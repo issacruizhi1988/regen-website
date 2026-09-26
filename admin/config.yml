@@ -1,0 +1,384 @@
+backend:
+  name: github
+  # Replace with your GitHub username/repo, e.g. "jane-doe/regen-website"
+  repo: issacruizhi1988/regen-website
+  branch: main
+  base_url: https://api.netlify.com
+
+# Uncomment and set these once the site has a real domain. They let Decap
+# CMS show correct "view live" links from within the editor.
+# site_url: https://your-site-name.netlify.app
+# display_url: https://your-site-name.netlify.app
+
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+locale: en
+
+collections:
+  - name: coaches
+    label: Coaches
+    description: The people on the coaching team. Each one gets a profile page.
+    files:
+      - name: coaches
+        label: Coaches
+        file: content/coaches.json
+        format: json
+        fields:
+          - label: Coaches
+            name: coaches
+            widget: list
+            summary: "{{fields.order}}. {{fields.name}}"
+            fields:
+              - label: URL Slug
+                name: slug
+                widget: string
+                hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coach.html?c=issac-tan"
+              - label: Name
+                name: name
+                widget: string
+              - label: Specialty (short tagline)
+                name: specialty
+                widget: string
+                hint: "One line, 70 characters or less. Shown on the coach card."
+              - label: Bio (short, for the card)
+                name: bio
+                widget: text
+                hint: "2-3 sentences, in the coach's own words."
+              - label: About (full profile)
+                name: about
+                widget: markdown
+                hint: "The full profile text shown on the coach's own page."
+              - label: Motto
+                name: motto
+                widget: string
+                required: false
+              - label: Credentials
+                name: credentials
+                widget: list
+                required: false
+                hint: "One credential per line, e.g. \"NASM Certified Personal Trainer\""
+              - label: Photo
+                name: photo
+                widget: image
+                hint: "Square-ish photo works best."
+              - label: WhatsApp Number
+                name: whatsapp
+                widget: string
+                hint: "Digits only with country code, e.g. 6591875632 (no + or spaces)."
+              - label: Instagram Handle
+                name: instagram
+                widget: string
+                required: false
+                hint: "Without the @ symbol, e.g. issactanruizhi"
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Pricing
+                name: pricing
+                widget: list
+                required: false
+                hint: "Packages this coach offers."
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: Price
+                    name: price
+                    widget: string
+              - label: Videos
+                name: videos
+                widget: list
+                required: false
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: YouTube Video ID
+                    name: youtubeId
+                    widget: string
+                    hint: "Paste the 11-character video ID, or the full YouTube link."
+              - label: Notion URL
+                name: notionUrl
+                widget: string
+                required: false
+              - label: Display Order
+                name: order
+                widget: number
+                hint: "Coaches are sorted by this number, lowest first."
+
+  - name: testimonials
+    label: Client Stories
+    description: Written and video client testimonials shown on the Results page.
+    files:
+      - name: testimonials
+        label: Client Stories
+        file: content/testimonials.json
+        format: json
+        fields:
+          - label: Stories
+            name: testimonials
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - label: Client Name
+                name: name
+                widget: string
+              - label: Headline
+                name: headline
+                widget: string
+              - label: Story
+                name: story
+                widget: markdown
+              - label: YouTube Video ID
+                name: youtubeId
+                widget: string
+                required: false
+                hint: "Paste the 11-character video ID, or the full YouTube link."
+              - label: Coach
+                name: coach
+                widget: string
+                required: false
+                hint: "The coach's URL slug, e.g. issac-tan. Leave blank if not tied to one coach."
+              - label: Featured
+                name: featured
+                widget: boolean
+                default: false
+                hint: "Show this story in the featured spot."
+
+  - name: reviews
+    label: Google Reviews
+    description: Your Google rating summary and individual reviews.
+    files:
+      - name: reviews
+        label: Google Reviews
+        file: content/reviews.json
+        format: json
+        fields:
+          - label: Google Reviews URL
+            name: googleUrl
+            widget: string
+            hint: "Link to your Google Business reviews page."
+          - label: Overall Rating
+            name: rating
+            widget: string
+            hint: "e.g. 4.9"
+          - label: Number of Reviews
+            name: count
+            widget: string
+            hint: "e.g. 120"
+          - label: Reviews
+            name: reviews
+            widget: list
+            summary: "{{fields.name}} ({{fields.rating}}★)"
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Rating
+                name: rating
+                widget: number
+                value_type: int
+                min: 1
+                max: 5
+                default: 5
+              - label: Review Text
+                name: text
+                widget: text
+              - label: Date
+                name: date
+                widget: string
+                hint: "e.g. March 2026"
+
+  - name: resources
+    label: Resources
+    description: Knowledge Nuggets — short educational articles.
+    files:
+      - name: resources
+        label: Resources
+        file: content/resources.json
+        format: json
+        fields:
+          - label: Resources
+            name: resources
+            widget: list
+            summary: "{{fields.emoji}} {{fields.title}}"
+            fields:
+              - label: URL Slug
+                name: slug
+                widget: string
+                hint: "Lowercase with dashes, e.g. breathing. Used in the page URL: /resource.html?r=breathing"
+              - label: Title
+                name: title
+                widget: string
+              - label: Emoji
+                name: emoji
+                widget: string
+                hint: "A single emoji shown next to the title, e.g. 🫁"
+              - label: Summary
+                name: summary
+                widget: text
+                hint: "1-2 sentences shown in the resources list."
+              - label: Body
+                name: body
+                widget: markdown
+              - label: Cover Image
+                name: cover
+                widget: image
+                required: false
+              - label: Notion URL
+                name: notionUrl
+                widget: string
+                required: false
+
+  - name: videos
+    label: Videos
+    description: The methodology video library.
+    files:
+      - name: videos
+        label: Videos
+        file: content/videos.json
+        format: json
+        fields:
+          - label: Methodology Videos
+            name: methodology
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: YouTube Video ID
+                name: youtubeId
+                widget: string
+                hint: "Paste the 11-character video ID, or the full YouTube link."
+              - label: Description
+                name: description
+                widget: text
+
+  - name: site
+    label: Site Settings
+    description: Sitewide settings — WhatsApp number, socials, location, pricing, FAQ.
+    files:
+      - name: site
+        label: Site Settings
+        file: content/site.json
+        format: json
+        fields:
+          - label: WhatsApp Number
+            name: whatsapp
+            widget: string
+            hint: "Digits only with country code, e.g. 6591875632 (no + or spaces). This is used to build the WhatsApp link."
+          - label: WhatsApp Display Number
+            name: whatsappDisplay
+            widget: string
+            hint: "How the number looks on the page, e.g. +65 9187 5632"
+          - label: WhatsApp Default Message
+            name: whatsappMessage
+            widget: text
+            hint: "Pre-filled message when someone taps the WhatsApp button."
+          - label: Instagram
+            name: instagram
+            widget: object
+            fields:
+              - label: Handle
+                name: handle
+                widget: string
+                hint: "Include the @, e.g. @regenperformance.sg"
+              - label: URL
+                name: url
+                widget: string
+          - label: YouTube
+            name: youtube
+            widget: object
+            fields:
+              - label: Handle
+                name: handle
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+          - label: Location
+            name: location
+            widget: object
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Address
+                name: address
+                widget: string
+              - label: Note
+                name: note
+                widget: string
+                required: false
+                hint: "A landmark hint, e.g. \"Just above Common Man Coffee\""
+              - label: Google Maps URL
+                name: mapsUrl
+                widget: string
+                required: false
+          - label: Homepage Quote
+            name: quote
+            widget: object
+            fields:
+              - label: Quote Text
+                name: text
+                widget: text
+              - label: Author
+                name: author
+                widget: string
+          - label: Mission
+            name: mission
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Body
+                name: body
+                widget: markdown
+          - label: What We Offer
+            name: offer
+            widget: list
+            hint: "One benefit per line."
+          - label: Discovery Call
+            name: discoveryCall
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Price
+                name: price
+                widget: string
+                hint: "e.g. Free"
+              - label: Body
+                name: body
+                widget: markdown
+          - label: Pricing
+            name: pricing
+            widget: list
+            summary: "{{fields.label}} — {{fields.price}}"
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Price
+                name: price
+                widget: string
+              - label: Note
+                name: note
+                widget: string
+                required: false
+          - label: FAQ
+            name: faq
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - label: Question
+                name: question
+                widget: string
+              - label: Answer
+                name: answer
+                widget: markdown

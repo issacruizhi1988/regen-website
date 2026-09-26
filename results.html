@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Results · ReGen Performance</title>
+<meta name="description" content="Real stories from ReGen Performance clients: injuries resolved, strength rebuilt, movement restored. See what our clients say on Google.">
+<meta property="og:title" content="Client Results · ReGen Performance">
+<meta property="og:description" content="Real people. Real change. See client stories and Google reviews.">
+<meta property="og:image" content="/assets/img/icon-512.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body data-page="results">
+<main>
+
+  <section class="page-hero">
+    <div class="glow"></div><div class="grain"></div>
+    <div class="wrap">
+      <span class="eyebrow">Client Results</span>
+      <h2 class="h2">Real People. <em>Real Change.</em></h2>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" id="stories-wrap"></div>
+  </section>
+
+  <section class="section" id="reviews-section" hidden>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Google Reviews</span>
+        <h2 class="h2">What Clients <em>Say</em></h2>
+        <div id="rating-badge" style="margin-top:1.4rem"></div>
+      </div>
+      <div class="review-grid" id="review-grid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="glow"></div>
+    <div class="wrap-narrow reveal">
+      <div class="hero-vline"></div>
+      <span class="eyebrow">Start Your Journey</span>
+      <h2 class="h2" style="margin-top:1rem">Your Body Works Better<br><em>As a System</em></h2>
+      <p class="lead" id="cta-lead">Take the first step towards a stronger, more resilient you. A free 30-minute discovery call, no pressure, just clarity.</p>
+      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html">WhatsApp Us</a><a class="btn btn-ghost" href="/book.html">How It Works</a></div>
+      <p class="cta-note" id="cta-note"></p>
+    </div>
+  </section>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="/assets/js/site.js"></script>
+<script>
+RG.ready(async function (site) {
+  var waHref = RG.wa(site.whatsapp, site.whatsappMessage);
+  document.getElementById("cta-wa").href = waHref;
+  document.getElementById("cta-wa").target = "_blank";
+  if (site.whatsappDisplay) document.getElementById("cta-note").textContent = "WhatsApp " + site.whatsappDisplay + " · " + ((site.location && site.location.name) || "");
+
+  var [t, r, c] = await Promise.all([RG.load("testimonials"), RG.load("reviews"), RG.load("coaches")]);
+  var coaches = (c.coaches || []);
+
+  var stories = (t.testimonials || []).slice().sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0); });
+  var storiesWrap = document.getElementById("stories-wrap");
+  if (stories.length) {
+    storiesWrap.innerHTML = stories.map(function (s) {
+      var coach = coaches.find(function (k) { return k.slug === s.coach; });
+      var coachLink = coach ? '<p style="margin-top:1.2rem"><a class="link-arrow" href="/coach.html?c=' + encodeURIComponent(coach.slug) + '">Coached by ' + RG.esc(coach.name) + ' <span>→</span></a></p>' : '';
+      var head = '<span class="eyebrow">' + RG.esc(s.name) + '</span>' + (s.headline && s.headline !== s.name ? '<h3 class="h3">' + RG.esc(s.headline) + '</h3>' : '');
+      if (RG.ytId(s.youtubeId)) {
+        return '<article class="story reveal">' +
+          '<div class="story-media">' + RG.video(s.youtubeId, s.name) + '</div>' +
+          '<div>' + head + '<div class="prose">' + RG.md(s.story) + '</div>' + coachLink + '</div></article>';
+      }
+      // Photo stories: text first, then the before/after images as a gallery.
+      var tmp = document.createElement("div");
+      tmp.innerHTML = RG.md(s.story);
+      var imgs = Array.prototype.slice.call(tmp.querySelectorAll("img"));
+      imgs.forEach(function (img) {
+        var p = img.parentNode; img.remove();
+        if (p !== tmp && p.tagName === "P" && !p.textContent.trim() && !p.querySelector("img")) p.remove();
+      });
+      var gallery = imgs.length ? '<div class="gallery">' + imgs.map(function (img) {
+        return '<button class="gallery-item" type="button" data-full="' + RG.esc(img.getAttribute("src")) + '"><img src="' + RG.esc(img.getAttribute("src")) + '" alt="' + RG.esc(s.name) + ' result photo" loading="lazy"></button>';
+      }).join("") + '</div>' : '';
+      var text = tmp.textContent.trim() ? '<div class="prose">' + tmp.innerHTML + '</div>' : '';
+      return '<article class="story story-photos reveal"><div class="story-photos-head">' + head + text + coachLink + '</div>' + gallery + '</article>';
+    }).join("");
+  } else {
+    storiesWrap.innerHTML = '<div class="empty">Client stories are being added. Check back soon.</div>';
+  }
+  RG.reveal(storiesWrap);
+
+  var reviews = r.reviews || [];
+  if (reviews.length) {
+    if (r.rating || r.count) {
+      var badge = '<b>' + RG.esc(r.rating) + '</b>&nbsp; <small>' + RG.esc(r.count) + ' Google reviews</small>';
+      document.getElementById("rating-badge").innerHTML = r.googleUrl
+        ? '<a class="rating-badge" href="' + RG.esc(r.googleUrl) + '" target="_blank" rel="noopener">' + badge + '</a>'
+        : '<span class="rating-badge">' + badge + '</span>';
+    }
+    document.getElementById("review-grid").innerHTML = reviews.map(function (v) {
+      return '<figure class="review reveal">' + RG.stars(v.rating) + '<p>' + RG.esc(v.text) + '</p>' +
+        '<figcaption class="review-by">' + RG.esc(v.name) + (v.date ? '<span>' + RG.esc(v.date) + '</span>' : '') + '</figcaption></figure>';
+    }).join("");
+    document.getElementById("reviews-section").hidden = false;
+    RG.reveal(document.getElementById("reviews-section"));
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Built From Within — ReGen Performance</title>
+<meta name="description" content="Built From Within — the ReGen Method. Why your body works better when you train the system, not just the muscles.">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--icons-bg:url("/assets/img/ebook/icons-sprite.png");
+  --ink:#070707;--cream:#ede8dc;--white:#fafaf8;
+  --gold:#c4a052;--gold-bright:#d4b06a;
+  --muted:#7a736a;--muted2:#3e3a35;
+  --card:#111009;--card2:#191612;
+  --border:rgba(196,160,82,0.11);--border2:rgba(196,160,82,0.26);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden;line-height:1.6;}
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:300;transition:width 0.4s ease;width:0%;}
+nav{position:fixed;top:2px;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(7,7,7,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-brand{font-family:"DM Mono",monospace;font-size:0.68rem;letter-spacing:0.45em;color:var(--gold);text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;}
+.nav-brand:hover{opacity:0.72;}
+.nav-pages{display:flex;gap:1.5rem;list-style:none;}
+.nav-pages li{font-family:"DM Mono",monospace;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color 0.25s;}
+.nav-pages li:hover,.nav-pages li.active{color:var(--gold);}
+.page{min-height:100vh;display:none;padding-top:62px;padding-bottom:90px;}
+.page.active{display:block;animation:reveal 0.5s ease both;}
+#p0.active{display:flex;padding-bottom:0;}
+@keyframes reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+#cover{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;text-align:center;position:relative;overflow:hidden;padding:2rem 1.5rem 5.5rem;}
+.cover-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 50% 28%,rgba(196,160,82,0.065) 0%,transparent 65%),radial-gradient(ellipse 35% 40% at 15% 85%,rgba(196,160,82,0.025) 0%,transparent 55%);}
+.cover-grain{position:absolute;inset:0;pointer-events:none;opacity:0.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");}
+.cover-vline{width:1px;height:72px;background:linear-gradient(to bottom,transparent,var(--gold));margin:0 auto 2.5rem;animation:lineGrow 1.1s ease 0.15s both;}
+@keyframes lineGrow{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:1}}
+.cover-wordmark{font-family:"DM Mono",monospace;font-size:0.63rem;letter-spacing:0.52em;color:var(--gold);text-transform:uppercase;margin-bottom:2rem;animation:reveal 0.8s ease 0.35s both;}
+.cover-title{font-family:"Playfair Display",serif;font-size:clamp(3.8rem,11vw,8rem);font-weight:900;line-height:0.88;color:var(--white);letter-spacing:-0.015em;animation:reveal 0.8s ease 0.5s both;}
+.cover-title em{font-style:italic;color:var(--gold);}
+.cover-rule{display:flex;align-items:center;gap:1rem;margin:2rem auto;width:230px;animation:reveal 0.8s ease 0.7s both;}
+.cover-rule span{flex:1;height:1px;background:var(--border2);}
+.cover-rule i{font-style:normal;font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.38em;color:rgba(196,160,82,0.5);text-transform:uppercase;}
+.cover-sub{font-size:clamp(0.9rem,2.5vw,1.08rem);color:var(--muted);font-weight:300;max-width:460px;line-height:1.88;animation:reveal 0.8s ease 0.8s both;}
+.cover-pills{display:flex;gap:0.65rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem;animation:reveal 0.8s ease 0.95s both;}
+.pill{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,160,82,0.52);border:1px solid rgba(196,160,82,0.17);padding:0.28rem 0.75rem;}
+.cover-cta{margin-top:2.2rem;animation:reveal 0.8s ease 1.05s both;}
+.btn-gold{background:var(--gold);color:var(--ink);border:none;padding:1rem 2.8rem;font-family:"DM Sans",sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-gold:hover{background:var(--gold-bright);transform:translateY(-2px);}
+.cover-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.7rem;animation:reveal 0.8s ease 1.2s both;}
+.hint-text{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.28em;color:rgba(196,160,82,0.55);text-transform:uppercase;}
+.hint-arrows{display:flex;align-items:center;gap:0.5rem;}
+.hint-arrow-btn{font-family:"DM Mono",monospace;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:0.45rem 1.2rem;cursor:pointer;transition:all 0.3s;border:none;font-weight:500;}
+.hint-arrow-btn:hover{background:var(--gold-bright);transform:translateY(-1px);}
+@keyframes pulse{0%,100%{opacity:0.28}55%{opacity:0.9}}
+.ch{max-width:800px;margin:0 auto;padding:3.5rem 1.5rem 0;}
+.ch-num{font-family:"DM Mono",monospace;font-size:0.58rem;letter-spacing:0.44em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;}
+.ch-title{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,6.5vw,4.2rem);font-weight:700;line-height:1.02;color:var(--white);}
+.ch-title em{font-style:italic;color:var(--gold);}
+.ch-lead{font-size:1.02rem;color:var(--muted);font-weight:300;line-height:1.9;max-width:550px;margin-top:1.4rem;padding-left:1.2rem;border-left:2px solid var(--gold);}
+.divider{height:1px;margin:2.5rem 0;background:linear-gradient(to right,rgba(196,160,82,0.32),transparent);}
+.section-label{font-family:"DM Mono",monospace;font-size:0.56rem;letter-spacing:0.38em;color:var(--gold);text-transform:uppercase;margin:3rem 0 1.2rem;display:flex;align-items:center;gap:0.8rem;}
+.section-label::after{content:"";flex:1;height:1px;background:var(--border);}
+.img-hero{position:relative;margin:2rem 0;overflow:hidden;border:1px solid var(--border);}
+.img-hero img{width:100%;height:255px;object-fit:cover;display:block;filter:brightness(0.55) saturate(0.6);transition:filter 0.5s;}
+.img-hero:hover img{filter:brightness(0.7) saturate(0.75);}
+.img-hero-cap{position:absolute;bottom:0;left:0;right:0;padding:0.9rem 1.3rem;background:linear-gradient(to top,rgba(7,7,7,0.96),transparent);font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;}
+.body-text{font-size:0.95rem;color:rgba(237,232,220,0.7);line-height:1.9;margin:1.4rem 0;}
+.body-text strong{color:var(--cream);font-weight:500;}
+.callout{background:var(--card2);border-left:3px solid var(--gold);padding:1.4rem 1.5rem;margin:2rem 0;}
+.callout-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;}
+.callout p{font-family:"Playfair Display",serif;font-style:italic;font-size:1.05rem;color:var(--cream);line-height:1.65;}
+.callout-asym{background:rgba(196,160,82,0.04);border:1px solid var(--border2);padding:1.5rem 1.5rem 1.5rem 1.8rem;margin:2rem 0;position:relative;}
+.callout-asym::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--gold),rgba(196,160,82,0.18));}
+.callout-asym-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem;}
+.callout-asym h4{font-family:"Playfair Display",serif;font-size:1.12rem;color:var(--white);margin-bottom:0.6rem;font-weight:700;}
+.callout-asym p{font-size:0.88rem;color:rgba(237,232,220,0.65);line-height:1.8;}
+.callout-asym p+p{margin-top:0.7rem;}
+.icon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+.icon-card{background:var(--card);padding:1.55rem 1.4rem;transition:background 0.3s;display:flex;flex-direction:column;gap:0.5rem;}
+.icon-card:hover{background:var(--card2);}
+.icon-card-icon{font-size:1.6rem;margin-bottom:0.3rem;display:flex;align-items:center;}
+.icon-card-icon svg{width:1.6rem;height:1.6rem;}
+
+.crop-icon{display:inline-block;width:2.2rem;height:2.2rem;background-image:var(--icons-bg);background-size:300% auto;background-repeat:no-repeat;background-position:var(--icon-pos) center;}
+.icon-pelvic{--icon-pos:0%;}
+.icon-abdominal{--icon-pos:50%;}
+.icon-posterior{--icon-pos:100%;}
+
+.icon-card-label{font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;}
+.icon-card-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);}
+.icon-card-text{font-size:0.78rem;color:var(--muted);line-height:1.65;}
+.leak-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+.leak-card{background:var(--card);padding:1.6rem 1.3rem;transition:background 0.3s;}
+.leak-card:hover{background:var(--card2);}
+.leak-icon{font-size:1.45rem;margin-bottom:0.75rem;}
+.leak-name{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:0.3rem;}
+.leak-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);margin-bottom:0.45rem;}
+.leak-desc{font-size:0.77rem;color:var(--muted);line-height:1.65;}
+.chain{display:flex;flex-direction:column;margin:1.5rem 0;}
+.chain-row{display:grid;grid-template-columns:44px 1fr;gap:1.2rem;position:relative;}
+.chain-row:not(:last-child)::after{content:"";position:absolute;left:21px;top:46px;width:2px;height:calc(100% - 8px);background:linear-gradient(to bottom,rgba(196,160,82,0.45),rgba(196,160,82,0.03));}
+.chain-node{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:"DM Mono",monospace;font-size:0.56rem;color:var(--gold);background:var(--ink);flex-shrink:0;margin-top:0.1rem;}
+.chain-body{padding-bottom:2rem;}
+.chain-tag{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:0.2rem;}
+.chain-heading{font-family:"Playfair Display",serif;font-size:1.18rem;font-weight:700;color:var(--white);margin-bottom:0.38rem;}
+.chain-text{font-size:0.84rem;color:var(--muted);line-height:1.75;}
+.rl-box{background:var(--card2);border:1px solid var(--border);padding:1.4rem;margin:2rem 0;}
+.rl-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:0.9rem;display:flex;align-items:center;gap:0.8rem;}
+.rl-label::after{content:"";flex:1;height:1px;background:var(--border2);}
+.rl-list{list-style:none;display:flex;flex-direction:column;gap:0.48rem;}
+.rl-list li{font-size:0.82rem;color:rgba(237,232,220,0.55);line-height:1.6;padding-left:1.1rem;position:relative;}
+.rl-list li::before{content:"·";position:absolute;left:0.15rem;color:var(--gold);font-size:1rem;line-height:1;top:0.08rem;}
+.pq{margin:3rem 0;padding:2.2rem 1.5rem;text-align:center;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);}
+.pq p{font-family:"Playfair Display",serif;font-size:clamp(1.1rem,2.8vw,1.6rem);font-style:italic;color:var(--cream);line-height:1.5;max-width:540px;margin:0 auto 0.9rem;}
+.pq cite{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;}
+.ch-bridge{margin:0;padding:2rem 1.5rem 3rem;max-width:800px;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:opacity 0.25s;border-top:1px solid var(--border);}
+.ch-bridge:hover{opacity:0.72;}
+.ch-bridge-text{display:flex;flex-direction:column;gap:0.2rem;}
+.ch-bridge-label{font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.3em;color:var(--muted2);text-transform:uppercase;}
+.ch-bridge-next{font-family:"Playfair Display",serif;font-size:1.05rem;font-style:italic;color:var(--gold);}
+.ch-bridge-arrow{font-size:1.2rem;color:var(--gold);transition:transform 0.25s;}
+.ch-bridge:hover .ch-bridge-arrow{transform:translateX(4px);}
+.reset-intro{background:var(--card2);border:1px solid var(--border);padding:1.6rem;margin:1.5rem 0;}
+.reset-intro-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem;}
+.reset-intro p{font-size:0.88rem;color:rgba(237,232,220,0.68);line-height:1.8;}
+.reset-intro p+p{margin-top:0.7rem;}
+.reset-what{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
+.reset-col{background:var(--card);padding:1.5rem 1.4rem;}
+.reset-col-icon{font-size:1.5rem;margin-bottom:0.8rem;display:flex;align-items:center;}
+.reset-col-icon svg{width:1.5rem;height:1.5rem;}
+.reset-col-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:0.4rem;}
+.reset-col-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);margin-bottom:0.5rem;}
+.reset-col-text{font-size:0.78rem;color:var(--muted);line-height:1.65;}
+.layers{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
+.layer{background:var(--card);padding:1.3rem 1.5rem;display:flex;gap:1.2rem;align-items:flex-start;transition:background 0.3s;}
+.layer:hover{background:var(--card2);}
+.layer-num{font-family:"DM Mono",monospace;font-size:0.6rem;color:var(--gold);background:rgba(196,160,82,0.1);border:1px solid var(--border2);padding:0.25rem 0.6rem;flex-shrink:0;margin-top:0.1rem;}
+.layer-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);margin-bottom:0.3rem;}
+.layer-text{font-size:0.79rem;color:var(--muted);line-height:1.65;}
+.breath-note{background:rgba(196,160,82,0.05);border:1px solid var(--border2);padding:1.4rem 1.5rem;margin:2rem 0;}
+.breath-note-label{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem;}
+.breath-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border2);margin-top:1rem;}
+.breath-col{background:var(--card);padding:1.2rem 1.3rem;}
+.breath-col-label{font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;}
+.breath-col-text{font-size:0.78rem;color:var(--muted);line-height:1.65;}
+.ex-block{border:1px solid var(--border);background:var(--card);margin:1.8rem 0;overflow:hidden;}
+.ex-header{background:rgba(196,160,82,0.055);padding:0.85rem 1.4rem;display:flex;align-items:center;gap:0.9rem;border-bottom:1px solid var(--border);}
+.ex-icon{font-size:1.2rem;}
+.ex-name{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);}
+.ex-badge{margin-left:auto;font-family:"DM Mono",monospace;font-size:0.46rem;letter-spacing:0.18em;color:var(--gold);border:1px solid var(--border2);padding:0.17rem 0.58rem;text-transform:uppercase;}
+.ex-comp{padding:0.7rem 1.4rem;background:rgba(196,160,82,0.04);border-bottom:1px solid var(--border);font-size:0.78rem;color:rgba(237,232,220,0.5);font-style:italic;}
+.ex-comp strong{color:rgba(196,160,82,0.8);font-style:normal;font-weight:500;}
+.ex-body{display:grid;grid-template-columns:1fr 1fr;}
+.ex-col{padding:1.2rem 1.4rem;}
+.ex-col:first-child{border-right:1px solid var(--border);}
+.ex-col-label{font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;}
+.ex-list{list-style:none;display:flex;flex-direction:column;gap:0.48rem;}
+.ex-list li{font-size:0.79rem;color:var(--muted);line-height:1.55;padding-left:1rem;position:relative;}
+.ex-list li::before{content:"—";position:absolute;left:0;color:var(--gold);opacity:0.38;}
+.yt-section{margin:2rem 0;}
+.yt-label{font-family:"DM Mono",monospace;font-size:0.52rem;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;margin-bottom:0.9rem;display:flex;align-items:center;gap:0.8rem;}
+.yt-label::after{content:"";flex:1;height:1px;background:var(--border);}
+.yt-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border);background:#000;}
+.yt-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.life-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:1.5rem 0;}
+.life-card{background:var(--card);padding:1.5rem 1.3rem;transition:background 0.3s;}
+.life-card:hover{background:var(--card2);}
+.life-icon{font-size:1.4rem;margin-bottom:0.7rem;}
+.life-title{font-family:"Playfair Display",serif;font-size:0.98rem;color:var(--cream);margin-bottom:0.45rem;}
+.life-text{font-size:0.77rem;color:var(--muted);line-height:1.65;}
+.life-tip{margin-top:0.65rem;font-size:0.72rem;font-style:italic;color:rgba(196,160,82,0.62);}
+.cta-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 62px);text-align:center;padding:4rem 1.5rem 5rem;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 50% 38%,rgba(196,160,82,0.055) 0%,transparent 65%);}
+.cta-vline{width:1px;height:55px;background:linear-gradient(to bottom,transparent,var(--gold));margin:0 auto 2rem;}
+.cta-wordmark{font-family:"DM Mono",monospace;font-size:0.65rem;letter-spacing:0.52em;color:var(--gold);text-transform:uppercase;margin-bottom:0.55rem;}
+.cta-location{font-family:"DM Mono",monospace;font-size:0.5rem;letter-spacing:0.35em;color:var(--muted2);text-transform:uppercase;margin-bottom:2.5rem;}
+.cta-headline{font-family:"Playfair Display",serif;font-size:clamp(2rem,5.5vw,3.5rem);font-weight:700;color:var(--white);line-height:1.06;max-width:560px;}
+.cta-headline em{font-style:italic;color:var(--gold);}
+.cta-human{font-size:0.97rem;color:var(--muted);font-weight:300;line-height:1.85;max-width:420px;margin-top:1.4rem;}
+.cta-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem auto;width:180px;}
+.cta-divider span{flex:1;height:1px;background:var(--border2);}
+.cta-divider i{font-style:normal;font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.3em;color:rgba(196,160,82,0.42);text-transform:uppercase;}
+.cta-actions{display:flex;flex-direction:column;gap:0.8rem;width:100%;max-width:390px;}
+.cta-btn{display:flex;align-items:center;gap:1rem;width:100%;padding:1.05rem 1.3rem;text-decoration:none;border:1px solid var(--border2);background:var(--card);transition:all 0.3s;cursor:pointer;}
+.cta-btn:hover{background:var(--card2);border-color:var(--gold);}
+.cta-btn.primary{background:var(--gold);border-color:var(--gold);}
+.cta-btn.primary:hover{background:var(--gold-bright);}
+.cta-btn.primary .cta-btn-title{color:var(--ink);}
+.cta-btn.primary .cta-btn-sub{color:rgba(7,7,7,0.52);}
+.cta-btn.primary .cta-arr{color:var(--ink);}
+.cta-btn-icon{font-size:1.1rem;flex-shrink:0;}
+.cta-btn-text{display:flex;flex-direction:column;gap:0.12rem;text-align:left;}
+.cta-btn-title{font-size:0.86rem;color:var(--cream);font-weight:500;}
+.cta-btn-sub{font-family:"DM Mono",monospace;font-size:0.46rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;}
+.cta-arr{margin-left:auto;color:var(--gold);flex-shrink:0;font-size:0.88rem;}
+.cta-foot{margin-top:2.8rem;font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.24em;color:var(--muted2);text-transform:uppercase;}
+.page-nav{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:0.42rem;z-index:200;background:rgba(7,7,7,0.96);backdrop-filter:blur(16px);border:1px solid var(--border);padding:0.5rem 0.8rem;}
+.pnav-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-family:"DM Mono",monospace;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.6rem;transition:color 0.2s;}
+.pnav-btn:hover{color:var(--gold);}
+.pnav-sep{width:1px;height:12px;background:var(--border2);}
+.pnav-dots{display:flex;gap:0.33rem;align-items:center;padding:0 0.3rem;}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(196,160,82,0.17);cursor:pointer;transition:all 0.3s;}
+.dot.active{background:var(--gold);transform:scale(1.4);}
+.pnav-count{font-family:"DM Mono",monospace;font-size:0.48rem;letter-spacing:0.15em;color:var(--muted2);padding:0 0.22rem;}
+@media(max-width:640px){
+  nav{padding:0.85rem 1.2rem;}.nav-pages{display:none;}
+  .ch{padding:2.5rem 1.2rem 0;}
+  .leak-grid{grid-template-columns:1fr;}.icon-grid{grid-template-columns:1fr;}
+  .reset-what{grid-template-columns:1fr;}.breath-split{grid-template-columns:1fr;}
+  .ex-body{grid-template-columns:1fr;}.ex-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .life-grid{grid-template-columns:1fr;}.cover-title{font-size:3.8rem;}
+  .cta-actions{max-width:100%;}.ch-bridge{padding:1.5rem 1.2rem 2.5rem;}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <a class="nav-brand" href="/" style="text-decoration:none">Regen Performance</a>
+  <ul class="nav-pages">
+    <li class="active" onclick="goTo(0)">Home</li>
+    <li onclick="goTo(1)">The Problem</li>
+    <li onclick="goTo(2)">The Ground</li>
+    <li onclick="goTo(3)">The Breath</li>
+    <li onclick="goTo(4)">The Line</li>
+    <li onclick="goTo(5)">The Signal</li>
+    <li onclick="goTo(6)">The Work</li>
+    <li onclick="goTo(7)">Begin</li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<div class="page active" id="p0">
+  <div id="cover">
+    <div class="cover-glow"></div><div class="cover-grain"></div>
+    <div class="cover-vline"></div>
+    <div class="cover-wordmark">Regen Performance &nbsp;·&nbsp; Singapore</div>
+    <h1 class="cover-title">Built<br><em>From</em><br>Within</h1>
+    <div class="cover-rule"><span></span><i>The ReGen Method</i><span></span></div>
+    <p class="cover-sub">Why your body works better when you train the system, not just the muscles. A guide for gym-goers who want results that actually last.</p>
+    <div class="cover-pills">
+      <span class="pill">Breathing</span>
+      <span class="pill">Foot &amp; Ground</span>
+      <span class="pill">Posterior Chain</span>
+      <span class="pill">Upper Body</span>
+      <span class="pill">Nervous System</span>
+    </div>
+    <div class="cover-cta"><button class="btn-gold" onclick="goTo(1)">Start Reading</button></div>
+    <div class="cover-hint">
+      <span class="hint-text">Tap arrows or dots to navigate</span>
+      <div class="hint-arrows">
+        <span class="hint-arrow-btn" onclick="next()">Begin &nbsp;→</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<div class="page" id="p1">
+  <div class="ch">
+    <div class="ch-num">Introduction</div>
+    <h2 class="ch-title">Something<br><em>Is Missing</em></h2>
+    <p class="ch-lead">Most people who train consistently still feel tight, uncomfortable, or stuck. Not because they are not trying hard enough. Because something deeper has not been addressed.</p>
+    <div class="divider"></div>
+    <div class="img-hero">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80" alt="Training"/>
+      <div class="img-hero-cap">📸 Replace with your coaching photo</div>
+    </div>
+    <p class="body-text">You train. You stretch. You go for treatment when things flare up. And for a while, it helps. But a few weeks later, the same tightness is back. The same discomfort in the same places. You start to wonder: <strong>am I just built this way?</strong></p>
+    <p class="body-text">You are not. But the way most people approach training is missing a critical layer. The body does not work as a collection of isolated parts. It works as one connected system. And when that system has gaps, no amount of effort fills them.</p>
+    <div class="callout">
+      <div class="callout-label">The Central Idea</div>
+      <p>"The body is not lacking effort. It is leaking energy, because the system is not connected."</p>
+    </div>
+    <p class="body-text">When one part of the body does not do its job, another takes over. This is compensation. Compensations build quietly over months and years, until they show up as tightness, weakness, or pain that keeps returning regardless of what you do.</p>
+    <div class="callout-asym">
+      <div class="callout-asym-label">Something Most People Are Never Told</div>
+      <h4>Your Body Was Never Meant to Be Perfectly Symmetrical</h4>
+      <p>Every human body is built asymmetrically. Your heart sits slightly left of centre. Your liver anchors the right side. Your right diaphragm is larger and more domed. This creates natural, predictable patterns. One shoulder tends to sit higher, one hip rotates more easily, one side carries more tension than the other.</p>
+      <p>This is not a flaw. It is biology. The body adapts around these asymmetries beautifully, until it runs out of capacity to manage them. Most chronic tightness and recurring pain does not come from the asymmetry itself. It comes from the body no longer being able to cope with it. Understanding this changes how you train and how you stop blaming yourself for problems that were never your fault.</p>
+    </div>
+    <div class="leak-grid">
+      <div class="leak-card"><div class="leak-icon">💨</div><div class="leak-name">Leak 01</div><div class="leak-title">Pressure Leaks</div><div class="leak-desc">When breathing is not coordinated, the body loses its internal support and creates tension instead of stability, usually in the neck and lower back.</div></div>
+      <div class="leak-card"><div class="leak-icon">⚡</div><div class="leak-name">Leak 02</div><div class="leak-title">Force Leaks</div><div class="leak-desc">When feet, hips, or arms are not connected, force cannot travel efficiently. Joints absorb load that the chain should be sharing across the whole body.</div></div>
+      <div class="leak-card"><div class="leak-icon">🤹</div><div class="leak-name">Leak 03</div><div class="leak-title">Coordination Leaks</div><div class="leak-desc">When movement is not organised, the body uses more effort than necessary. Fatigue builds in the wrong places. Simple things feel harder than they should.</div></div>
+    </div>
+    <p class="body-text">The ReGen Method addresses all three, not by adding more exercises, but by <strong>reconnecting the system</strong> so everything you already do works better.</p>
+    <div class="pq">
+      <p>"It may not be about doing more. It may be about organising the system better."</p>
+      <cite>ReGen Performance · Singapore</cite>
+    </div>
+  </div>
+  <div class="ch-bridge" onclick="goTo(2)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Next Chapter</span><span class="ch-bridge-next">The first place the system breaks down is the one you are standing on.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- THE GROUND -->
+<div class="page" id="p2">
+  <div class="ch">
+    <div class="ch-num">Chapter 01</div>
+    <h2 class="ch-title">The<br><em>Ground</em></h2>
+    <p class="ch-lead">Everything starts here. Before the bar, before the breath, before anything, there is the foot. And most people have completely forgotten how to use it.</p>
+    <div class="divider"></div>
+    <div class="img-hero">
+      <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=900&q=80" alt="Foot"/>
+      <div class="img-hero-cap">📸 Foot tripod diagram or coaching photo</div>
+    </div>
+    <p class="body-text">Your feet are the body's first contact point with the world. Every step, every squat, every press begins with how your foot meets the floor. When that contact is clear and organised, force travels cleanly through every joint above. When it is not, every joint above compensates.</p>
+    <p class="body-text">The foot has three key contact points: the heel, the ball under the big toe, and the ball under the little toe. <strong>We call this the foot tripod.</strong> When all three are evenly active, you have a stable, responsive base. When one collapses or grips, the entire system above it shifts.</p>
+    <div class="callout">
+      <div class="callout-label">Why the Big Toe Matters More Than You Think</div>
+      <p>"The big toe is the final push-off in every step, lunge, and sprint. When it stops doing its job, the knee, hip, and lower back quietly start doing it instead."</p>
+    </div>
+    <div class="chain">
+      <div class="chain-row"><div class="chain-node">01</div><div class="chain-body"><div class="chain-tag">The Base</div><div class="chain-heading">Foot Tripod</div><div class="chain-text">Heel, big toe ball, little toe ball, all three active and evenly loaded. When this is in place, force distributes cleanly upward through every joint.</div></div></div>
+      <div class="chain-row"><div class="chain-node">02</div><div class="chain-body"><div class="chain-tag">Upstream Effect</div><div class="chain-heading">Big Toe and the Posterior Chain</div><div class="chain-text">Big toe pressing into the floor activates the entire back line: calves, hamstrings, glutes. A weak big toe means a poorly activated posterior chain, regardless of how hard you try.</div></div></div>
+      <div class="chain-row"><div class="chain-node">03</div><div class="chain-body"><div class="chain-tag">Upstream Effect</div><div class="chain-heading">Ankle, Knee, Hip</div><div class="chain-text">How your foot loads the floor determines how your knee tracks and how your hip operates. A collapsed arch rotates the knee inward. A gripping foot compresses the joint. Either way, the hip loses efficiency.</div></div></div>
+      <div class="chain-row"><div class="chain-node">04</div><div class="chain-body"><div class="chain-tag">The Deep Link</div><div class="chain-heading">Foot and the Pelvic Floor</div><div class="chain-text">Through the deep fascial system, foot position and toe strength directly influence pelvic floor activation. This is why foot mechanics matter even for what we traditionally call core problems.</div></div></div>
+    </div>
+    <div class="rl-box">
+      <div class="rl-label">Sound familiar?</div>
+      <ul class="rl-list">
+        <li>Knees that cave inward on squats or lunges</li>
+        <li>Hips that feel tight no matter how much you stretch</li>
+        <li>Feet that ache after a long day of standing or walking</li>
+        <li>Feeling unstable during single-leg exercises</li>
+        <li>Lower back switching on before your glutes do</li>
+      </ul>
+    </div>
+    <p class="body-text">The answer, more often than not, starts at the floor. <strong>That is where we begin.</strong></p>
+  </div>
+  <div class="ch-bridge" onclick="goTo(3)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Next Chapter</span><span class="ch-bridge-next">A stable base is only as useful as what it can breathe through.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- THE BREATH -->
+<div class="page" id="p3">
+  <div class="ch">
+    <div class="ch-num">Chapter 02</div>
+    <h2 class="ch-title">The<br><em>Breath</em></h2>
+    <p class="ch-lead">You do it 20,000 times a day. And most of those times, you are doing it in a way that quietly undermines everything else you do in the gym.</p>
+    <div class="divider"></div>
+    <div class="img-hero">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80" alt="Training"/>
+      <div class="img-hero-cap">📸 Replace with your coaching photo</div>
+    </div>
+    <p class="body-text">Most people breathe into their chest. Shoulders rise. Neck tightens. The lower ribs barely move. This pattern, built through years of stress, prolonged sitting, and screen time, quietly shifts how the entire torso loads and stabilises.</p>
+    <p class="body-text">Inside your trunk is a pressure system. Think of it as a cylinder: four walls that work together to support everything inside.</p>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <div class="icon-card-icon">🫁</div>
+        <div class="icon-card-label">Top</div>
+        <div class="icon-card-title">The Diaphragm</div>
+        <div class="icon-card-text">When it contracts well, it descends and creates pressure downward and outward, like a piston driving stability through the trunk before any external load arrives.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon"><span class="crop-icon icon-pelvic"></span></div>
+        <div class="icon-card-label">Bottom</div>
+        <div class="icon-card-title">The Pelvic Floor</div>
+        <div class="icon-card-text">Responds to the diaphragm from below. When both work together, they regulate trunk pressure like a two-way valve. No hard bracing or sucking in required.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon"><span class="crop-icon icon-abdominal"></span></div>
+        <div class="icon-card-label">Sides</div>
+        <div class="icon-card-title">The Abdominal Wall</div>
+        <div class="icon-card-text">Does not need to be forcefully braced. It responds automatically when the diaphragm and pelvic floor are coordinating correctly, providing effortless support.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon"><span class="crop-icon icon-posterior"></span></div>
+        <div class="icon-card-label">Behind</div>
+        <div class="icon-card-title">The Posterior Wall</div>
+        <div class="icon-card-text">Deep spinal muscles complete the cylinder from behind, contributing to 360 degrees of pressure that supports the spine from the inside out.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-label">The Key Insight</div>
+      <p>"The diaphragm is not just a breathing muscle. It is your primary stabiliser. When the cylinder works, your spine is supported before any weight is applied."</p>
+    </div>
+    <p class="body-text">When breathing breaks down, air floods the chest, ribs flare upward, and the neck takes over. The cylinder collapses. The body loses its internal support and compensates with tension wherever it can find it. This is why some people feel <strong>more neck and upper trap tightness the harder they train.</strong> They are not getting stronger. They are getting more compressed.</p>
+    <div class="rl-box">
+      <div class="rl-label">Sound familiar?</div>
+      <ul class="rl-list">
+        <li>Shoulders creeping toward your ears when tired or under stress</li>
+        <li>Neck tightness that gets worse with more training, not less</li>
+        <li>Lower back that braces hard instead of feeling supported</li>
+        <li>Feeling winded on exercises that should not exhaust you</li>
+        <li>Upper traps that stay tight regardless of stretching or massage</li>
+      </ul>
+    </div>
+    <div class="pq">
+      <p>"The breath is not just oxygen. It is organisation, the body's way of setting itself up before any load arrives."</p>
+      <cite>ReGen Performance · The Method</cite>
+    </div>
+  </div>
+  <div class="ch-bridge" onclick="goTo(4)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Next Chapter</span><span class="ch-bridge-next">With pressure organised, the body has a pathway. That pathway is the line.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- THE LINE -->
+<div class="page" id="p4">
+  <div class="ch">
+    <div class="ch-num">Chapter 03</div>
+    <h2 class="ch-title">The<br><em>Line</em></h2>
+    <p class="ch-lead">When the feet are connected and the breath is organised, force needs a pathway. A line that carries it from the ground all the way to the hands, without losing anything along the way.</p>
+    <div class="divider"></div>
+    <div class="img-hero">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80" alt="Posterior chain"/>
+      <div class="img-hero-cap">📸 Posterior chain or deadlift coaching photo</div>
+    </div>
+    <p class="body-text">The posterior chain is the body's main highway for load transfer. Heel. Calf. Hamstring. Glute. Lower back. Thoracic spine. Upper back. All the way to the base of the skull. <strong>When connected, load is shared across the entire line.</strong> No single joint absorbs more than its share.</p>
+    <p class="body-text">When disconnected, which is common after years of desk work, load concentrates. Usually in the lower back. Sometimes the neck. Often both. This is why many people feel their back on deadlifts instead of their glutes and hamstrings. The line is not firing as a unit.</p>
+    <div class="callout">
+      <div class="callout-label">The Upper Anchor</div>
+      <p>"The shoulder blade is not just part of the shoulder. It is the bridge between your arms and your trunk. When it moves freely, force transfers cleanly. When it is stuck, everything above compensates."</p>
+    </div>
+    <p class="body-text">The scapula must be able to glide, tilt, and rotate freely along the rib cage for pressing and pulling to work correctly. And here is something most people never hear: <strong>how you grip changes how your shoulder blade moves.</strong> The way your knuckles contact a bar directly affects the muscle that wraps your scapula around your rib cage. A small grip adjustment can change how a pressing exercise feels, immediately.</p>
+    <div class="chain">
+      <div class="chain-row"><div class="chain-node">01</div><div class="chain-body"><div class="chain-tag">The Launch</div><div class="chain-heading">Heel, Hamstring, Glute</div><div class="chain-text">When the foot tripod is active and the big toe engaged, tension builds up the back line automatically. The glute fires because the chain below it is connected, not because you thought about it.</div></div></div>
+      <div class="chain-row"><div class="chain-node">02</div><div class="chain-body"><div class="chain-tag">The Cross</div><div class="chain-heading">Glute, Thoracolumbar Fascia, Lat</div><div class="chain-text">Force crosses the midline through a thick sheet of connective tissue linking the glute to the opposite lat. This cross-body connection makes heavy movements feel whole, stable, and powerful.</div></div></div>
+      <div class="chain-row"><div class="chain-node">03</div><div class="chain-body"><div class="chain-tag">The Anchor</div><div class="chain-heading">Rib Cage, Scapula, Arm</div><div class="chain-text">The shoulder blade wraps around the rib cage. For it to move well, the ribs must be stacked over the pelvis, not flared. Rib position is scapula health. Scapula health is shoulder health.</div></div></div>
+      <div class="chain-row"><div class="chain-node">04</div><div class="chain-body"><div class="chain-tag">The Detail</div><div class="chain-heading">Knuckles, Serratus, Scapula</div><div class="chain-text">Pressing through all knuckles, especially the pinky side, activates the muscle responsible for wrapping the scapula around the rib cage. Grip is never just grip.</div></div></div>
+    </div>
+    <div class="rl-box">
+      <div class="rl-label">Sound familiar?</div>
+      <ul class="rl-list">
+        <li>Lower back that switches on during deadlifts instead of your glutes</li>
+        <li>Shoulders that shrug during pulling exercises</li>
+        <li>Upper traps that stay tight no matter what you do</li>
+        <li>Pressing that lives in the shoulder, not the chest and upper back</li>
+        <li>Back that tightens during simple tasks like carrying bags</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ch-bridge" onclick="goTo(5)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Next Chapter</span><span class="ch-bridge-next">Above the feet, breath, and line, something else coordinates all of it.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- THE SIGNAL -->
+<div class="page" id="p5">
+  <div class="ch">
+    <div class="ch-num">Chapter 04</div>
+    <h2 class="ch-title">The<br><em>Signal</em></h2>
+    <p class="ch-lead">Above the feet, the breath, and the line sits the most important layer, the one that controls every other layer. And the one most training programmes completely ignore.</p>
+    <div class="divider"></div>
+    <div class="img-hero">
+      <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=900&q=80" alt="Nervous system"/>
+      <div class="img-hero-cap">📸 Movement or coaching photo</div>
+    </div>
+    <p class="body-text">Your nervous system has one primary job: keep you safe. To do that, it reads signals from every joint, muscle, and sense organ, thousands of inputs per second, and decides how much movement, strength, and flexibility to allow at any moment.</p>
+    <p class="body-text">If it senses something uncertain, an unstable foot, a compressed rib cage, a neck that has lost its position, it protects you. It limits your range of motion. It dials down strength. It creates tension as a warning. <strong>The brain is not being difficult. It is being logical.</strong></p>
+    <div class="callout">
+      <div class="callout-label">The Key Insight</div>
+      <p>"Your brain is not limiting you because something is broken. It is limiting you because the information it is receiving is not good enough. Better input equals more output."</p>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <div class="icon-card-icon">🦴</div>
+        <div class="icon-card-label">Input 01</div>
+        <div class="icon-card-title">Joint Position</div>
+        <div class="icon-card-text">When foot, knee, hip, and spine are stacked well, the brain receives clear positional data and allows free, full movement without restriction.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon">💆</div>
+        <div class="icon-card-label">Input 02</div>
+        <div class="icon-card-title">Head &amp; Neck</div>
+        <div class="icon-card-text">Your inner ear tells the brain where your head is in space. Neck mechanics and head position directly influence what the rest of the body can access.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon">💨</div>
+        <div class="icon-card-label">Input 03</div>
+        <div class="icon-card-title">Internal Pressure</div>
+        <div class="icon-card-text">Organised breathing and good trunk pressure communicate safety from the inside out, before external load even arrives. The cylinder is a signal, not just a stabiliser.</div>
+      </div>
+      <div class="icon-card">
+        <div class="icon-card-icon">👁️</div>
+        <div class="icon-card-label">Input 04</div>
+        <div class="icon-card-title">Vision</div>
+        <div class="icon-card-text">Where your eyes point affects neck tension and the brain's sense of orientation. Eye position is rarely trained, but it is powerfully influential on everything below it.</div>
+      </div>
+    </div>
+    <p class="body-text">When you address all four inputs, feet, breath, mechanics, and head position, the output changes. Strength increases. Range opens. Chronic tension that persisted for years can release in a single session. <strong>Not because something was fixed. Because the brain was given a reason to let go.</strong></p>
+    <div class="rl-box">
+      <div class="rl-label">Sound familiar?</div>
+      <ul class="rl-list">
+        <li>Strength that varies significantly from day to day for no obvious reason</li>
+        <li>Range of motion that disappears under load even though you feel flexible</li>
+        <li>Chronic tension that returns no matter what treatment you try</li>
+        <li>Movements that feel blocked even when nothing is structurally wrong</li>
+        <li>Performance that drops when stressed or not sleeping well</li>
+      </ul>
+    </div>
+    <div class="pq">
+      <p>"You are not broken. Your nervous system is making a very reasonable decision, based on information that can be changed."</p>
+      <cite>ReGen Performance · Singapore</cite>
+    </div>
+  </div>
+  <div class="ch-bridge" onclick="goTo(6)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Next Chapter</span><span class="ch-bridge-next">Now let us take all of this into the gym and into the rest of your day.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- THE WORK -->
+<div class="page" id="p6">
+  <div class="ch">
+    <div class="ch-num">Chapter 05</div>
+    <h2 class="ch-title">The<br><em>Work</em></h2>
+    <p class="ch-lead">The same system runs through every rep you do and every hour you spend outside the gym. Here is how to use it.</p>
+    <div class="divider"></div>
+
+    <div class="section-label">Before You Train — A Reset, Not a Warm-Up</div>
+    <p class="body-text">Most people walk into the gym and jump straight into warming up: some light cardio, a few stretches, maybe a foam roll. This is not wrong. But it misses something important.</p>
+    <p class="body-text"><strong>A warm-up prepares the body for effort. A reset prepares the body for position.</strong></p>
+    <div class="reset-intro">
+      <div class="reset-intro-label">Why This Matters</div>
+      <p>Because of how the body naturally compensates, and the asymmetric patterns we all carry from daily life, the body often arrives at the gym in a slightly off-balance state. One side compressed, the other elongated. One hip sitting slightly forward, one behind. The rib cage stacked in a way that favours one direction of rotation.</p>
+      <p>Loading that position, even with technically correct form, reinforces it over time. A reset is different. It is 1 to 2 short, targeted exercises designed to bring the body closer to a neutral, balanced starting position before any load is applied. Not a random stretch. Not a generic mobility drill. A specific bias that counters your natural tendency and allows the muscles and joints to work from a better starting point.</p>
+    </div>
+
+    <div class="reset-what">
+      <div class="reset-col">
+        <div class="reset-col-icon" style="font-size:1.8rem;">🦵🏼</div>
+        <div class="reset-col-label">Reset Type 01</div>
+        <div class="reset-col-title">Feet and Pelvis</div>
+        <div class="reset-col-text">Before loading any pattern, attention goes to two foundational positions: how the feet contact the floor, and where the pelvis sits. Establishing an active foot tripod and a neutral pelvic position sets the base from which every muscle and joint above can operate properly. This is where compensation most often starts, and where the reset most often begins.</div>
+      </div>
+      <div class="reset-col">
+        <div class="reset-col-icon" style="font-size:1.8rem;">😮‍💨</div>
+        <div class="reset-col-label">Reset Type 02</div>
+        <div class="reset-col-title">A Breathing Position</div>
+        <div class="reset-col-text">A short breathing-based drill that encourages both sides of the rib cage to move evenly and the pelvis to find a more neutral orientation. Usually 5 to 8 breaths. Often surprisingly effective on the first set. This is not deep breathing for relaxation. It is positional breathing to restore the internal pressure system before any loading begins.</div>
+      </div>
+    </div>
+
+    <p class="body-text">The specific reset depends on your assessment: your posture, your history, your natural compensation pattern. This is something we identify in the first session. But the principle is always the same: <strong>organise the system first, then load it.</strong></p>
+
+    <div class="section-label">How a Session Is Built</div>
+    <p class="body-text">We do not select exercises based on muscle groups alone. Every session is built in deliberate layers, each one building on the one before it.</p>
+    <div class="layers">
+      <div class="layer"><span class="layer-num">01</span><div class="layer-body"><div class="layer-title">Reset</div><div class="layer-text">1 to 2 exercises to bring the body into a more balanced starting position. Short, targeted, specific to your pattern. This is the layer most programmes skip entirely.</div></div></div>
+      <div class="layer"><span class="layer-num">02</span><div class="layer-body"><div class="layer-title">Position and Pattern</div><div class="layer-text">The first working exercises are chosen to strengthen the body in the position the reset established. The goal is to lock in and reinforce better alignment while the nervous system still remembers it.</div></div></div>
+      <div class="layer"><span class="layer-num">03</span><div class="layer-body"><div class="layer-title">Load and Build</div><div class="layer-text">The main strength work: squat, hinge, press, pull, loaded progressively. The body is now in a better position to absorb and distribute that load without defaulting to its old compensation pattern.</div></div></div>
+      <div class="layer"><span class="layer-num">04</span><div class="layer-body"><div class="layer-title">Respect and Adapt</div><div class="layer-text">The sequence and combination of exercises is chosen to work with, and gradually shift, your body's natural compensation tendencies. Over time, this changes what your body considers its default resting position.</div></div></div>
+    </div>
+    <p class="body-text">The result: <strong>strength built on top of organisation.</strong> Not just bigger muscles reinforcing the same old pattern.</p>
+
+    <div class="section-label">The Four Patterns</div>
+    <div class="breath-note">
+      <div class="breath-note-label">A Note on Breathing and Lifting</div>
+      <div class="breath-split">
+        <div class="breath-col"><div class="breath-col-label">For most training</div><div class="breath-col-text">Exhale on effort. This keeps the trunk connected, prevents the accidental breath hold, and helps the nervous system stay calm under load. The exhalation itself creates stability. It is not a loss of pressure.</div></div>
+        <div class="breath-col"><div class="breath-col-label">For heavy loads</div><div class="breath-col-text">Inhale, set the cylinder intentionally, then move. This is a deliberate pressure strategy, not the same as holding your breath out of tension or fear. The key word is always intentional.</div></div>
+      </div>
+    </div>
+    <div class="yt-section">
+      <div class="yt-label">Watch the Method in Action</div>
+      <div class="yt-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/z8-Rcyz9eJc?rel=0" title="ReGen Performance Methodology | Connecting the Body as One System" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="ex-block">
+      <div class="ex-header"><span class="ex-icon">🏋️</span><span class="ex-name">The Squat</span><span class="ex-badge">Full Chain</span></div>
+      <div class="ex-comp"><strong>Common pattern:</strong> lower back overworks as the foot tripod collapses and the hips lose their anchor to the ground.</div>
+      <div class="ex-body">
+        <div class="ex-col"><div class="ex-col-label">What Is Actually Happening</div><ul class="ex-list"><li>Foot tripod must be alive before any load reaches the spine</li><li>Big toe into the floor primes the entire posterior chain</li><li>For moderate loads, exhale before descent to organise pressure</li><li>For heavy loads, inhale, set the cylinder, then descend</li><li>Rib position determines how deep you can go safely</li></ul></div>
+        <div class="ex-col"><div class="ex-col-label">Cues That Actually Work</div><ul class="ex-list"><li>Feel all three tripod points before you move</li><li>Ribs down, not chest up. Close the space</li><li>Push through the big toe, not just the heel</li><li>Eyes level, chin slightly in throughout</li><li>Depth comes from the hips, not from rounding the lower back</li></ul></div>
+      </div>
+    </div>
+    <div class="ex-block">
+      <div class="ex-header"><span class="ex-icon">🔩</span><span class="ex-name">The Hinge (Deadlift / RDL)</span><span class="ex-badge">Posterior Chain</span></div>
+      <div class="ex-comp"><strong>Common pattern:</strong> lower back bends instead of the hips hinging, because the posterior chain is not loaded from the feet upward.</div>
+      <div class="ex-body">
+        <div class="ex-col"><div class="ex-col-label">What Is Actually Happening</div><ul class="ex-list"><li>The chain must be loaded from the floor up before the pull begins</li><li>Hips are the hinge. The lower back should not change shape</li><li>For heavy pulls, inhale and set pressure before the bar leaves the floor</li><li>Exhale at the top once the movement is complete</li><li>The bar moves because the chain moves, not the arms or back</li></ul></div>
+        <div class="ex-col"><div class="ex-col-label">Cues That Actually Work</div><ul class="ex-list"><li>Before pulling, feel tension build from feet up through hamstrings</li><li>Push the floor away. The bar follows as a result</li><li>Shoulder blades heavy, toward your back pockets</li><li>Feeling it in your lower back? Raise your hips slightly</li><li>The glutes fire at the top. If not, the chain below is not loaded</li></ul></div>
+      </div>
+    </div>
+    <div class="ex-block">
+      <div class="ex-header"><span class="ex-icon">💪</span><span class="ex-name">The Press (Push-up / Bench / Overhead)</span><span class="ex-badge">Scapula + Rib Cage</span></div>
+      <div class="ex-comp"><strong>Common pattern:</strong> shoulder absorbs the load because the scapula cannot move freely along a rib cage that is flared or stiff.</div>
+      <div class="ex-body">
+        <div class="ex-col"><div class="ex-col-label">What Is Actually Happening</div><ul class="ex-list"><li>Knuckle pressure directly affects how the shoulder blade moves</li><li>The scapula must wrap the rib cage as you press, not be pinned back</li><li>Rib position determines whether the scapula has room to move</li><li>For most pressing, exhale as you push to stay connected</li><li>For maximal pressing, brief pressure hold, then exhale at lockout</li></ul></div>
+        <div class="ex-col"><div class="ex-col-label">Cues That Actually Work</div><ul class="ex-list"><li>Press through all knuckles evenly, especially the pinky side</li><li>Let the shoulder blade move forward and around the rib cage</li><li>Ribs closed, not flaring toward the ceiling</li><li>Push the ground or bar away. Feel the upper back engage</li><li>Neck long throughout. Do not let it shorten under load</li></ul></div>
+      </div>
+    </div>
+    <div class="ex-block">
+      <div class="ex-header"><span class="ex-icon">🚣</span><span class="ex-name">The Pull (Row / Pull-up / Cable)</span><span class="ex-badge">Upper Back + Scapula</span></div>
+      <div class="ex-comp"><strong>Common pattern:</strong> arms and upper traps do the work because the scapula is not moving and breath is not set before the pull begins.</div>
+      <div class="ex-body">
+        <div class="ex-col"><div class="ex-col-label">What Is Actually Happening</div><ul class="ex-list"><li>Pulling should be felt in the mid-back and lats, not the arms</li><li>If the scapula is not moving, the biceps absorb everything</li><li>If breath is not set, neck and traps take over the pull</li><li>The scapula must retract and depress, not just shrug backward</li><li>Head position affects how much the upper back can contribute</li></ul></div>
+        <div class="ex-col"><div class="ex-col-label">Cues That Actually Work</div><ul class="ex-list"><li>Elbow to back pocket, not pulling the weight toward you</li><li>Feel the shoulder blade slide toward the spine and downward</li><li>Shoulders stay away from ears throughout the full range</li><li>Exhale on the effort. Stay connected through the trunk</li><li>Feeling it in your neck? Reduce load and reset the breath first</li></ul></div>
+      </div>
+    </div>
+
+    <div class="section-label">Beyond the Gym</div>
+    <p class="body-text">You spend one hour in the gym. The other twenty-three hours are where the system is either reinforced or slowly undone. For most desk workers, the hours outside training are where the most damage accumulates and where the most gains are lost.</p>
+    <div class="life-grid">
+      <div class="life-card"><div class="life-icon">🛡️</div><div class="life-title">The Gym as Armour</div><div class="life-text">When you build strength through organised patterns, your body becomes more resilient to the accumulated stress of daily life. The sitting, the phone, the carrying matter less when the system is strong. Training is not separate from daily life. It is the reason daily life hurts less.</div><div class="life-tip">The stronger and better-organised your body, the more daily stress it can absorb without breaking down.</div></div>
+      <div class="life-card"><div class="life-icon">💻</div><div class="life-title">At Your Desk</div><div class="life-text">A forward head position sends a low-level threat signal to the nervous system for as long as you hold it. Eight hours of screen time is eight hours of compressed neck, elevated upper traps, and restricted rib cage.</div><div class="life-tip">Try: sit bones down, ribs over pelvis, screen at eye level. Breathe into the lower ribs, not the chest. Set a reminder every 45 minutes.</div></div>
+      <div class="life-card"><div class="life-icon">🚶</div><div class="life-title">Walking</div><div class="life-text">Walking is the most underrated training tool most people ignore. Every step is an opportunity to load the foot tripod, activate the posterior chain, and reinforce a rhythmic breathing pattern.</div><div class="life-tip">Try: feel the heel land, roll through the foot, push off the big toe. Let the arms swing naturally. Breathe through the nose.</div></div>
+      <div class="life-card"><div class="life-icon">👜</div><div class="life-title">Carrying Bags</div><div class="life-text">A single-shoulder bag shifts the entire system. One shoulder elevates, the spine rotates, the hip hikes. Over time this reinforces the asymmetry patterns that drive recurring pain.</div><div class="life-tip">Try: alternate sides regularly or use a backpack. Notice which side always feels more loaded. That is your dominant compensation pattern.</div></div>
+      <div class="life-card"><div class="life-icon">📱</div><div class="life-title">On Your Phone</div><div class="life-text">Looking down at a screen drops your head forward and multiplies the effective load on the neck, sending a continuous compression signal through the entire upper body hundreds of times a day.</div><div class="life-tip">Try: raise the screen to eye level. Take a full exhale every 10 minutes. Let the upper traps drop before you look back down.</div></div>
+      <div class="life-card"><div class="life-icon">😴</div><div class="life-title">Sleep Position</div><div class="life-text">How you sleep sets the pattern your body wakes up in. Stomach sleeping compresses the neck and extends the lower back. Side sleeping with a collapsed hip loads one side consistently night after night.</div><div class="life-tip">Try: side sleeping with a pillow between the knees to keep the hips neutral. Let the spine decompress overnight rather than reinforce tension.</div></div>
+    </div>
+    <div class="pq">
+      <p>"Every rep is a conversation between your nervous system and your environment. So is every hour at your desk."</p>
+      <cite>ReGen Performance · Singapore</cite>
+    </div>
+  </div>
+  <div class="ch-bridge" onclick="goTo(7)">
+    <div class="ch-bridge-text"><span class="ch-bridge-label">Final Chapter</span><span class="ch-bridge-next">You now understand what most people are never told.</span></div>
+    <span class="ch-bridge-arrow">→</span>
+  </div>
+</div>
+
+<!-- BEGIN -->
+<div class="page" id="p7">
+  <div class="cta-wrap">
+    <div class="cta-glow"></div>
+    <div class="cta-vline"></div>
+    <div class="cta-wordmark">Regen Performance</div>
+    <div class="cta-location">Singapore</div>
+    <h2 class="cta-headline">Your Body Works<br>Better <em>As a System</em></h2>
+    <p class="cta-human">Most people spend years training hard without ever understanding why things keep coming back. The ground, the breath, the line, the signal. These are not separate ideas. They are one system. Now you know where to look.</p>
+    <div class="cta-divider"><span></span><i>What's Next</i><span></span></div>
+    <div class="cta-actions">
+      <a class="cta-btn primary" href="/book.html">
+        <span class="cta-btn-icon">📅</span>
+        <span class="cta-btn-text"><span class="cta-btn-title">Schedule Your Coach</span><span class="cta-btn-sub">Meet the team · Book a session</span></span>
+        <span class="cta-arr">→</span>
+      </a>
+      <a class="cta-btn" href="https://www.youtube.com/@ReGenPerformanceEducation" target="_blank" rel="noopener">
+        <span class="cta-btn-icon">▶</span>
+        <span class="cta-btn-text"><span class="cta-btn-title">Watch on YouTube</span><span class="cta-btn-sub">See the method applied in real sessions</span></span>
+        <span class="cta-arr">→</span>
+      </a>
+      <a class="cta-btn" href="https://www.instagram.com/regenperformance.sg?igsh=aXF1dWF6ZnA1ejl0&utm_source=qr" target="_blank" rel="noopener">
+        <span class="cta-btn-icon">📲</span>
+        <span class="cta-btn-text"><span class="cta-btn-title">Follow on Instagram</span><span class="cta-btn-sub">Daily insights · @regenperformance.sg</span></span>
+        <span class="cta-arr">→</span>
+      </a>
+    <a class="cta-btn" href="https://wa.me/6591875632?text=Hi%20ReGen%2C%20I%27d%20like%20to%20book%20a%20free%2030-minute%20discovery%20call." target="_blank" rel="noopener">
+        <span class="cta-btn-icon">💬</span>
+        <span class="cta-btn-text"><span class="cta-btn-title">WhatsApp Us</span><span class="cta-btn-sub">Enquiries · +65 9187 5632</span></span>
+        <span class="cta-arr">→</span>
+      </a>
+    </div>
+    <div class="cta-foot">© ReGen Performance Singapore &nbsp;·&nbsp; Built From Within</div>
+  </div>
+</div>
+
+<div class="page-nav">
+  <button class="pnav-btn" onclick="prev()">← Prev</button>
+  <div class="pnav-sep"></div>
+  <div class="pnav-dots">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+    <div class="dot" onclick="goTo(3)"></div>
+    <div class="dot" onclick="goTo(4)"></div>
+    <div class="dot" onclick="goTo(5)"></div>
+    <div class="dot" onclick="goTo(6)"></div>
+    <div class="dot" onclick="goTo(7)"></div>
+  </div>
+  <div class="pnav-sep"></div>
+  <div class="pnav-count" id="counter">1 / 8</div>
+  <div class="pnav-sep"></div>
+  <button class="pnav-btn" onclick="next()">Next →</button>
+</div>
+
+<script>
+let cur=0;const total=8;
+function goTo(n){
+  document.getElementById("p"+cur).classList.remove("active");
+  document.querySelectorAll(".nav-pages li")[cur]?.classList.remove("active");
+  document.querySelectorAll(".dot")[cur]?.classList.remove("active");
+  cur=n;
+  document.getElementById("p"+cur).classList.add("active");
+  document.querySelectorAll(".nav-pages li")[cur]?.classList.add("active");
+  document.querySelectorAll(".dot")[cur]?.classList.add("active");
+  document.getElementById("counter").textContent=(cur+1)+" / "+total;
+  document.getElementById("progressBar").style.width=((cur/(total-1))*100)+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function next(){if(cur<total-1)goTo(cur+1);}
+function prev(){if(cur>0)goTo(cur-1);}
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight"||e.key==="ArrowDown")next();
+  if(e.key==="ArrowLeft"||e.key==="ArrowUp")prev();
+});
+document.getElementById("progressBar").style.width="0%";
+</script>
+</body>
+</html>

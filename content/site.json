@@ -1,0 +1,71 @@
+{
+  "whatsapp": "6591875632",
+  "whatsappDisplay": "+65 9187 5632",
+  "whatsappMessage": "Hi ReGen, I'd like to book a free 30-minute discovery call.",
+  "instagram": {
+    "handle": "@regenperformance.sg",
+    "url": "https://www.instagram.com/regenperformance.sg"
+  },
+  "youtube": {
+    "handle": "@ReGenPerformanceEducation",
+    "url": "https://www.youtube.com/@ReGenPerformanceEducation"
+  },
+  "location": {
+    "name": "Platinum Fitness",
+    "address": "22 Martin Road, Level 4, Singapore 239058",
+    "note": "Just above Common Man Coffee",
+    "mapsUrl": ""
+  },
+  "quote": {
+    "text": "Unlock your potential and elevate your life by mastering the fundamentals. Move well first, then embrace the journey of moving often.",
+    "author": "Gray Cook"
+  },
+  "mission": {
+    "title": "Our Mission and Why We Do What We Do",
+    "body": "At ReGen Performance, we transform lives through mindful movement, helping you break free from pain and achieve peak performance. Our comprehensive system optimizes movement patterns for lasting results, guided by practitioners who live what they teach."
+  },
+  "offer": [
+    "Customized strength training programs",
+    "Expert guidance from specialized coaches",
+    "Focus on building resilience and optimizing performance",
+    "Commitment to improving your overall quality of life"
+  ],
+  "discoveryCall": {
+    "title": "30-Minute Discovery Call",
+    "price": "Free",
+    "body": "📞 Contact us today at 91875632 to schedule your complimentary consultation and start your journey to a stronger, more resilient you! 💪🏼✨"
+  },
+  "pricing": [
+    {
+      "label": "30-Minute Discovery Call",
+      "price": "Free",
+      "note": "Session packages vary by coach. See each coach's profile for their rates."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What makes ReGen Performance different?",
+      "answer": "At ReGen Performance, we don't just train—you learn how to move, lift, and perform better. Our approach combines strength training, movement optimization, and injury prevention, ensuring you achieve long-term results without sacrificing your body. Every session is designed to make you stronger, more resilient, and pain-free, so you actually enjoy the process of getting fit."
+    },
+    {
+      "question": "How do I get started?",
+      "answer": "Getting started is easy! Just 📱WhatsApp us at 91875632 to schedule a free 30-minute discovery call. During this session, we'll discuss your goals 🎯, assess your movement needs 💪, and map out a personalized plan 📋 to set you up for success ✨."
+    },
+    {
+      "question": "What happens in my first session?",
+      "answer": "Your first session is all about understanding your body and setting you up for progress. Here's what happens:\n✔ Comprehensive movement assessment to identify strengths & imbalances\n✔ Goal-setting discussion to align training with your needs\n✔ Guided exercises to help you feel and move better immediately\n✔ A clear game plan so you leave knowing exactly what to do next\nWe make sure you feel comfortable, confident, and ready to take the next step!"
+    },
+    {
+      "question": "Do you work with beginners?",
+      "answer": "Absolutely! Whether you're just starting out or have been training for years, we adapt our programs to meet you exactly where you are. Our goal is to build your strength and movement quality without the pressure of extreme workouts—just smart, effective training that makes you feel great in your body."
+    },
+    {
+      "question": "How do you help with injuries?",
+      "answer": "This is our specialty! We focus on building strength and resilience to help your body handle stress from both daily life and training. Our approach prioritizes:\n✅ Proper load management to avoid overuse & strain\n✅ Optimal joint positioning for pain-free movement\n✅ Exercises tailored to your needs, so you feel stronger without aggravating injuries\nWe promise that after every session, you'll not only feel better but also understand why you're doing what you do—so you can train smarter and move better for life. 💪"
+    },
+    {
+      "question": "Can you help me get a six-pack?",
+      "answer": "Of course! But here's the truth—a 6-pack is a byproduct of smart training, not endless crunches. 😉\nWe help you:\n✔ Lose fat & build muscle sustainably\n✔ Train in a way that enhances both aesthetics & function\n✔ Move better, feel stronger, and actually enjoy working out\nWe're not a hardcore bootcamp that just makes you sweat for the sake of it. Instead, we focus on lifting well, moving holistically, and training in a way that benefits your body long-term.\nSo yes, we can help with the abs—but more importantly, we'll help you build a body that moves as good as it looks. 😎"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources · ReGen Performance</title>
+<meta name="description" content="Short guides on the ideas behind ReGen Performance training: breathing, movement assessment, recovery and more.">
+<meta property="og:title" content="Resources · ReGen Performance">
+<meta property="og:description" content="Short guides on the ideas behind how we train.">
+<meta property="og:image" content="/assets/img/icon-512.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body data-page="resources">
+<main>
+
+  <section class="page-hero">
+    <div class="glow"></div><div class="grain"></div>
+    <div class="wrap">
+      <span class="eyebrow">Resources</span>
+      <h2 class="h2">Knowledge <em>Nuggets</em></h2>
+      <p class="lead">Short guides on the ideas behind how we train. Read them before your first session to get the most from it.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3" id="resource-grid"></div>
+    </div>
+  </section>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="/assets/js/site.js"></script>
+<script>
+RG.ready(async function (site) {
+  var r = await RG.load("resources");
+  var resources = r.resources || [];
+  var grid = document.getElementById("resource-grid");
+
+  var ebookCard = '<a class="card reveal" href="/ebook/">' +
+    '<span class="card-icon">📖</span>' +
+    '<span class="card-title">Built From Within</span>' +
+    '<span class="card-text">The ReGen Method, explained in eight short chapters.</span>' +
+    '<span class="link-arrow">Read <span>→</span></span></a>';
+
+  if (!resources.length) {
+    grid.innerHTML = ebookCard;
+    RG.reveal(grid);
+    return;
+  }
+
+  grid.innerHTML = resources.map(function (res) {
+    return '<a class="card reveal" href="/resource.html?r=' + encodeURIComponent(res.slug) + '">' +
+      (res.emoji ? '<span class="card-icon">' + RG.esc(res.emoji) + '</span>' : '') +
+      '<span class="card-title">' + RG.esc(res.title) + '</span>' +
+      (res.summary ? '<span class="card-text">' + RG.esc(res.summary) + '</span>' : '') +
+      '<span class="link-arrow">Read <span>→</span></span></a>';
+  }).join("") + ebookCard;
+
+  RG.reveal(grid);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+{
+  "coaches": [
+    {
+      "slug": "issac-tan",
+      "name": "Issac Tan",
+      "specialty": "Teaching you how to move without pain",
+      "bio": "I help people unlock their peak performance and build a body that feels as good as it looks. Through a blend of science, personalized training, and supportive coaching, I'll help you build sustainable habits and a lifestyle you'll genuinely enjoy.",
+      "about": "🌟 I help people unlock their **peak performance** and build a body that feels as good as it looks.\n\n🏋️‍♂️ **My specialty:** Teaching you how to **move without pain** (because \"just push through it\" isn't a strategy).\n\n💪 **Your goals matter** - Whether it's strength, recovery, or living pain-free, I'll guide you with evidence-based methods that deliver results.\n\n👥 Through a perfect blend of **science**, **personalized training**, and supportive coaching, I'll help you build sustainable habits and create a lifestyle you'll genuinely enjoy.\n\n**\"MOVE BETTER. GET STRONGER. HURT LESS. LIVE MORE.\"**",
+      "motto": "MOVE BETTER. GET STRONGER. HURT LESS. LIVE MORE.",
+      "credentials": [],
+      "photo": "/assets/img/coaches/issac-tan.jpg",
+      "whatsapp": "6591875632",
+      "instagram": "issactanruizhi",
+      "location": "Platinum Fitness, 22 Martin Road, Level 4, Singapore 239058",
+      "pricing": [
+        {
+          "label": "30-Minute Discovery Call",
+          "price": "Free"
+        },
+        {
+          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
+          "price": "$180"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$825 ($165 per session)"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1800 ($150 per session)"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Video",
+          "youtubeId": "G5oqcdcOAI8"
+        },
+        {
+          "title": "Facility Tour",
+          "youtubeId": "uUGg1K_iulU"
+        }
+      ],
+      "notionUrl": "https://regenperformance.notion.site/Issac-Tan-11f2698f422380dabce0eff261339838",
+      "order": 1
+    },
+    {
+      "slug": "edmund-lee",
+      "name": "Edmund Lee",
+      "specialty": "Transforming lives through movement and strength",
+      "bio": "I coach individuals to achieve peak performance and holistic health. I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body — whether it's overcoming pain, enhancing your movement options, or achieving a full-body transformation.",
+      "about": "🌟 I coach individuals to **achieve peak performance and holistic health**.\n\n🏋️‍♀️ I am dedicated to **transforming lives through movement and strength**\n\n💪 My coaching services aim to **educate** and **lead you to a better quality of life**\n\n👥 I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body. Whether it's overcoming pain, enhancing your movement options, or achieving a full-body transformation, I'm here to guide you every step of the way\n\n**Let's work together to create lasting change and empower you to move freely and confidently!**",
+      "motto": "",
+      "credentials": [],
+      "photo": "/assets/img/coaches/edmund-lee.jpg",
+      "whatsapp": "6596728893",
+      "instagram": "edmund_smt",
+      "location": "Platinum Fitness, 22 Martin Road, Level 4, Singapore 239058",
+      "pricing": [
+        {
+          "label": "30-Minute Discovery Call",
+          "price": "Free"
+        },
+        {
+          "label": "First Trial Session",
+          "price": "$100"
+        },
+        {
+          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
+          "price": "$140"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$120 ($600 per session)"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1200 ($100 per session)"
+        },
+        {
+          "label": "House visits",
+          "price": "Surcharge of $40"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Video",
+          "youtubeId": "G5oqcdcOAI8"
+        },
+        {
+          "title": "Facility Tour",
+          "youtubeId": "uUGg1K_iulU"
+        }
+      ],
+      "notionUrl": "https://regenperformance.notion.site/edmund",
+      "order": 2
+    },
+    {
+      "slug": "tan-long",
+      "name": "Tan Long",
+      "specialty": "Rehab and Movement specialist",
+      "bio": "I specialize in empowering people to move without pain through optimised training for integrated peak performance and holistic fitness. I aim to help you achieve your fitness and health goals through efficient and evidence-led methods.",
+      "about": "🌟 Rehab and Movement specialist.\n\n💪🏼 I specialize in empowering people to move without pain. Optimised training for integrated peak performance and holistic fitness!\n\n📚 I aim to help you achieve your fitness and health goals through efficient and evidence-led methods.\n\n## My Experience & Certification\n\n### Professional Experience\n\n- Senior Rehab Trainer | Functional Training Institute (2021–2024)\n- Trainer | 9rounds, Anytime Fitness (2018–2021)\n- Preschool Physical Program Coach | Nurture Education Group (2018–2019)\n\n#### Professional Certifications\n\n**Movement & Performance**\n\n- Neurokinetic Therapy (NKT) Level 1 and 2\n- OMT Osteopathic Articulations\n- iThrust HVLA Masterclass\n- Barefoot Training Specialist Level 1\n- Spheric Movement and Performance Level 1\n- FRCms\n\n#### Specialized Training\n\n- Sports Massage by Posture Lab\n- DZMR\n- Level 8 Fix Scoliosis\n- EBFA Pelvic Floor Specialist\n- IKN Level 1 and 2\n- Resistance Training Specialist Level 1\n- Sports Rehab Level 1\n- Rehab Essentials",
+      "motto": "",
+      "credentials": [
+        "Neurokinetic Therapy (NKT) Level 1 and 2",
+        "OMT Osteopathic Articulations",
+        "iThrust HVLA Masterclass",
+        "Barefoot Training Specialist Level 1",
+        "Spheric Movement and Performance Level 1",
+        "FRCms",
+        "Sports Massage by Posture Lab",
+        "DZMR",
+        "Level 8 Fix Scoliosis",
+        "EBFA Pelvic Floor Specialist",
+        "IKN Level 1 and 2",
+        "Resistance Training Specialist Level 1",
+        "Sports Rehab Level 1",
+        "Rehab Essentials"
+      ],
+      "photo": "/assets/img/coaches/tan-long.jpg",
+      "whatsapp": "6591801940",
+      "instagram": "kodomo_trains",
+      "location": "Platinum Fitness Robertson Quay, 22 Martin Road, Singapore",
+      "pricing": [
+        {
+          "label": "30-Minute Discovery Call",
+          "price": "Free"
+        },
+        {
+          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training (Inclusive of Gym rental)",
+          "price": "$170"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$800 ($160 per session)"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1680 ($140 per session)"
+        }
+      ],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Tan-Long-1a52698f422380a7aad6db451609c274",
+      "order": 3
+    },
+    {
+      "slug": "shaun-lim",
+      "name": "Shaun Lim",
+      "specialty": "Empowering people to move without pain",
+      "bio": "I coach individuals to achieve peak performance and holistic health. With personalized coaching and support, I will help you develop healthy habits and reach your goals.",
+      "about": "🌟 I coach individuals to **achieve peak performance and holistic health**.\n\n🏋️‍♀️ I specialize in empowering people to **move without pain**.\n\n💪 My coaching services aim to help you achieve your fitness goals and **improve your quality of life**.\n\n👥 With personalized coaching and support, I will help you develop healthy habits and reach your goals.\n\n## My Experience & Certification\n\n- Dance Faculty Personal Trainer @ LASALLE COLLEGE OF THE ARTS (Jan 2025 - Present)\n- Rehab and Peak Performance Trainer @ FUNCTIONAL TRAINING INSTITUTE (March 2023 - Dec 2024)\n- Head Swim Coach and Personal Trainer @ ELITE COACH (October 2019 - Feb 2023)\n- Professional Dancer @ RICHARD CHAPPELL DANCE (UK) (Feb 2019 - Aug 2019)\n- Project Dancer @ THE HUMAN EXPRESSION 2nd COMPANY (June 2018 - Present)\n\n**My certifications:**\n\n- National Council of Strength & Fitness (NCSF) Certified Personal Trainer\n- Integrated Kinetic Neurology Rehabilitation Level 1 & 2\n- Postural Restoration Institute (Myokinematic Restoration)\n- Anatomy in Motion (Gary Ward AiM)",
+      "motto": "",
+      "credentials": [
+        "National Council of Strength & Fitness (NCSF) Certified Personal Trainer",
+        "Integrated Kinetic Neurology Rehabilitation Level 1 & 2",
+        "Postural Restoration Institute (Myokinematic Restoration)",
+        "Anatomy in Motion (Gary Ward AiM)"
+      ],
+      "photo": "/assets/img/coaches/shaun-lim.jpg",
+      "whatsapp": "6592371442",
+      "instagram": "shaun_slzh",
+      "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
+      "pricing": [
+        {
+          "label": "30-Minute Discovery Call",
+          "price": "Free"
+        },
+        {
+          "label": "1 hour of Sports Rehab Therapy/Functional Personal Training",
+          "price": "$140"
+        },
+        {
+          "label": "5 sessions",
+          "price": "$550 ($120 per session)"
+        },
+        {
+          "label": "12 sessions",
+          "price": "$1200 ($100 per session)"
+        }
+      ],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Shaun-Lim-1a42698f422380aa942bf90e5af1e34c",
+      "order": 4
+    },
+    {
+      "slug": "eugene",
+      "name": "Eugene",
+      "specialty": "Fat loss & confidence coaching for women aged 30-40",
+      "bio": "Expert coaching for women aged 30-40 who want to lose 10-20kg, build confidence, and create lasting change - without extreme diets or medications. I combine science-backed training, nutrition, and psychology to help you achieve sustainable results.",
+      "about": "## Transform Your Body & Mind\n\nExpert coaching for women aged 30-40 who want to lose 10-20kg, build confidence, and create lasting change - without extreme diets or medications.\n\n### My Unique Approach\n\nI combine science-backed training, nutrition, and psychology to help you achieve sustainable results. My holistic method focuses on:\n\n- **🏋️‍♀️ Smart Training**\n  - Master functional movements\n  - Train safely & effectively\n  - Enhance daily performance\n- **🧠 Mindset Mastery**\n  - Transform limiting beliefs\n  - Create empowering habits\n  - Build unshakeable confidence\n- **🎯 Sustainable Results**\n  - Science-backed nutrition\n  - Step-by-step progression\n  - Lifelong transformation\n\n### Work With Me\n\n> 🎯 Free Strategy Session\n\nBook a 60-minute discovery call to discuss your goals and see if we're the right fit.\n\n#### Premium 1:1 Coaching Program\n\n- Customized training plan\n- Nutrition guidance\n- Mindset coaching\n- Direct access support\n- Progress tracking\n\n### Let's Connect\n\n> 📱 WhatsApp: 9003 2060\n\n📧 Email: [coacheugeney@gmail.com](mailto:coacheugeney@gmail.com)\n\n📍 Location: Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995\n\nView our world-class training facility: [Take a Virtual Tour](https://www.instagram.com/reel/Ct-xWECA4L5/?igshid=MzRlODBiNWFlZA==)\n\nFor daily tips and transformation stories, follow me on [Instagram (@eugeneywl)](https://www.instagram.com/eugeneywl?igsh=MWFsdGpnam9jeDVkdA==)",
+      "motto": "",
+      "credentials": [],
+      "photo": "/assets/img/coaches/eugene.jpg",
+      "whatsapp": "6590032060",
+      "instagram": "eugeneywl",
+      "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
+      "pricing": [],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Eugene-1d22698f422380a1b669dd6c406d47bc",
+      "order": 5
+    },
+    {
+      "slug": "kennard-chia",
+      "name": "Kennard Chia",
+      "specialty": "Transforming Busy Professionals from Sedentary to Strong",
+      "bio": "Evidence-based methods designed for your busy schedule — sustainable fat loss, beginner-friendly strength training, and personalized fitness coaching tailored specifically to your goals and lifestyle.",
+      "about": "🌟 **Transforming Busy Professionals from Sedentary to Strong**\n\n🏋️‍♀️ **Evidence-Based Methods Designed for Your Busy Schedule**\n\n#### 🧠 My Expertise\n\n- ✅ **Sustainable Fat Loss** - No crash diets, just proven strategies\n- ✅ **Beginner-Friendly Strength Training** - Learn proper form from day one\n- ✅ **Personalized Fitness Coaching** - Tailored specifically to your goals and lifestyle\n\n**TRAIN SMART. LIVE STRONG. STAY CONSISTENT.**\n\n> 📱 Ready to transform your fitness journey? Contact me today to learn how my coaching programs can help you achieve your health and fitness goals!\n\n- 💬 WhatsApp: **+65 9007 8599**\n- 📧 Email: **kennardchia97@gmail.com**\n\n#### 📍 Training Location\n\nPlatinum Fitness Robertson Quay, 11 Unity St, Singapore 237995\n\n🎥 **Facility Tour:** [View on Instagram](https://www.instagram.com/reel/Ct-xWECA4L5/?igshid=MzRlODBiNWFlZA==)\n\n📲 Follow for daily fitness tips, client transformations, and workout ideas: [Instagram (@strengthwithken)](https://www.instagram.com/strengthwithken?igsh=MTI2OWMyMm8wdTVhbQ==&utm_source=qr)",
+      "motto": "TRAIN SMART. LIVE STRONG. STAY CONSISTENT.",
+      "credentials": [],
+      "photo": "/assets/img/coaches/kennard-chia.jpg",
+      "whatsapp": "6590078599",
+      "instagram": "strengthwithken",
+      "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
+      "pricing": [],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Kennard-Chia-2222698f42238084950bf3c47002a4bd",
+      "order": 6
+    },
+    {
+      "slug": "hans-ng",
+      "name": "Hans Ng",
+      "specialty": "Empowering people to move without pain",
+      "bio": "I coach individuals to achieve peak performance and holistic health. With personalised coaching and support, I will help you develop healthy habits and reach your goals.",
+      "about": "🤩 Aspire to help people to **achieve peak performance** and **holistic health**\n\n🏋️‍♂️ Focus in empowering people to **move without pain**\n\n💪 My coaching services aim to help you to **achieve your fitness goals** and **improve your quality of life**\n\n🙌 With personalised coaching and support, I will help to develop healthy habits and reach your goals\n\n👥 I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body. Whether it's overcoming pain, enhancing your movement options, or achieving a full-body transformation, I'm here to guide you every step of the way\n\n**Let's work together to create lasting change and empower you to move freely and confidently!**",
+      "motto": "",
+      "credentials": [],
+      "photo": "/assets/img/coaches/hans-ng.jpg",
+      "whatsapp": "6582813329",
+      "instagram": "hans_ng92",
+      "location": "Platinum Fitness Robertson Quay, 22 Martin Road, #04-01, Singapore 239058",
+      "pricing": [
+        {
+          "label": "30-Minute Free Consultation",
+          "price": "Free"
+        },
+        {
+          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
+          "price": "$155"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$725 ($145 per session)"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1620 ($135 per session)"
+        },
+        {
+          "label": "Referral Program",
+          "price": ""
+        }
+      ],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Hans-Ng-2232698f422380afb69adfd625e0792a",
+      "order": 7
+    },
+    {
+      "slug": "jenson",
+      "name": "Jenson",
+      "specialty": "Empowering people to move without pain",
+      "bio": "I coach individuals to achieve peak performance and holistic health. With personalised coaching and support, I will help you develop healthy habits and reach your goals.",
+      "about": "🤩 Aspire to help people to **achieve peak performance** and **holistic health**\n\n🏋️‍♂️ Focus in empowering people to **move without pain**\n\n💪 My coaching services aim to help you to **achieve your fitness goals** and **improve your quality of life**\n\n🙌 With personalised coaching and support, I will help to develop healthy habits and reach your goals\n\n👥 I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body. Whether it's overcoming pain, enhancing your movement options, or achieving a full-body transformation, I'm here to guide you every step of the way\n\n**Let's work together to create lasting change and empower you to move freely and confidently!**\n\n## My Experience & Certification\n\n#### 🎓 Academic Qualifications\n\n- **Edinburgh Napier University** — *Higher Diploma in Sport & Exercise Science*\n- **PSB Academy** — *Diploma in Sport & Exercise Science*\n\n#### 🏅 Professional Certifications\n\n- **FISAF** — *Certified Fitness Leader & Personal Trainer*\n- **PTA Global** — *Certified Personal Trainer*\n\n#### 💪 Specialized Training\n\n- **Functional Training Institute**\n  - Rehab Hero Certificate Course\n  - Dual Zone Myofascial Release\n- **Fitness Innovation Singapore (FIT)**\n  - Training Pregnant & Post Natal Clients\n  - Pre & Post Rehab Training Course\n  - Sport Injuries Management\n  - Training Clients with Lower Back Pain\n  - Advanced Muscle & Strength Development\n  - Weight Management through Nutrition & Exercise\n- **Fitness Anywhere**\n  - TRX Suspension Training Course\n- **Fitness Factory**\n  - Restorative Stretch Therapy (RST)",
+      "motto": "",
+      "credentials": [
+        "Edinburgh Napier University — Higher Diploma in Sport & Exercise Science",
+        "PSB Academy — Diploma in Sport & Exercise Science",
+        "FISAF — Certified Fitness Leader & Personal Trainer",
+        "PTA Global — Certified Personal Trainer",
+        "Functional Training Institute — Rehab Hero Certificate Course",
+        "Functional Training Institute — Dual Zone Myofascial Release",
+        "Fitness Innovation Singapore (FIT) — Training Pregnant & Post Natal Clients",
+        "Fitness Innovation Singapore (FIT) — Pre & Post Rehab Training Course",
+        "Fitness Innovation Singapore (FIT) — Sport Injuries Management",
+        "Fitness Innovation Singapore (FIT) — Training Clients with Lower Back Pain",
+        "Fitness Innovation Singapore (FIT) — Advanced Muscle & Strength Development",
+        "Fitness Innovation Singapore (FIT) — Weight Management through Nutrition & Exercise",
+        "Fitness Anywhere — TRX Suspension Training Course",
+        "Fitness Factory — Restorative Stretch Therapy (RST)"
+      ],
+      "photo": "/assets/img/coaches/jenson.jpg",
+      "whatsapp": "6598215310",
+      "instagram": "freeman_fitness_delivery",
+      "location": "Platinum Fitness Robertson Quay, 22 Martin Road, #04-01, Singapore 239058",
+      "pricing": [
+        {
+          "label": "30-Minute Free Consultation",
+          "price": "Free"
+        },
+        {
+          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
+          "price": "$130"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$575 ($115 per session)"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1320 ($110 per session)"
+        },
+        {
+          "label": "Referral Program",
+          "price": ""
+        }
+      ],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Jenson-3032698f422380449876c625a69afbaf",
+      "order": 8
+    },
+    {
+      "slug": "roxanne-zeng",
+      "name": "Roxanne Zeng",
+      "specialty": "Building strength and confidence with women from inside out",
+      "bio": "Effective body transformation training that fits into different lifestyles — combining body transformation programs, pain management training, and lifestyle strength training.",
+      "about": "🌟 **Building strength and confidence with women from inside out**\n\n🏋️‍♀️ **Effective Body Transformation journey that fits in to different lifestyles**\n\n#### 🧠 My Expertise\n\n- Body Transformation Programs for Women\n- Pain Management Training\n- Lifestyle Strength Training\n\n#### 🏆 Qualifications\n\n- ACE - Certified Personal Trainer Specialist\n- Precision Nutrition - Nutrition Coach PN L1\n- NASM - Women's Fitness Specialist\n- canfitpro - Personal Trainer Specialist\n\n📱 Ready to transform your fitness journey? Contact me today to learn how my coaching programs can help you achieve your health and fitness goals!\n\n- 💬 WhatsApp: **+65 8828 9225**\n- 📧 Email: [roxannezeng17@gmail.com](mailto:roxannezeng17@gmail.com)\n\n#### 📍 Training Location\n\nPlatinum Fitness Robertson Quay, 22 Martin Rd, #04-01, Singapore 239058\n\n🎥 **Facility Tour:** [View on Instagram](https://www.instagram.com/reel/Ct-xWECA4L5/?igshid=MzRlODBiNWFlZA==)\n\n📲 Follow for daily fitness tips, client transformations, and workout ideas: [Instagram (@roxannewithlove)](https://www.instagram.com/roxannewithlove?igsh=MWNpNGhyMGgxcHMzbQ%3D%3D&utm_source=qr)",
+      "motto": "",
+      "credentials": [
+        "ACE - Certified Personal Trainer Specialist",
+        "Precision Nutrition - Nutrition Coach PN L1",
+        "NASM - Women's Fitness Specialist",
+        "canfitpro - Personal Trainer Specialist"
+      ],
+      "photo": "/assets/img/coaches/roxanne-zeng.jpg",
+      "whatsapp": "6588289225",
+      "instagram": "roxannewithlove",
+      "location": "Platinum Fitness Robertson Quay, 22 Martin Rd, #04-01, Singapore 239058",
+      "pricing": [],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Roxanne-Zeng-2ae2698f422380619751e9544a42c618",
+      "order": 9
+    },
+    {
+      "slug": "qaila-warren",
+      "name": "Qaila Warren",
+      "specialty": "ACE Certified Personal Trainer with a Social Work background",
+      "bio": "I am an ACE Certified Personal Trainer with a background in Social Work. I help individuals train safely, build confidence in the gym, and navigate challenges in their fitness journey with compassion and grit.",
+      "about": "## 👋🏽 Hello, I'm Coach Qaila\n\n🏆 I am an ACE Certified Personal Trainer with a background in Social Work.\n\n❤️‍🩹 I help individuals train safely, build confidence in the gym and navigate challenges in their fitness journey with compassion and grit.\n\n💡 My coaching combines structured strength training with a collaborative, process-oriented and values-based approach.\n\n📍 Platinum Fitness Gym — 22 Martin Road\n\n## 🌱 Who I Help\n\n✅ You're new to the gym and don't know where to start\n✅ You've struggled to stay consistent with exercise\n✅ You want to train safely despite pain, injuries, or setbacks\n✅ You're looking for guidance, accountability, and structure\n✅ You want sustainable results without extreme diets or burnout\n\n## 📚 Qualifications\n\n🏅 ACE Certified Personal Trainer\n🎓 Diploma in Social Work\n📖 Ongoing professional development through mentorships, workshops, and continuing education\n🧠 Experience supporting clients across varying goals, fitness levels, and life stages\n\n## 🤝🏽 How I Can Support You\n\n#### 1️⃣ Personalised Training\n\n💪🏽 Programmes tailored to your goals, experience, lifestyle, and needs.\n\n#### 2️⃣ Habit & Lifestyle Support\n\n🧠 Practical strategies to help you build sustainable consistency around training, recovery, and nutrition.\n\n#### 3️⃣ Safe & Confident Training\n\n❤️‍🩹 Helping you train safely and rebuild confidence after pain, injuries, or setbacks in life.\n\n#### 4️⃣ Accountability & Guidance\n\n📈 Ongoing support through programming, check-ins, exercise feedback, and progress tracking.\n\n#### 5️⃣ Tools & Resources for Real Life\n\n🧰 From habit-building guides and reflection exercises to food journaling support and educational resources, you'll have practical tools to help you navigate setbacks, adapt to life's demands, and continue moving forward with confidence.\n\n#### 6️⃣ Tools & Resources for Real Life\n\n🌻 Developing healthier self-talk, navigating setbacks, and learning how to adapt when things don't go according to plan.\n\n## 🏆 Client's Achievements\n\n## 💰 Price List\n\n## 📞 Ready to Get Started?\n\nI'd love to collaborate and support you. Let's build a stronger, more confident version of you, one step at a time.\n\n📲 WhatsApp: +65 8874 4111\n\n## 🔍 FAQs\n\n#### I'm a beginner, can I still join?\n\nOf course! Many of my clients start with little to no gym experience. Sessions are tailored to your current level, and the goal is to help you build confidence, understanding, and a strong foundation at your own pace.\n\n#### What if I have pain/injuries?\n\nThat's completely okay! I take an individualised approach and adjust training based on your history, symptoms, and comfort levels. The aim is to help you move and train with more confidence, not push through pain unnecessarily.\n\n#### What should I expect in the first session?\n\nThe first session is focused on understanding you. We will go through your goals, training history, lifestyle, movement assessments, and any limitations or concerns you may have. From there, we will start building a plan that works for you.\n\n#### Do you provide programming?\n\nYes! All clients receive personalised programming through my coaching app, where workouts, progress tracking, and training guidance are organised in one place. Programs are adjusted based on your goals, schedule, and progress.\n\n#### How am I supported outside our sessions?\n\nSupport goes beyond our in-person sessions! Clients receive guidance through check-ins, habit support, food journaling feedback, exercise form reviews, and additional resources to help them stay consistent and confident independently.\n\n## 🧠 More About Me\n\n*For those who are curious about the person behind the coaching.*\n\n#### 👩🏻‍💼 Why My Background Matters\n\nBefore becoming a Personal Trainer, I studied and worked in Social Work.\n\nSupporting individuals from diverse backgrounds taught me the importance of empathy, behaviour change, and meeting people where they are. These experiences continue to shape how I coach today.\n\nI believe meaningful progress happens when people feel understood, supported, and empowered to take ownership of their journey.\n\n#### 🏀 Sport Has Always Been Part of My Life\n\nGrowing up, sport played a significant role in shaping who I am. I was the only girl on my primary school's basketball team before later founding the school's first official girls' basketball team.\n\nSince then, I've explored various interests including strength training, bouldering, dancing, and drumming. Each experience has taught me valuable lessons about resilience, growth, and embracing the learning process.\n\n#### 🌻 My Coaching Philosophy\n\nFitness is rarely just about workouts.\n\nMany people are balancing work, family responsibilities, stress, injuries, self-doubt, or previous experiences that shape how they approach exercise.\n\nMy role isn't simply to prescribe exercises.\n\nIt's to help you develop the skills, confidence, and understanding needed to navigate challenges while continuing to move towards your goals.\n\nI believe progress comes from consistency, self-awareness, and learning how to work with life's challenges rather than waiting for perfect conditions.\n\n#### 🌱 My Coaching Journey\n\nMy coaching approach has been shaped by mentors from different areas of the industry, including strength training, rehabilitation, sports performance, and lifestyle coaching.\n\nWorking with clients from various backgrounds has helped me develop a coaching philosophy centred around collaboration, curiosity, and sustainable progress rather than perfection.\n\n#### ☕ Beyond The Gym\n\nOutside of coaching, you'll probably find me training, exploring new hobbies, spending time with people I care about, or working on community initiatives.\n\nI believe growth extends beyond fitness, and some of life's most meaningful lessons happen outside the gym.",
+      "motto": "",
+      "credentials": [
+        "ACE Certified Personal Trainer",
+        "Diploma in Social Work"
+      ],
+      "photo": "/assets/img/coaches/qaila-warren.jpg",
+      "whatsapp": "6588744111",
+      "instagram": "project.future.self",
+      "location": "Platinum Fitness Gym, 22 Martin Road",
+      "pricing": [],
+      "videos": [],
+      "notionUrl": "https://regenperformance.notion.site/Qaila-Warren-7022698f4223827ea04f01a039997eb7",
+      "order": 10
+    }
+  ]
+}
