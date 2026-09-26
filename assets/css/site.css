@@ -327,3 +327,140 @@ a.card{text-decoration:none;}
 .lightbox-close{position:fixed;top:1rem;right:1rem;width:44px;height:44px;border:1px solid var(--border2);background:var(--ink);color:var(--gold);font-size:1.3rem;cursor:pointer;}
 @media (max-width:640px){.gallery{grid-template-columns:1fr 1fr;gap:0.5rem;}}
 .review p{white-space:pre-line;}
+
+/* ================= v2: team-first layout ================= */
+
+/* Focus tags */
+.focus-list{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.6rem;}
+.focus{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border2);background:rgba(196,160,82,0.05);padding:0.4rem 0.75rem;line-height:1.4;}
+.focus-sm{margin-top:0.9rem;gap:0.4rem;}
+.focus-sm .focus{font-size:0.5rem;padding:0.3rem 0.55rem;}
+
+/* Coach cards: equal heights */
+.coach-card .coach-specialty{min-height:2.6em;}
+
+/* Home: hero faces */
+.hero-team{display:inline-flex;align-items:center;gap:1rem;margin-top:2.4rem;text-decoration:none;}
+.hero-faces{display:flex;}
+.hero-face{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid var(--ink);margin-left:-10px;background:var(--card2);box-shadow:0 0 0 1px var(--border2);}
+.hero-face:first-child{margin-left:0;}
+.hero-face img{width:100%;height:100%;object-fit:cover;}
+.hero-face .photo-placeholder span{font-size:0.8rem;}
+.hero-team-text{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.hero-team-text span{display:inline-block;transition:transform .25s;}
+.hero-team:hover .hero-team-text span{transform:translateX(4px);}
+
+/* Home: team wall */
+.team-wall{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;}
+.team-member{text-decoration:none;display:flex;flex-direction:column;gap:0.35rem;}
+.team-member .coach-photo{border:1px solid var(--border);margin-bottom:0.6rem;}
+.team-member:hover .coach-photo img{transform:scale(1.04);filter:saturate(1);}
+.team-name{font-family:var(--serif);font-size:1.08rem;color:var(--white);font-weight:700;line-height:1.2;}
+.team-spec{font-size:0.78rem;color:var(--muted);line-height:1.5;}
+.team-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem;}
+.team-stats>div{background:var(--card);padding:1.4rem 1rem;text-align:center;display:flex;flex-direction:column-reverse;gap:0.3rem;}
+.team-stats dd{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--white);font-weight:700;}
+.team-stats dt{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;}
+
+/* Coach profile */
+.coach-hero{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding-top:2rem;padding-bottom:3rem;}
+.coach-hero-photo{border:1px solid var(--border2);}
+.coach-hero-name{font-size:clamp(2.6rem,6vw,4.6rem);margin-top:0.8rem;}
+.coach-hero-spec{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--gold);margin-top:0.9rem;line-height:1.4;}
+.coach-motto{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:1rem;line-height:1.8;}
+.coach-facts{display:flex;flex-wrap:wrap;gap:0;margin:1.8rem 0 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.coach-facts>div{padding:0.9rem 1.4rem 0.9rem 0;margin-right:1.4rem;}
+.coach-facts>div+div{padding-left:1.4rem;border-left:1px solid var(--border);}
+.coach-facts dt{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.24em;color:var(--gold);text-transform:uppercase;}
+.coach-facts dd{font-size:0.92rem;color:var(--cream);margin-top:0.2rem;}
+.coach-tabs{position:sticky;top:var(--nav-h);z-index:50;background:rgba(7,7,7,0.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.coach-tabs .wrap{display:flex;gap:1.8rem;overflow-x:auto;scrollbar-width:none;}
+.coach-tabs .wrap::-webkit-scrollbar{display:none;}
+.coach-tabs a{flex-shrink:0;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:1rem 0;transition:color .2s;}
+.coach-tabs a:hover{color:var(--gold);}
+.coach-body{padding-top:1rem;padding-bottom:2rem;}
+.coach-sec{padding:3.2rem 0;border-bottom:1px solid var(--border);scroll-margin-top:calc(var(--nav-h) + 56px);}
+.coach-sec:last-child{border-bottom:0;}
+.coach-sec-title{margin:-0.4rem 0 1.4rem;}
+.coach-intro{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--cream);line-height:1.55;margin-bottom:1.4rem;}
+.coach-videos{grid-template-columns:repeat(2,1fr);}
+.coach-reviews{columns:2 280px;column-gap:1.2rem;}
+.coach-reviews.spaced{margin-top:2.5rem;}
+.review.is-extra{display:none;}
+.coach-note{font-size:0.84rem;color:var(--muted);margin-top:1rem;}
+.timeline{list-style:none;position:relative;padding-left:1.6rem;}
+.timeline::before{content:"";position:absolute;left:4px;top:0.5rem;bottom:0.5rem;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(196,160,82,0.08));}
+.timeline li{position:relative;padding-bottom:1.6rem;display:flex;flex-direction:column;gap:0.15rem;}
+.timeline li:last-child{padding-bottom:0;}
+.timeline li::before{content:"";position:absolute;left:-1.6rem;top:0.45rem;width:9px;height:9px;border-radius:50%;background:var(--ink);border:1px solid var(--gold);}
+.timeline li:first-child::before{background:var(--gold);}
+.timeline-period{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;}
+.timeline-role{font-family:var(--serif);font-size:1.08rem;color:var(--white);}
+.timeline-org{font-size:0.86rem;color:var(--muted);}
+.cred-highlights{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+.cred-highlights li{background:var(--card);padding:1rem 1.1rem 1rem 2.2rem;font-size:0.86rem;color:var(--cream);line-height:1.5;position:relative;}
+.cred-highlights li::before{content:"✦";position:absolute;left:1rem;top:1rem;color:var(--gold);font-size:0.7rem;}
+.cred-all{margin-top:1.2rem;border:1px solid var(--border);background:var(--card);}
+.cred-all summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
+.cred-all summary::-webkit-details-marker{display:none;}
+.cred-all summary::after{content:"+";font-size:1rem;transition:transform .3s;}
+.cred-all[open] summary::after{transform:rotate(45deg);}
+.cred-all>.prose,.cred-all>.cred-groups{padding:0 1.2rem 1.4rem;}
+.cred-groups{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;}
+.cred-group .card-label{display:block;margin-bottom:0.6rem;}
+.cred-group ul{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.cred-group li{font-size:0.82rem;color:var(--text-soft);line-height:1.55;padding-left:0.9rem;position:relative;}
+.cred-group li::before{content:"·";position:absolute;left:0;color:var(--gold);}
+.price-card{border:1px solid var(--border2);background:var(--card);padding:1.6rem;}
+.price-card .btn{margin-top:1.4rem;}
+.price-row small{display:block;font-size:0.74rem;color:var(--muted);margin-top:0.15rem;}
+.price-lead span,.price-lead b{color:var(--gold);}
+
+/* Results: case cards + review filter */
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.case{border:1px solid var(--border);background:var(--card);display:flex;flex-direction:column;}
+.case-photos{display:grid;gap:2px;background:var(--border);}
+.case-photos.n1{grid-template-columns:1fr;}
+.case-photos.n2,.case-photos.n4{grid-template-columns:1fr 1fr;}
+.case-photos.n3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;}
+.case-photos.n3 .gallery-item:first-child{grid-row:1/3;aspect-ratio:auto;}
+.case-photos .gallery-item{border:0;aspect-ratio:1/1;position:relative;}
+.case-photos.n1 .gallery-item{aspect-ratio:4/3;}
+.case-more{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(7,7,7,0.62);font-family:var(--serif);font-size:1.8rem;color:var(--white);}
+.case-body{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:0.6rem;}
+.case-body p{margin-top:0!important;}
+.review-filter{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;}
+.chip{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--border2);padding:0.55rem 0.95rem;cursor:pointer;transition:all .2s;}
+.chip:hover{color:var(--gold);border-color:var(--gold);}
+.chip.on{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+.review-coach{display:block;font-style:normal;color:var(--muted);margin-top:0.35rem;letter-spacing:0.16em;}
+.rating-badge{gap:0.9rem;}
+
+/* Lightbox v2 */
+.lightbox figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:0.8rem;}
+.lightbox figcaption{max-width:720px;text-align:center;font-size:0.9rem;color:var(--cream);line-height:1.6;padding:0 3rem;}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:64px;border:1px solid var(--border2);background:rgba(7,7,7,0.8);color:var(--gold);font-size:1.8rem;cursor:pointer;}
+.lightbox-nav.prev{left:1rem;}.lightbox-nav.next{right:1rem;}
+.lightbox-count{position:fixed;top:1.4rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;color:var(--muted);}
+.lightbox img{max-height:78vh;}
+
+@media (max-width:980px){
+  .team-wall{grid-template-columns:repeat(3,1fr);}
+  .coach-hero{grid-template-columns:1fr;}
+  .coach-hero-photo{max-width:420px;}
+}
+@media (max-width:640px){
+  .team-wall{grid-template-columns:1fr 1fr;gap:1rem;}
+  .team-stats{grid-template-columns:1fr 1fr;}
+  .case-grid,.coach-videos,.cred-highlights,.cred-groups{grid-template-columns:1fr;}
+  .coach-facts>div{padding:0.8rem 1rem 0.8rem 0;margin-right:1rem;}
+  .coach-facts>div+div{padding-left:1rem;}
+  .lightbox-nav{top:auto;bottom:1rem;transform:none;}
+  .lightbox figcaption{padding:0 1rem;}
+}
+@media (max-width:640px){
+  .coach-facts{display:grid;grid-template-columns:1fr 1fr;}
+  .coach-facts>div,.coach-facts>div+div{padding:0.8rem 0;margin:0;border-left:0;}
+  .coach-facts>div:nth-child(even){padding-left:1rem;border-left:1px solid var(--border);}
+  .coach-facts>div:nth-child(n+3){border-top:1px solid var(--border);}
+}

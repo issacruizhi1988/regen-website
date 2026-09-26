@@ -23,22 +23,32 @@
     <div class="glow"></div><div class="grain"></div>
     <div class="wrap">
       <span class="eyebrow">Client Results</span>
-      <h2 class="h2">Real People. <em>Real Change.</em></h2>
+      <h1 class="h2">Real People. <em>Real Change.</em></h1>
+      <p class="lead">Injuries resolved, strength rebuilt, movement restored. In their own words.</p>
+      <div id="rating-badge" style="margin-top:1.8rem"></div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap" id="stories-wrap"></div>
+  <section class="section" id="video-section" hidden>
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">Video Stories</span><h2 class="h2">Watch Their <em>Journeys</em></h2></div>
+      <div id="video-stories"></div>
+    </div>
+  </section>
+
+  <section class="section" id="photo-section" hidden>
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">Before &amp; After</span><h2 class="h2">Progress You Can <em>See</em></h2><p class="lead">Tap any photo to see it full size.</p></div>
+      <div class="case-grid" id="photo-stories"></div>
+    </div>
   </section>
 
   <section class="section" id="reviews-section" hidden>
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Google Reviews</span>
-        <h2 class="h2">What Clients <em>Say</em></h2>
-        <div id="rating-badge" style="margin-top:1.4rem"></div>
-      </div>
+      <div class="section-head reveal"><span class="eyebrow">Google Reviews</span><h2 class="h2">What Clients <em>Say</em></h2></div>
+      <div class="review-filter" id="review-filter" role="group" aria-label="Filter reviews by coach"></div>
       <div class="review-grid" id="review-grid"></div>
+      <div class="btn-row" style="justify-content:center;margin-top:1rem"><button class="btn btn-ghost" id="review-more" type="button" hidden>Show all reviews</button></div>
     </div>
   </section>
 
@@ -47,9 +57,9 @@
     <div class="wrap-narrow reveal">
       <div class="hero-vline"></div>
       <span class="eyebrow">Start Your Journey</span>
-      <h2 class="h2" style="margin-top:1rem">Your Body Works Better<br><em>As a System</em></h2>
-      <p class="lead" id="cta-lead">Take the first step towards a stronger, more resilient you. A free 30-minute discovery call, no pressure, just clarity.</p>
-      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html">WhatsApp Us</a><a class="btn btn-ghost" href="/book.html">How It Works</a></div>
+      <h2 class="h2" style="margin-top:1rem">Your Story <em>Starts Here</em></h2>
+      <p class="lead">A free 30-minute discovery call. No pressure, just clarity on where to start.</p>
+      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html">WhatsApp Us</a><a class="btn btn-ghost" href="/coaches.html">Meet the Team</a></div>
       <p class="cta-note" id="cta-note"></p>
     </div>
   </section>
@@ -59,60 +69,92 @@
 <script src="/assets/js/site.js"></script>
 <script>
 RG.ready(async function (site) {
+  var E = RG.esc;
   var waHref = RG.wa(site.whatsapp, site.whatsappMessage);
-  document.getElementById("cta-wa").href = waHref;
-  document.getElementById("cta-wa").target = "_blank";
+  var cta = document.getElementById("cta-wa"); cta.href = waHref; cta.target = "_blank";
   if (site.whatsappDisplay) document.getElementById("cta-note").textContent = "WhatsApp " + site.whatsappDisplay + " · " + ((site.location && site.location.name) || "");
 
   var [t, r, c] = await Promise.all([RG.load("testimonials"), RG.load("reviews"), RG.load("coaches")]);
-  var coaches = (c.coaches || []);
+  var coaches = c.coaches || [];
+  var bySlug = {}; coaches.forEach(function (k) { bySlug[k.slug] = k; });
+  var coachLink = function (slug) {
+    var k = bySlug[slug];
+    return k ? '<p style="margin-top:1.2rem"><a class="link-arrow" href="/coach.html?c=' + encodeURIComponent(k.slug) + '">Coached by ' + E(k.name) + ' <span>→</span></a></p>' : "";
+  };
+  var stories = t.testimonials || [];
 
-  var stories = (t.testimonials || []).slice().sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0); });
-  var storiesWrap = document.getElementById("stories-wrap");
-  if (stories.length) {
-    storiesWrap.innerHTML = stories.map(function (s) {
-      var coach = coaches.find(function (k) { return k.slug === s.coach; });
-      var coachLink = coach ? '<p style="margin-top:1.2rem"><a class="link-arrow" href="/coach.html?c=' + encodeURIComponent(coach.slug) + '">Coached by ' + RG.esc(coach.name) + ' <span>→</span></a></p>' : '';
-      var head = '<span class="eyebrow">' + RG.esc(s.name) + '</span>' + (s.headline && s.headline !== s.name ? '<h3 class="h3">' + RG.esc(s.headline) + '</h3>' : '');
-      if (RG.ytId(s.youtubeId)) {
-        return '<article class="story reveal">' +
-          '<div class="story-media">' + RG.video(s.youtubeId, s.name) + '</div>' +
-          '<div>' + head + '<div class="prose">' + RG.md(s.story) + '</div>' + coachLink + '</div></article>';
-      }
-      // Photo stories: text first, then the before/after images as a gallery.
-      var tmp = document.createElement("div");
-      tmp.innerHTML = RG.md(s.story);
-      var imgs = Array.prototype.slice.call(tmp.querySelectorAll("img"));
-      imgs.forEach(function (img) {
-        var p = img.parentNode; img.remove();
-        if (p !== tmp && p.tagName === "P" && !p.textContent.trim() && !p.querySelector("img")) p.remove();
-      });
-      var gallery = imgs.length ? '<div class="gallery">' + imgs.map(function (img) {
-        return '<button class="gallery-item" type="button" data-full="' + RG.esc(img.getAttribute("src")) + '"><img src="' + RG.esc(img.getAttribute("src")) + '" alt="' + RG.esc(s.name) + ' result photo" loading="lazy"></button>';
-      }).join("") + '</div>' : '';
-      var text = tmp.textContent.trim() ? '<div class="prose">' + tmp.innerHTML + '</div>' : '';
-      return '<article class="story story-photos reveal"><div class="story-photos-head">' + head + text + coachLink + '</div>' + gallery + '</article>';
+  // 1. Video stories
+  var vids = stories.filter(function (s) { return RG.ytId(s.youtubeId); });
+  if (vids.length) {
+    document.getElementById("video-stories").innerHTML = vids.map(function (s) {
+      return '<article class="story reveal"><div class="story-media">' + RG.video(s.youtubeId, s.name) + '</div>' +
+        '<div><span class="eyebrow">' + E(s.name) + '</span>' + (s.headline ? '<h3 class="h3">' + E(s.headline) + '</h3>' : '') +
+        '<div class="prose">' + RG.md(s.story) + '</div>' + coachLink(s.coach) + '</div></article>';
     }).join("");
-  } else {
-    storiesWrap.innerHTML = '<div class="empty">Client stories are being added. Check back soon.</div>';
+    document.getElementById("video-section").hidden = false;
   }
-  RG.reveal(storiesWrap);
 
+  // 2. Before & after: each case is a card of photos; captions come from the image alt text.
+  var cases = stories.filter(function (s) { return !RG.ytId(s.youtubeId); }).map(function (s) {
+    var tmp = document.createElement("div"); tmp.innerHTML = RG.md(s.story);
+    var imgs = Array.prototype.map.call(tmp.querySelectorAll("img"), function (i) { return { src: i.getAttribute("src"), alt: i.getAttribute("alt") || "" }; });
+    tmp.querySelectorAll("img").forEach(function (i) { i.remove(); });
+    return { s: s, imgs: imgs, text: tmp.textContent.trim() ? tmp.innerHTML : "" };
+  }).filter(function (x) { return x.imgs.length; });
+  if (cases.length) {
+    document.getElementById("photo-stories").innerHTML = cases.map(function (x, ci) {
+      var lead = x.imgs[0].alt;
+      return '<article class="case reveal">' +
+        '<div class="case-photos n' + Math.min(x.imgs.length, 4) + '">' + x.imgs.slice(0, 4).map(function (im, i) {
+          return '<button class="gallery-item" type="button" data-full="' + E(im.src) + '" data-caption="' + E(im.alt) + '" data-group="case' + ci + '">' +
+            '<img src="' + E(im.src) + '" alt="' + E(im.alt || x.s.name + " result photo") + '" loading="lazy">' +
+            (i === 3 && x.imgs.length > 4 ? '<span class="case-more">+' + (x.imgs.length - 4) + '</span>' : '') + '</button>';
+        }).join("") + '</div>' +
+        x.imgs.slice(4).map(function (im) { return '<button class="gallery-item" type="button" hidden data-full="' + E(im.src) + '" data-caption="' + E(im.alt) + '" data-group="case' + ci + '"></button>'; }).join("") +
+        '<div class="case-body"><h3 class="card-title">' + E(x.s.headline || x.s.name) + '</h3>' +
+        (lead ? '<p class="card-text">' + E(lead) + '</p>' : '') +
+        '<span class="card-label">' + x.imgs.length + ' photo' + (x.imgs.length > 1 ? 's' : '') + '</span>' + coachLink(x.s.coach) + '</div></article>';
+    }).join("");
+    document.getElementById("photo-section").hidden = false;
+  }
+
+  // 3. Google reviews: featured first, filter by coach, show-all toggle.
   var reviews = r.reviews || [];
   if (reviews.length) {
     if (r.rating || r.count) {
-      var badge = '<b>' + RG.esc(r.rating) + '</b>&nbsp; <small>' + RG.esc(r.count) + ' Google reviews</small>';
+      var badge = '<b>' + E(r.rating) + ' ★</b><small>' + E(r.count) + ' Google reviews</small>';
       document.getElementById("rating-badge").innerHTML = r.googleUrl
-        ? '<a class="rating-badge" href="' + RG.esc(r.googleUrl) + '" target="_blank" rel="noopener">' + badge + '</a>'
+        ? '<a class="rating-badge" href="' + E(r.googleUrl) + '" target="_blank" rel="noopener">' + badge + '</a>'
         : '<span class="rating-badge">' + badge + '</span>';
     }
-    document.getElementById("review-grid").innerHTML = reviews.map(function (v) {
-      return '<figure class="review reveal">' + RG.stars(v.rating) + '<p>' + RG.esc(v.text) + '</p>' +
-        '<figcaption class="review-by">' + RG.esc(v.name) + (v.date ? '<span>' + RG.esc(v.date) + '</span>' : '') + '</figcaption></figure>';
-    }).join("");
+    var ordered = reviews.filter(function (v) { return v.featured; }).concat(reviews.filter(function (v) { return !v.featured; }));
+    var counts = {}; reviews.forEach(function (v) { (v.coaches || []).forEach(function (k) { counts[k] = (counts[k] || 0) + 1; }); });
+    var chips = [["", "All coaches"]].concat(RG.shuffle(Object.keys(counts).filter(function (k) { return bySlug[k]; })).map(function (k) { return [k, bySlug[k].name]; }));
+    var filterEl = document.getElementById("review-filter");
+    filterEl.innerHTML = chips.map(function (ch, i) { return '<button type="button" class="chip' + (i ? '' : ' on') + '" data-coach="' + ch[0] + '">' + E(ch[1]) + '</button>'; }).join("");
+    var grid = document.getElementById("review-grid"), more = document.getElementById("review-more");
+    var state = { coach: "", all: false };
+    function render() {
+      var list = ordered.filter(function (v) { return !state.coach || (v.coaches || []).indexOf(state.coach) >= 0; });
+      var limit = state.all || state.coach ? list.length : 12;
+      grid.innerHTML = list.slice(0, limit).map(function (v) {
+        var names = (v.coaches || []).filter(function (k) { return bySlug[k]; }).map(function (k) { return bySlug[k].name; });
+        return '<figure class="review">' + RG.stars(v.rating) + '<p>' + E(v.text) + '</p><figcaption class="review-by">' + E(v.name) + (v.date ? '<span>' + E(v.date) + '</span>' : '') +
+          (names.length ? '<em class="review-coach">' + E(names.join(" & ")) + '</em>' : '') + '</figcaption></figure>';
+      }).join("");
+      more.hidden = limit >= list.length;
+      more.textContent = "Show all " + list.length + " reviews";
+    }
+    filterEl.addEventListener("click", function (e) {
+      var b = e.target.closest(".chip"); if (!b) return;
+      filterEl.querySelectorAll(".chip").forEach(function (x) { x.classList.toggle("on", x === b); });
+      state.coach = b.getAttribute("data-coach"); render();
+    });
+    more.addEventListener("click", function () { state.all = true; render(); });
+    render();
     document.getElementById("reviews-section").hidden = false;
-    RG.reveal(document.getElementById("reviews-section"));
   }
+  RG.reveal(document.querySelector("main"));
 });
 </script>
 </body>

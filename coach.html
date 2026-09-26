@@ -18,19 +18,19 @@
 </head>
 <body data-page="coaches">
 <main>
-  <div class="wrap" style="padding-top:2.5rem">
+  <div class="wrap" style="padding-top:2rem">
     <a class="link-arrow" href="/coaches.html"><span style="transform:rotate(180deg)">→</span> All coaches</a>
   </div>
-  <div id="coach-root" class="wrap" style="padding:2rem 1.5rem 2rem"></div>
+  <div id="coach-root"><div class="skeleton">Loading profile</div></div>
 
   <section class="cta-band" id="cta-section" hidden>
     <div class="glow"></div>
     <div class="wrap-narrow reveal">
       <div class="hero-vline"></div>
       <span class="eyebrow">Start Your Journey</span>
-      <h2 class="h2" style="margin-top:1rem">Your Body Works Better<br><em>As a System</em></h2>
-      <p class="lead">Take the first step towards a stronger, more resilient you. A free 30-minute discovery call, no pressure, just clarity.</p>
-      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html" target="_blank" rel="noopener">WhatsApp Us</a><a class="btn btn-ghost" href="/book.html">How It Works</a></div>
+      <h2 class="h2" style="margin-top:1rem" id="cta-title">Book a Free<br><em>Discovery Call</em></h2>
+      <p class="lead">Thirty minutes. No pressure, just clarity on what your body needs and where to start.</p>
+      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-ghost" href="/coaches.html">Meet the Team</a></div>
     </div>
   </section>
 </main>
@@ -39,67 +39,138 @@
 <script>
 RG.ready(async function (site) {
   var slug = RG.param("c");
-  var c = await RG.load("coaches");
-  var coach = (c.coaches || []).find(function (k) { return k.slug === slug; });
+  var [c, t, r] = await Promise.all([RG.load("coaches"), RG.load("testimonials"), RG.load("reviews")]);
+  var all = c.coaches || [];
+  var coach = all.find(function (k) { return k.slug === slug; });
   var root = document.getElementById("coach-root");
+  var E = RG.esc;
 
   if (!coach) {
-    root.innerHTML = '<div class="empty">We couldn\'t find that coach.<br><br><a class="link-arrow" href="/coaches.html">Back to all coaches <span>→</span></a></div>';
+    root.innerHTML = '<div class="wrap" style="padding:3rem 1.5rem"><div class="empty">We couldn\'t find that coach.<br><br><a class="link-arrow" href="/coaches.html">Back to all coaches <span>→</span></a></div></div>';
     return;
   }
 
+  var first = (coach.name || "").split(/\s+/)[0] || "there";
   document.title = coach.name + " · ReGen Performance";
-  if (coach.bio) {
-    document.getElementById("meta-desc").setAttribute("content", coach.bio);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", coach.bio);
+  var desc = coach.intro || coach.bio || "";
+  if (desc) {
+    document.getElementById("meta-desc").setAttribute("content", desc);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", desc);
   }
   document.querySelector('meta[property="og:title"]').setAttribute("content", coach.name + " · ReGen Performance");
 
-  var firstName = (coach.name || "").split(/\s+/)[0] || "there";
-  var waMsg = "Hi " + firstName + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.";
-  var waLink = RG.wa(coach.whatsapp || site.whatsapp, waMsg);
+  var waLink = RG.wa(coach.whatsapp || site.whatsapp, "Hi " + first + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.");
   var ig = RG.igUrl(coach.instagram);
+  var list = function (a) { return (a || []).filter(function (x) { return x && (typeof x === "string" ? x.trim() : true); }); };
 
-  var pricingHtml = "";
-  if (coach.pricing && coach.pricing.length) {
-    pricingHtml = '<div class="fact"><span class="card-label">Sessions &amp; Pricing</span>' +
-      '<p style="margin-bottom:0.8rem">Start with a free 30-minute discovery call.</p>' +
-      coach.pricing.map(function (p) {
-        return '<div class="price-row"><span>' + RG.esc(p.label) + '</span><b>' + RG.esc(p.price) + '</b></div>';
-      }).join("") + '</div>';
+  // Credentials may be grouped [{group, items}] or a flat list of strings.
+  var groups = list(coach.credentials);
+  if (groups.length && typeof groups[0] === "string") groups = [{ group: "Certifications", items: groups }];
+  groups = groups.filter(function (g) { return list(g.items).length; });
+  var certCount = groups.reduce(function (n, g) { return n + list(g.items).length; }, 0);
+  var highlights = list(coach.highlights);
+  if (!highlights.length && certCount <= 8) highlights = [];
+
+  var stories = (t.testimonials || []).filter(function (s) { return s.coach === slug && RG.ytId(s.youtubeId); });
+  var reviews = (r.reviews || []).filter(function (v) { return (v.coaches || []).indexOf(slug) >= 0; });
+  var videos = list(coach.videos).filter(function (v) { return RG.ytId(v.youtubeId); });
+
+  var facts = [];
+  if (coach.since) facts.push(["Coaching since", coach.since]);
+  if (reviews.length) facts.push(["Google reviews", reviews.length + " mention " + first]);
+  if (certCount) facts.push(["Certifications", String(certCount)]);
+  if (coach.location) facts.push(["Trains at", coach.location.split(",")[0]]);
+
+  var sections = [];
+  function section(id, label, title, html) {
+    if (!html) return;
+    sections.push([id, label]);
+    return '<section class="coach-sec" id="' + id + '"><div class="label-rule">' + label + '</div>' + (title ? '<h2 class="h3 coach-sec-title">' + title + '</h2>' : '') + html + '</section>';
   }
 
-  var factsHtml =
-    (coach.specialty ? '<div class="fact"><span class="card-label">Specialty</span><p>' + RG.esc(coach.specialty) + '</p></div>' : '') +
-    '<div class="fact"><span class="card-label">Book</span><p style="margin-bottom:0.9rem">Start with a free 30-minute discovery call.</p><a class="btn btn-gold btn-sm" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp ' + RG.esc(firstName) + '</a></div>' +
-    (ig ? '<div class="fact"><span class="card-label">Instagram</span><p><a href="' + ig + '" target="_blank" rel="noopener">@' + RG.esc(coach.instagram.replace(/^@/, "")) + '</a></p></div>' : '') +
-    (coach.location ? '<div class="fact"><span class="card-label">Location</span><p>' + RG.esc(coach.location) + '</p></div>' : '') +
-    (coach.credentials && coach.credentials.filter(Boolean).length && !/certif|qualif/i.test(coach.about || "") ? '<div class="fact"><span class="card-label">Credentials</span><ul>' + coach.credentials.filter(Boolean).map(function (x) { return '<li>' + RG.esc(x) + '</li>'; }).join("") + '</ul></div>' : '') +
-    pricingHtml;
+  var aboutHtml =
+    (coach.intro ? '<p class="coach-intro">' + E(coach.intro) + '</p>' : '') +
+    (coach.approach ? '<div class="prose">' + RG.md(coach.approach) + '</div>' : (coach.about ? '<div class="prose">' + RG.md(coach.about) + '</div>' : '')) +
+    (list(coach.focus).length ? '<div class="focus-list">' + list(coach.focus).map(function (f) { return '<span class="focus">' + E(f) + '</span>'; }).join("") + '</div>' : '');
 
-  var videosHtml = "";
-  if (coach.videos && coach.videos.filter(function (v) { return v.youtubeId; }).length) {
-    videosHtml = '<div class="video-grid" style="margin-top:2.5rem">' + coach.videos.filter(function (v) { return v.youtubeId; }).map(function (v) {
-      return '<div>' + RG.video(v.youtubeId, v.title) + (v.title ? '<div class="video-cap"><span class="card-title">' + RG.esc(v.title) + '</span></div>' : '') + '</div>';
-    }).join("") + '</div>';
+  var videoHtml = videos.length ? '<div class="video-grid coach-videos">' + videos.map(function (v) {
+    return '<div>' + RG.video(v.youtubeId, v.title) + (v.title ? '<div class="video-cap"><span class="card-title">' + E(v.title) + '</span></div>' : '') + '</div>';
+  }).join("") + '</div>' : '';
+
+  var resultsHtml = "";
+  if (stories.length) resultsHtml += '<div class="video-grid coach-videos">' + stories.map(function (s) {
+    return '<div>' + RG.video(s.youtubeId, s.name) + '<div class="video-cap"><span class="card-label">' + E(s.name) + '</span><span class="card-title" style="display:block;margin-top:0.3rem">' + E(s.headline) + '</span></div></div>';
+  }).join("") + '</div>';
+  if (reviews.length) {
+    var shown = 4;
+    resultsHtml += '<div class="coach-reviews' + (stories.length ? ' spaced' : '') + '">' + reviews.map(function (v, i) {
+      return '<figure class="review' + (i >= shown ? ' is-extra' : '') + '">' + RG.stars(v.rating) + '<p>' + E(v.text) + '</p><figcaption class="review-by">' + E(v.name) + (v.date ? '<span>' + E(v.date) + '</span>' : '') + '</figcaption></figure>';
+    }).join("") + '</div>' +
+    (reviews.length > shown ? '<button class="btn btn-ghost btn-sm more-reviews" type="button">Show all ' + reviews.length + ' reviews</button>' : '') +
+    (r.googleUrl ? '<p class="coach-note"><a class="link-arrow" href="' + E(r.googleUrl) + '" target="_blank" rel="noopener">See every review on Google <span>→</span></a></p>' : '');
   }
+
+  var expHtml = list(coach.experience).length ? '<ol class="timeline">' + list(coach.experience).map(function (x) {
+    return '<li><span class="timeline-period">' + E(x.period) + '</span><span class="timeline-role">' + E(x.role) + '</span>' + (x.org ? '<span class="timeline-org">' + E(x.org) + '</span>' : '') + '</li>';
+  }).join("") + '</ol>' : '';
+
+  var credHtml = "";
+  if (certCount) {
+    if (highlights.length) credHtml += '<ul class="cred-highlights">' + highlights.map(function (h) { return '<li>' + E(h) + '</li>'; }).join("") + '</ul>';
+    var groupsHtml = groups.map(function (g) {
+      return '<div class="cred-group"><span class="card-label">' + E(g.group) + '</span><ul>' + list(g.items).map(function (i) { return '<li>' + E(i) + '</li>'; }).join("") + '</ul></div>';
+    }).join("");
+    credHtml += highlights.length
+      ? '<details class="cred-all"><summary>See all ' + certCount + ' certifications</summary><div class="cred-groups">' + groupsHtml + '</div></details>'
+      : '<div class="cred-groups">' + groupsHtml + '</div>';
+  }
+
+  var priceHtml = '<div class="price-card">' +
+    '<div class="price-row price-lead"><span>30-Minute Discovery Call</span><b>Free</b></div>' +
+    list(coach.pricing).filter(function (p) { return !/discovery|consultation/i.test(p.label); }).map(function (p) {
+      return '<div class="price-row"><span>' + E(p.label) + (p.note ? '<small>' + E(p.note) + '</small>' : '') + '</span><b>' + E(p.price) + '</b></div>';
+    }).join("") +
+    (list(coach.pricing).filter(function (p) { return !/discovery|consultation/i.test(p.label); }).length ? '' : '<p class="coach-note">Ask ' + E(first) + ' about session packages on your discovery call.</p>') +
+    '<a class="btn btn-gold" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp ' + E(first) + '</a>' +
+    (coach.location ? '<p class="coach-note">' + E(coach.location) + '</p>' : '') + '</div>';
+
+  var moreHtml = coach.more ? '<details class="cred-all"><summary>More about ' + E(first) + '</summary><div class="prose" style="margin-top:1.2rem">' + RG.md(coach.more) + '</div></details>' : '';
+
+  var body =
+    (section("about", "About " + E(first), "", aboutHtml) || "") +
+    (section("watch", "Watch", "", videoHtml) || "") +
+    (section("results", "Client Results", "", resultsHtml) || "") +
+    (section("experience", "Experience", "", expHtml) || "") +
+    (section("credentials", "Credentials", "", credHtml) || "") +
+    (section("sessions", "Sessions &amp; Pricing", "", priceHtml) || "") +
+    (moreHtml ? '<section class="coach-sec">' + moreHtml + '</section>' : "");
+
+  var others = all.filter(function (k) { return k.slug !== slug; }).sort(function () { return Math.random() - 0.5; }).slice(0, 3);
 
   root.innerHTML =
-    '<div class="profile">' +
-    '<aside class="profile-aside reveal">' +
-    '<div class="coach-photo">' + RG.photo(coach.photo, coach.name) + '</div>' +
-    factsHtml +
-    '</aside>' +
-    '<div class="reveal">' +
-    '<span class="eyebrow">Coach</span>' +
-    '<h1 class="h2" style="margin-top:0.8rem">' + RG.esc(coach.name) + '</h1>' +
-    (coach.motto ? '<div class="pq" style="text-align:left;padding-left:0;padding-right:0"><p>' + RG.esc(coach.motto) + '</p></div>' : '') +
-    (coach.about ? '<div class="prose" style="margin-top:1.6rem">' + RG.md(coach.about) + '</div>' : '') +
-    videosHtml +
-    '</div></div>';
+    '<header class="coach-hero wrap">' +
+      '<div class="coach-photo coach-hero-photo">' + RG.photo(coach.photo, coach.name) + '</div>' +
+      '<div class="coach-hero-body">' +
+        '<span class="eyebrow">ReGen Coach</span>' +
+        '<h1 class="h1 coach-hero-name">' + E(coach.name) + '</h1>' +
+        (coach.specialty ? '<p class="coach-hero-spec">' + E(coach.specialty) + '</p>' : '') +
+        (coach.motto ? '<p class="coach-motto">"' + E(coach.motto) + '"</p>' : '') +
+        (facts.length ? '<dl class="coach-facts">' + facts.map(function (f) { return '<div><dt>' + E(f[0]) + '</dt><dd>' + E(f[1]) + '</dd></div>'; }).join("") + '</dl>' : '') +
+        '<div class="btn-row"><a class="btn btn-gold" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp ' + E(first) + '</a>' +
+        (ig ? '<a class="btn btn-ghost" href="' + ig + '" target="_blank" rel="noopener">@' + E(String(coach.instagram).replace(/^@/, "")) + '</a>' : '') + '</div>' +
+      '</div>' +
+    '</header>' +
+    '<nav class="coach-tabs" aria-label="Profile sections"><div class="wrap">' + sections.map(function (s) { return '<a href="#' + s[0] + '">' + s[1].replace(/^About .*/, "About") + '</a>'; }).join("") + '</div></nav>' +
+    '<div class="wrap-narrow coach-body">' + body + '</div>' +
+    (others.length ? '<section class="section"><div class="wrap"><div class="label-rule">Meet the Team</div><div class="coach-grid">' + others.map(RG.coachCard).join("") + '</div></div></section>' : '');
 
-  RG.reveal(root);
+  var btn = root.querySelector(".more-reviews");
+  if (btn) btn.addEventListener("click", function () { root.querySelectorAll(".review.is-extra").forEach(function (x) { x.classList.remove("is-extra"); }); btn.remove(); });
+
+  var cta = document.getElementById("cta-wa");
+  cta.href = waLink; cta.textContent = "WhatsApp " + first;
   document.getElementById("cta-section").hidden = false;
+  RG.reveal(root);
 });
 </script>
 </body>

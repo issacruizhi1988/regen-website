@@ -28,85 +28,59 @@ collections:
           - label: Coaches
             name: coaches
             widget: list
-            summary: "{{fields.order}}. {{fields.name}}"
+            summary: "{{fields.name}}"
+            hint: "Every coach page uses the same layout. Fill in what the coach has; empty sections are hidden automatically. Coaches are shown in a random order on the site so everyone gets equal visibility."
             fields:
-              - label: URL Slug
-                name: slug
-                widget: string
-                hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coach.html?c=issac-tan"
-              - label: Name
-                name: name
-                widget: string
-              - label: Specialty (short tagline)
-                name: specialty
-                widget: string
-                hint: "One line, 70 characters or less. Shown on the coach card."
-              - label: Bio (short, for the card)
-                name: bio
-                widget: text
-                hint: "2-3 sentences, in the coach's own words."
-              - label: About (full profile)
-                name: about
-                widget: markdown
-                hint: "The full profile text shown on the coach's own page."
-              - label: Motto
-                name: motto
-                widget: string
+              - {label: URL Slug, name: slug, widget: string, hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coach.html?c=issac-tan"}
+              - {label: Name, name: name, widget: string}
+              - {label: Photo, name: photo, widget: image, hint: "Square photo, face clearly visible, no text on the image."}
+              - {label: Specialty (one-line tagline), name: specialty, widget: string, hint: "60 characters or less. Shown under the name everywhere."}
+              - {label: Intro (one sentence), name: intro, widget: string, required: false, hint: "First person, e.g. \"I help people ...\". The large line at the top of the About section."}
+              - {label: Card bio (2 sentences), name: bio, widget: text, required: false}
+              - {label: Motto, name: motto, widget: string, required: false}
+              - {label: Focus areas, name: focus, widget: list, required: false, hint: "3 to 5 short tags, e.g. Pain management, Women's strength."}
+              - {label: Approach, name: approach, widget: markdown, required: false, hint: "1 to 4 short paragraphs: how you coach and who you help."}
+              - {label: Coaching since (year), name: since, widget: string, required: false, hint: "e.g. 2011"}
+              - label: Experience
+                name: experience
+                widget: list
                 required: false
+                summary: "{{fields.period}} · {{fields.role}}"
+                fields:
+                  - {label: Role, name: role, widget: string}
+                  - {label: Organisation, name: org, widget: string, required: false}
+                  - {label: Period, name: period, widget: string, hint: "e.g. Jan 2022 – Oct 2023"}
+              - {label: Credential highlights, name: highlights, widget: list, required: false, hint: "Up to 6 key certifications shown first. Only needed if the coach has many."}
               - label: Credentials
                 name: credentials
                 widget: list
                 required: false
-                hint: "One credential per line, e.g. \"NASM Certified Personal Trainer\""
-              - label: Photo
-                name: photo
-                widget: image
-                hint: "Square-ish photo works best."
-              - label: WhatsApp Number
-                name: whatsapp
-                widget: string
-                hint: "Digits only with country code, e.g. 6591875632 (no + or spaces)."
-              - label: Instagram Handle
-                name: instagram
-                widget: string
-                required: false
-                hint: "Without the @ symbol, e.g. issactanruizhi"
-              - label: Location
-                name: location
-                widget: string
-                required: false
+                summary: "{{fields.group}}"
+                fields:
+                  - {label: Group, name: group, widget: string, hint: "e.g. Personal Trainer Certification"}
+                  - {label: Items, name: items, widget: list}
               - label: Pricing
                 name: pricing
                 widget: list
                 required: false
-                hint: "Packages this coach offers."
+                hint: "The free 30-minute discovery call is always shown first automatically."
                 fields:
-                  - label: Label
-                    name: label
-                    widget: string
-                  - label: Price
-                    name: price
-                    widget: string
+                  - {label: Label, name: label, widget: string}
+                  - {label: Price, name: price, widget: string}
+                  - {label: Note, name: note, widget: string, required: false, hint: "e.g. $165 per session"}
+              - {label: WhatsApp Number, name: whatsapp, widget: string, hint: "Digits only with country code, e.g. 6591875632."}
+              - {label: Instagram Handle, name: instagram, widget: string, required: false, hint: "Without the @."}
+              - {label: Location, name: location, widget: string, required: false}
               - label: Videos
                 name: videos
                 widget: list
                 required: false
                 fields:
-                  - label: Title
-                    name: title
-                    widget: string
-                  - label: YouTube Video ID
-                    name: youtubeId
-                    widget: string
-                    hint: "Paste the 11-character video ID, or the full YouTube link."
-              - label: Notion URL
-                name: notionUrl
-                widget: string
-                required: false
-              - label: Display Order
-                name: order
-                widget: number
-                hint: "Coaches are sorted by this number, lowest first."
+                  - {label: Title, name: title, widget: string}
+                  - {label: YouTube Video ID, name: youtubeId, widget: string, hint: "The 11-character ID or the full YouTube link."}
+              - {label: More about me, name: more, widget: markdown, required: false, hint: "Anything else (FAQs, background). Shown in a collapsed section."}
+              - {label: Notion URL, name: notionUrl, widget: string, required: false}
+              - {label: Order (unused), name: order, widget: hidden, required: false}
 
   - name: testimonials
     label: Client Stories
@@ -190,6 +164,14 @@ collections:
                 name: date
                 widget: string
                 hint: "e.g. March 2026"
+              - label: Coaches mentioned
+                name: coaches
+                widget: select
+                multiple: true
+                required: false
+                hint: "Tag the coach(es) this review is about. It then appears on their profile."
+                options: [issac-tan, edmund-lee, tan-long, shaun-lim, eugene, kennard-chia, hans-ng, jenson, roxanne-zeng, qaila-warren]
+              - {label: Featured, name: featured, widget: boolean, default: false, hint: "Featured reviews show first on the Results page and rotate on the Home page."}
 
   - name: resources
     label: Resources

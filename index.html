@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ReGen Performance · Movement &amp; Strength Coaching Singapore</title>
 <meta name="description" content="ReGen Performance is a movement and strength coaching team in Singapore. Train the system, not just the muscles. Move well, get stronger and train pain-free. Book a free 30-minute discovery call.">
-<meta property="og:title" content="ReGen Performance · Built From Within">
+<meta property="og:title" content="ReGen Performance · Movement &amp; Strength Coaching Singapore">
 <meta property="og:description" content="Movement and strength coaching in Singapore. Train the system, not just the muscles.">
 <meta property="og:image" content="/assets/img/icon-512.png">
 <meta property="og:type" content="website">
@@ -31,9 +31,21 @@
         <a class="btn btn-gold" id="hero-book" href="/book.html">Book a Free Discovery Call</a>
         <a class="btn btn-ghost" href="/philosophy.html">Explore the Method</a>
       </div>
-      <div class="pills rise rise-4">
-        <span class="pill">Breathing</span><span class="pill">Foot &amp; Ground</span><span class="pill">Posterior Chain</span><span class="pill">Upper Body</span><span class="pill">Nervous System</span>
+      <a class="hero-team rise rise-4" id="hero-team" href="#team" hidden></a>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team">
+    <div class="wrap">
+      <div class="section-head reveal center">
+        <span class="eyebrow">Meet the Team</span>
+        <h2 class="h2">Practitioners Who <em>Live What They Teach</em></h2>
+        <p class="lead">Every ReGen coach works from the same system. Each brings their own experience, so you can choose the coach who fits your goals.</p>
       </div>
+      <div class="team-wall" id="team-wall"><div class="skeleton">Loading the team</div></div>
+      <dl class="team-stats reveal" id="team-stats"></dl>
+      <div class="btn-row reveal" style="justify-content:center;margin-top:2.5rem"><a class="btn btn-gold" href="/coaches.html">Meet All Coaches</a><a class="btn btn-ghost" id="team-book" href="/book.html">Book a Free Discovery Call</a></div>
     </div>
   </section>
 
@@ -73,7 +85,7 @@
       </div>
       <div class="btn-row reveal" style="margin-top:2.2rem">
         <a class="btn btn-ghost" href="/philosophy.html">The Full Philosophy</a>
-        <a class="btn btn-ghost" href="/ebook/">Read the Free Ebook</a>
+        <a class="btn btn-ghost" href="/coaches.html">Meet the Coaches</a>
       </div>
     </div>
   </section>
@@ -88,18 +100,6 @@
       <div id="featured-stories"></div>
       <div id="home-reviews" style="margin-top:3.5rem"></div>
       <div class="reveal" style="margin-top:2.5rem"><a class="link-arrow" href="/results.html">See all client results <span>→</span></a></div>
-    </div>
-  </section>
-
-  <!-- COACHES -->
-  <section class="section" id="coaches-section" hidden>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Meet the Team</span>
-        <h2 class="h2">Practitioners Who <em>Live What They Teach</em></h2>
-      </div>
-      <div class="coach-grid" id="home-coaches"></div>
-      <div class="reveal" style="margin-top:2.5rem"><a class="btn btn-ghost" href="/coaches.html">Meet All Coaches</a></div>
     </div>
   </section>
 
@@ -149,7 +149,10 @@ RG.ready(async function (site) {
     }).join("");
     document.getElementById("results-section").hidden = false;
   }
-  var reviews = (r.reviews || []).slice(0, 3);
+  // Three featured reviews, each about a different coach, in a fresh order per visit.
+  var seen = {}, reviews = RG.shuffle((r.reviews || []).filter(function (v) { return v.featured; })).filter(function (v) {
+    var k = (v.coaches || [])[0] || v.name; if (seen[k]) return false; seen[k] = 1; return true;
+  }).slice(0, 3);
   if (reviews.length) {
     document.getElementById("home-reviews").innerHTML = '<div class="label-rule">What Clients Say on Google</div><div class="review-grid">' + reviews.map(function (v) {
       return '<figure class="review reveal">' + RG.stars(v.rating) + "<p>" + RG.esc(v.text) + '</p><figcaption class="review-by">' + RG.esc(v.name) + "</figcaption></figure>";
@@ -157,14 +160,26 @@ RG.ready(async function (site) {
     document.getElementById("results-section").hidden = false;
   }
 
-  var coaches = (c.coaches || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); }).slice(0, 3);
-  if (coaches.length) {
-    document.getElementById("home-coaches").innerHTML = coaches.map(function (k) {
+  var team = RG.shuffle(c.coaches);
+  if (team.length) {
+    document.getElementById("team-wall").innerHTML = team.map(function (k) {
       var href = "/coach.html?c=" + encodeURIComponent(k.slug);
-      return '<article class="coach-card reveal"><a class="coach-photo" href="' + href + '">' + RG.photo(k.photo, k.name) + '</a><div class="coach-body"><h3 class="coach-name"><a href="' + href + '">' + RG.esc(k.name) + '</a></h3><div class="coach-specialty">' + RG.esc(k.specialty) + '</div><p class="coach-bio">' + RG.esc(k.bio) + '</p><div class="coach-actions"><a class="link-arrow" href="' + href + '">View profile <span>→</span></a></div></div></article>';
+      return '<a class="team-member reveal" href="' + href + '"><span class="coach-photo">' + RG.photo(k.photo, k.name) + '</span>' +
+        '<span class="team-name">' + RG.esc(k.name) + '</span><span class="team-spec">' + RG.esc(k.specialty) + '</span></a>';
     }).join("");
-    document.getElementById("coaches-section").hidden = false;
+    var hero = document.getElementById("hero-team");
+    hero.innerHTML = '<span class="hero-faces">' + team.slice(0, 6).map(function (k) { return '<span class="hero-face">' + RG.photo(k.photo, k.name) + '</span>'; }).join("") + '</span>' +
+      '<span class="hero-team-text">Meet our ' + team.length + ' coaches <span>→</span></span>';
+    hero.hidden = false;
+    var stats = [];
+    if (r.rating) stats.push([r.rating + " ★", "Google rating"]);
+    if (r.count) stats.push([r.count, "Google reviews"]);
+    stats.push([String(team.length), "Coaches"]);
+    stats.push(["5", "Pillars, one system"]);
+    document.getElementById("team-stats").innerHTML = stats.map(function (x) { return '<div><dd>' + RG.esc(x[0]) + '</dd><dt>' + RG.esc(x[1]) + '</dt></div>'; }).join("");
   }
+  document.getElementById("team-book").href = waHref;
+  document.getElementById("team-book").target = "_blank";
 });
 </script>
 </body>

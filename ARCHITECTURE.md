@@ -12,11 +12,10 @@ A static site with no build step. Pages are plain HTML files. Shared chrome (nav
 /resources.html        Knowledge Nuggets list
 /resource.html?r=<slug> Single resource
 /book.html             Discovery call, WhatsApp, location, pricing, FAQ
-/ebook/index.html      Original "Built From Within" ebook (kept as-is)
 /admin/                Decap CMS
 /assets/css/site.css   Design system
 /assets/js/site.js     Chrome + JSON rendering helpers
-/assets/img/           logo-*.png, icons, coaches/<slug>.jpg, ebook/*, resources/*
+/assets/img/           logo-*.png, icons, coaches/<slug>.jpg, resources/*
 /content/*.json        All editable content
 ```
 
@@ -47,23 +46,25 @@ A static site with no build step. Pages are plain HTML files. Shared chrome (nav
 ```
 
 ### content/coaches.json
+Every profile uses one standard layout (reference: `issac-tan`). Empty fields hide their section. Coaches are shown in random order (`RG.shuffle`) so no one is always first. `order` is unused.
 ```json
 { "coaches": [ {
-  "slug": "issac-tan",
-  "name": "Issac Tan",
-  "specialty": "short: one line, <= 70 chars",
-  "bio": "short: 2-3 sentences for the card, taken from the coach's own words",
-  "about": "markdown: full profile text from Notion",
+  "slug": "issac-tan", "name": "Issac Tan", "photo": "/assets/img/coaches/issac-tan.jpg",
+  "specialty": "one-line tagline, <= 60 chars",
+  "intro": "one first-person sentence",
+  "bio": "2 sentences for cards",
   "motto": "",
-  "credentials": [ "" ],
-  "photo": "/assets/img/coaches/issac-tan.jpg",
-  "whatsapp": "6591875632",
-  "instagram": "issactanruizhi",
-  "location": "",
-  "pricing": [ { "label": "", "price": "" } ],
+  "focus": ["3-5 short tags"],
+  "approach": "markdown, 1-4 short paragraphs",
+  "since": "2011",
+  "experience": [ { "role": "", "org": "", "period": "" } ],
+  "highlights": [ "up to 6 key certifications" ],
+  "credentials": [ { "group": "", "items": [ "" ] } ],
+  "pricing": [ { "label": "", "price": "", "note": "" } ],
+  "whatsapp": "6591875632", "instagram": "issactanruizhi", "location": "",
   "videos": [ { "title": "", "youtubeId": "" } ],
-  "notionUrl": "",
-  "order": 1
+  "more": "markdown, collapsed 'More about' section",
+  "notionUrl": ""
 } ] }
 ```
 
@@ -81,7 +82,10 @@ A static site with no build step. Pages are plain HTML files. Shared chrome (nav
 
 ### content/reviews.json
 ```json
-{ "googleUrl": "", "rating": "", "count": "", "reviews": [ { "name": "", "rating": 5, "text": "", "date": "" } ] }
+{ "googleUrl": "", "rating": "", "count": "", "reviews": [ { "name": "", "rating": 5, "text": "", "date": "", "coaches": ["slug"], "featured": false } ] }
+```
+Reviews are verbatim. `coaches` puts a review on those coaches' profiles. `featured` (about 12, balanced across coaches) shows first on Results and rotates on Home.
+```
 ```
 
 ### content/resources.json

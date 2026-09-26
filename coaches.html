@@ -23,8 +23,8 @@
     <div class="glow"></div><div class="grain"></div>
     <div class="wrap">
       <span class="eyebrow">Meet the Team</span>
-      <h2 class="h2">Practitioners Who <em>Live What They Teach</em></h2>
-      <p class="lead">Explore our coaches and find the right match for your goals. Each brings unique expertise and a shared system.</p>
+      <h1 class="h2">One Team. <em>One System.</em></h1>
+      <p class="lead">Practitioners who live what they teach. Each brings their own expertise to the same shared method, so you can choose the coach whose experience fits your goals.</p>
     </div>
   </section>
 
@@ -57,7 +57,7 @@ RG.ready(async function (site) {
   if (site.whatsappDisplay) document.getElementById("cta-note").textContent = "WhatsApp " + site.whatsappDisplay + " · " + ((site.location && site.location.name) || "");
 
   var c = await RG.load("coaches");
-  var coaches = (c.coaches || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
+  var coaches = RG.shuffle(c.coaches);
   var grid = document.getElementById("coach-grid");
 
   if (!coaches.length) {
@@ -65,24 +65,7 @@ RG.ready(async function (site) {
     return;
   }
 
-  grid.innerHTML = coaches.map(function (k) {
-    var href = "/coach.html?c=" + encodeURIComponent(k.slug);
-    var firstName = (k.name || "").split(/\s+/)[0] || "there";
-    var waMsg = "Hi " + firstName + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.";
-    var waLink = RG.wa(k.whatsapp || site.whatsapp, waMsg);
-    var ig = RG.igUrl(k.instagram);
-    return '<article class="coach-card reveal">' +
-      '<a class="coach-photo" href="' + href + '">' + RG.photo(k.photo, k.name) + '</a>' +
-      '<div class="coach-body">' +
-      '<h3 class="coach-name"><a href="' + href + '">' + RG.esc(k.name) + '</a></h3>' +
-      (k.specialty ? '<div class="coach-specialty">' + RG.esc(k.specialty) + '</div>' : '') +
-      (k.bio ? '<p class="coach-bio">' + RG.esc(k.bio) + '</p>' : '') +
-      '<div class="coach-actions">' +
-      '<a class="btn btn-gold btn-sm" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp</a>' +
-      '<a class="link-arrow" href="' + href + '">Profile <span>→</span></a>' +
-      (ig ? '<a class="coach-ig" href="' + ig + '" target="_blank" rel="noopener">@' + RG.esc(k.instagram.replace(/^@/, "")) + '</a>' : '') +
-      '</div></div></article>';
-  }).join("");
+  grid.innerHTML = coaches.map(RG.coachCard).join("");
   RG.reveal(grid);
 });
 </script>

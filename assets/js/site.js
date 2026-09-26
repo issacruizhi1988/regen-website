@@ -1,6 +1,6 @@
 /* ReGen Performance site runtime.
    Renders shared chrome and exposes helpers (window.RG) for page scripts.
-   Pages set <body data-page="home|philosophy|coaches|results|ebook|book|resources"> */
+   Pages set <body data-page="home|philosophy|coaches|results|book|resources"> */
 (function () {
   "use strict";
 
@@ -9,7 +9,7 @@
     { href: "/philosophy.html", label: "Philosophy", page: "philosophy" },
     { href: "/coaches.html", label: "Coaches", page: "coaches" },
     { href: "/results.html", label: "Results", page: "results" },
-    { href: "/ebook/", label: "Ebook", page: "ebook" }
+    { href: "/resources.html", label: "Resources", page: "resources" }
   ];
 
   var WA_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></svg>';
@@ -67,16 +67,45 @@
     if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches(".video[data-yt]")) { e.preventDefault(); playVideo(e.target); }
   });
 
-  // Lightbox for any .gallery-item[data-full]
+  // Lightbox for any .gallery-item[data-full]; items sharing data-group can be stepped through.
   document.addEventListener("click", function (e) {
     var g = e.target.closest && e.target.closest(".gallery-item[data-full]");
     if (!g) return;
+    var grp = g.getAttribute("data-group");
+    var items = grp ? Array.prototype.slice.call(document.querySelectorAll('.gallery-item[data-group="' + grp + '"]')) : [g];
+    var idx = Math.max(0, items.indexOf(g));
     var d = document.createElement("dialog");
     d.className = "lightbox";
-    d.innerHTML = '<img src="' + esc(g.getAttribute("data-full")) + '" alt=""><button class="lightbox-close" aria-label="Close">×</button>';
-    document.body.appendChild(d);
-    d.addEventListener("click", function () { d.close(); });
+    d.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure>' +
+      '<button class="lightbox-close" aria-label="Close">×</button>' +
+      (items.length > 1 ? '<button class="lightbox-nav prev" aria-label="Previous photo">‹</button><button class="lightbox-nav next" aria-label="Next photo">›</button><span class="lightbox-count"></span>' : '');
+    var img = d.querySelector("img"), cap = d.querySelector("figcaption"), count = d.querySelector(".lightbox-count");
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      img.src = items[idx].getAttribute("data-full");
+      var c = items[idx].getAttribute("data-caption") || "";
+      cap.textContent = c; cap.hidden = !c;
+      if (count) count.textContent = (idx + 1) + " / " + items.length;
+    }
+    d.addEventListener("click", function (ev) {
+      if (ev.target.closest(".prev")) return show(idx - 1);
+      if (ev.target.closest(".next")) return show(idx + 1);
+      if (ev.target === img) return items.length > 1 ? show(idx + 1) : d.close();
+      d.close();
+    });
+    d.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowRight") show(idx + 1);
+      if (ev.key === "ArrowLeft") show(idx - 1);
+    });
+    var x0 = null;
+    d.addEventListener("touchstart", function (ev) { x0 = ev.touches[0].clientX; }, { passive: true });
+    d.addEventListener("touchend", function (ev) {
+      if (x0 === null) return; var dx = ev.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
     d.addEventListener("close", function () { d.remove(); });
+    document.body.appendChild(d);
+    show(idx);
     d.showModal();
   });
 
@@ -142,7 +171,7 @@
       '<div class="wrap"><div class="footer-grid">' +
       '<div class="footer-brand"><img src="/assets/img/logo-full-gold.png" alt="ReGen Performance" width="78" height="64"><p>Movement and strength coaching in Singapore. The body is not broken. It is just not working as a system yet.</p></div>' +
       '<div class="footer-col"><h4>Explore</h4><ul>' +
-      '<li><a href="/philosophy.html">The ReGen Method</a></li><li><a href="/coaches.html">Our Coaches</a></li><li><a href="/results.html">Client Results</a></li><li><a href="/resources.html">Resources</a></li><li><a href="/ebook/">Built From Within Ebook</a></li></ul></div>' +
+      '<li><a href="/philosophy.html">The ReGen Method</a></li><li><a href="/coaches.html">Our Coaches</a></li><li><a href="/results.html">Client Results</a></li><li><a href="/resources.html">Resources</a></li><li><a href="/book.html">Book a Call</a></li></ul></div>' +
       '<div class="footer-col"><h4>Follow</h4><ul>' +
       '<li><a href="' + esc(ig) + '" target="_blank" rel="noopener">Instagram</a></li><li><a href="' + esc(yt) + '" target="_blank" rel="noopener">YouTube</a></li></ul></div>' +
       '<div class="footer-col"><h4>Visit</h4><ul>' +
@@ -179,11 +208,36 @@
     });
   }
 
+  // Fisher-Yates shuffle: coaches appear in a fresh order on every visit so no one is always first.
+  function shuffle(a) {
+    a = (a || []).slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  // One card design for every coach, used on Home, Coaches and profile pages.
+  function coachCard(k) {
+    var href = "/coach.html?c=" + encodeURIComponent(k.slug);
+    var first = (k.name || "").split(/\s+/)[0];
+    var site = window.RG.site || {};
+    var waHref = wa(k.whatsapp || site.whatsapp, "Hi " + first + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.");
+    var focus = (k.focus || []).filter(Boolean).slice(0, 3);
+    return '<article class="coach-card reveal">' +
+      '<a class="coach-photo" href="' + href + '" aria-label="' + esc(k.name) + ' profile">' + photo(k.photo, k.name) + '</a>' +
+      '<div class="coach-body">' +
+      '<h3 class="coach-name"><a href="' + href + '">' + esc(k.name) + '</a></h3>' +
+      '<div class="coach-specialty">' + esc(k.specialty) + '</div>' +
+      (focus.length ? '<div class="focus-list focus-sm">' + focus.map(function (f) { return '<span class="focus">' + esc(f) + '</span>'; }).join("") + '</div>' : '<p class="coach-bio">' + esc(k.bio) + '</p>') +
+      '<div class="coach-actions"><a class="btn btn-gold btn-sm" href="' + waHref + '" target="_blank" rel="noopener">WhatsApp ' + esc(first) + '</a>' +
+      '<a class="link-arrow" href="' + href + '">Profile <span>→</span></a></div>' +
+      '</div></article>';
+  }
+
   function param(name) { return new URLSearchParams(location.search).get(name) || ""; }
 
   var readyFns = [];
   window.RG = {
-    load: load, esc: esc, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
+    load: load, esc: esc, shuffle: shuffle, coachCard: coachCard, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
     reveal: observeReveal,
     ready: function (fn) { readyFns.push(fn); }
   };

@@ -43,14 +43,8 @@ RG.ready(async function (site) {
   var resources = r.resources || [];
   var grid = document.getElementById("resource-grid");
 
-  var ebookCard = '<a class="card reveal" href="/ebook/">' +
-    '<span class="card-icon">📖</span>' +
-    '<span class="card-title">Built From Within</span>' +
-    '<span class="card-text">The ReGen Method, explained in eight short chapters.</span>' +
-    '<span class="link-arrow">Read <span>→</span></span></a>';
-
   if (!resources.length) {
-    grid.innerHTML = ebookCard;
+    grid.innerHTML = '<div class="empty">Resources are being added. Check back soon.</div>';
     RG.reveal(grid);
     return;
   }
@@ -61,7 +55,7 @@ RG.ready(async function (site) {
       '<span class="card-title">' + RG.esc(res.title) + '</span>' +
       (res.summary ? '<span class="card-text">' + RG.esc(res.summary) + '</span>' : '') +
       '<span class="link-arrow">Read <span>→</span></span></a>';
-  }).join("") + ebookCard;
+  }).join("");
 
   RG.reveal(grid);
 });
