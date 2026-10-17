@@ -102,18 +102,29 @@ RG.ready(async function (site) {
     return { s: s, imgs: imgs, text: tmp.textContent.trim() ? tmp.innerHTML : "" };
   }).filter(function (x) { return x.imgs.length; });
   if (cases.length) {
-    // Every photo is shown as a small thumbnail; tapping opens the full-size image.
+    // One even photo wall: every photo the same size, labelled with its case; tap for full size.
     var thumb = function (src) { return src.replace("/assets/img/stories/", "/assets/img/stories/thumbs/"); };
-    document.getElementById("photo-stories").innerHTML = cases.map(function (x, ci) {
-      var lead = x.imgs[0].alt;
-      return '<article class="case reveal">' +
-        '<div class="case-body"><h3 class="card-title">' + E(x.s.headline || x.s.name) + '</h3>' +
-        (lead ? '<p class="card-text">' + E(lead) + '</p>' : '') + coachLink(x.s.coach) + '</div>' +
-        '<div class="case-photos">' + x.imgs.map(function (im) {
-          return '<button class="gallery-item" type="button" data-full="' + E(im.src) + '" data-caption="' + E(im.alt) + '" data-group="case' + ci + '">' +
-            '<img src="' + E(thumb(im.src)) + '" alt="' + E(im.alt || x.s.name + " result photo") + '" decoding="async"></button>';
-        }).join("") + '</div></article>';
-    }).join("");
+    var tiles = [];
+    cases.forEach(function (x) {
+      x.imgs.forEach(function (im) {
+        tiles.push('<button class="gallery-item wall-item" type="button" data-full="' + E(im.src) + '" data-caption="' + E((x.s.headline || x.s.name) + (im.alt ? " · " + im.alt : "")) + '" data-group="wall">' +
+          '<img src="' + E(thumb(im.src)) + '" alt="' + E(im.alt || x.s.name + " result photo") + '" decoding="async">' +
+          '<span class="wall-tag">' + E(x.s.headline || x.s.name) + '</span></button>');
+      });
+    });
+    var wall = document.getElementById("photo-stories");
+    wall.className = "photo-wall";
+    wall.innerHTML = tiles.join("");
+    // Never leave empty cells: stretch the last photo across any leftover columns.
+    function fillLastRow() {
+      var items = wall.children, n = items.length; if (!n) return;
+      var cols = getComputedStyle(wall).gridTemplateColumns.split(" ").length;
+      for (var i = 0; i < n; i++) { items[i].style.gridColumn = ""; items[i].style.aspectRatio = ""; }
+      var r = n % cols;
+      if (r) { var last = items[n - 1], span = cols - r + 1; last.style.gridColumn = "span " + span; last.style.aspectRatio = span + " / 1"; }
+    }
+    fillLastRow();
+    window.addEventListener("resize", fillLastRow);
     document.getElementById("photo-section").hidden = false;
   }
 
