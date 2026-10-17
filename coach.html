@@ -121,7 +121,8 @@ RG.ready(async function (site) {
     (section("experience", "Experience", "", expHtml) || "") +
     (section("credentials", "Credentials", "", credHtml) || "") +
     (section("sessions", "Sessions &amp; Pricing", "", priceHtml) || "") +
-    (moreHtml ? '<section class="coach-sec">' + moreHtml + '</section>' : "");
+    (moreHtml ? '<section class="coach-sec">' + moreHtml + '</section>' : "") +
+    '<p class="coach-results-link"><a class="link-arrow" href="/results.html">See client results <span>→</span></a></p>';
 
   var others = all.filter(function (k) { return k.slug !== slug; }).sort(function () { return Math.random() - 0.5; }).slice(0, 3);
 
