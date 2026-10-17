@@ -31,7 +31,7 @@ collections:
             summary: "{{fields.name}}"
             hint: "Every coach page uses the same layout. Fill in what the coach has; empty sections are hidden automatically. Coaches are shown in a random order on the site so everyone gets equal visibility."
             fields:
-              - {label: URL Slug, name: slug, widget: string, hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coach.html?c=issac-tan"}
+              - {label: URL Slug, name: slug, widget: string, hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coaches/issac-tan/"}
               - {label: Name, name: name, widget: string}
               - {label: Photo, name: photo, widget: image, hint: "Square photo, face clearly visible, no text on the image."}
               - {label: Specialty (one-line tagline), name: specialty, widget: string, hint: "60 characters or less. Shown under the name everywhere."}

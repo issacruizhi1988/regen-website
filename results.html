@@ -59,7 +59,7 @@
       <span class="eyebrow">Start Your Journey</span>
       <h2 class="h2" style="margin-top:1rem">Your Story <em>Starts Here</em></h2>
       <p class="lead">A free 30-minute discovery call. No pressure, just clarity on where to start.</p>
-      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/book.html">WhatsApp Us</a><a class="btn btn-ghost" href="/coaches.html">Meet the Team</a></div>
+      <div class="btn-row"><a class="btn btn-gold" id="cta-wa" href="/#contact">WhatsApp Us</a><a class="btn btn-ghost" href="/coaches.html">Meet the Team</a></div>
       <p class="cta-note" id="cta-note"></p>
     </div>
   </section>
@@ -79,7 +79,7 @@ RG.ready(async function (site) {
   var bySlug = {}; coaches.forEach(function (k) { bySlug[k.slug] = k; });
   var coachLink = function (slug) {
     var k = bySlug[slug];
-    return k ? '<p style="margin-top:1.2rem"><a class="link-arrow" href="/coach.html?c=' + encodeURIComponent(k.slug) + '">Coached by ' + E(k.name) + ' <span>→</span></a></p>' : "";
+    return k ? '<p style="margin-top:1.2rem"><a class="link-arrow" href="/coaches/' + encodeURIComponent(k.slug) + '/">Coached by ' + E(k.name) + ' <span>→</span></a></p>' : "";
   };
   var stories = t.testimonials || [];
 
