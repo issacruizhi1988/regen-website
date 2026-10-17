@@ -159,7 +159,7 @@ RG.ready(async function (site) {
     document.getElementById("results-section").hidden = false;
   }
 
-  var team = RG.shuffle(c.coaches);
+  var team = RG.teamOrder(c.coaches);
   if (team.length) {
     document.getElementById("team-wall").innerHTML = team.map(function (k) {
       var href = "/coach.html?c=" + encodeURIComponent(k.slug);

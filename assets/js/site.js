@@ -215,6 +215,23 @@
     return a;
   }
 
+  // Coach order from site.json coachOrder: fixed first / middle / last, everyone else shuffled.
+  function teamOrder(list) {
+    var o = (window.RG.site && window.RG.site.coachOrder) || {};
+    var by = {}; (list || []).forEach(function (k) { by[k.slug] = k; });
+    var pick = function (a) { return (a || []).map(function (s) { return by[s]; }).filter(Boolean); };
+    var first = pick(o.first), mid = pick(o.middle), last = pick(o.last);
+    var used = {}; first.concat(mid, last).forEach(function (k) { used[k.slug] = 1; });
+    var rest = shuffle((list || []).filter(function (k) { return !used[k.slug]; }));
+    var out = first.concat(rest);
+    if (mid.length) {
+      var total = out.length + mid.length + last.length;
+      var at = Math.max(first.length, Math.min(out.length, Math.floor((total - mid.length) / 2)));
+      out.splice.apply(out, [at, 0].concat(mid));
+    }
+    return out.concat(last);
+  }
+
   // One card design for every coach, used on Home, Coaches and profile pages.
   function coachCard(k) {
     var href = "/coach.html?c=" + encodeURIComponent(k.slug);
@@ -237,7 +254,7 @@
 
   var readyFns = [];
   window.RG = {
-    load: load, esc: esc, shuffle: shuffle, coachCard: coachCard, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
+    load: load, esc: esc, shuffle: shuffle, teamOrder: teamOrder, coachCard: coachCard, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
     reveal: observeReveal,
     ready: function (fn) { readyFns.push(fn); }
   };

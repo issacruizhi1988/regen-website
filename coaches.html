@@ -57,7 +57,7 @@ RG.ready(async function (site) {
   if (site.whatsappDisplay) document.getElementById("cta-note").textContent = "WhatsApp " + site.whatsappDisplay + " · " + ((site.location && site.location.name) || "");
 
   var c = await RG.load("coaches");
-  var coaches = RG.shuffle(c.coaches);
+  var coaches = RG.teamOrder(c.coaches);
   var grid = document.getElementById("coach-grid");
 
   if (!coaches.length) {
