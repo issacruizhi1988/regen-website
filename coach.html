@@ -39,7 +39,7 @@
 <script>
 RG.ready(async function (site) {
   var slug = RG.param("c");
-  var [c, t, r] = await Promise.all([RG.load("coaches"), RG.load("testimonials"), RG.load("reviews")]);
+  var c = await RG.load("coaches");
   var all = c.coaches || [];
   var coach = all.find(function (k) { return k.slug === slug; });
   var root = document.getElementById("coach-root");
@@ -71,14 +71,10 @@ RG.ready(async function (site) {
   var highlights = list(coach.highlights);
   if (!highlights.length && certCount <= 8) highlights = [];
 
-  var stories = (t.testimonials || []).filter(function (s) { return s.coach === slug && RG.ytId(s.youtubeId); });
-  var reviews = (r.reviews || []).filter(function (v) { return (v.coaches || []).indexOf(slug) >= 0; });
-  var videos = list(coach.videos).filter(function (v) { return RG.ytId(v.youtubeId); });
 
   var facts = [];
-  if (coach.since) facts.push(["Coaching since", coach.since]);
-  if (reviews.length) facts.push(["Google reviews", reviews.length + " mention " + first]);
-  if (certCount) facts.push(["Certifications", String(certCount)]);
+  var years = /^\d{4}$/.test(coach.since || "") ? new Date().getFullYear() - Number(coach.since) : 0;
+  if (years > 0) facts.push(["Experience", years + "+ years · since " + coach.since]);
   if (coach.location) facts.push(["Trains at", coach.location.split(",")[0]]);
 
   var sections = [];
@@ -93,22 +89,6 @@ RG.ready(async function (site) {
     (coach.approach ? '<div class="prose">' + RG.md(coach.approach) + '</div>' : (coach.about ? '<div class="prose">' + RG.md(coach.about) + '</div>' : '')) +
     (list(coach.focus).length ? '<div class="focus-list">' + list(coach.focus).map(function (f) { return '<span class="focus">' + E(f) + '</span>'; }).join("") + '</div>' : '');
 
-  var videoHtml = videos.length ? '<div class="video-grid coach-videos">' + videos.map(function (v) {
-    return '<div>' + RG.video(v.youtubeId, v.title) + (v.title ? '<div class="video-cap"><span class="card-title">' + E(v.title) + '</span></div>' : '') + '</div>';
-  }).join("") + '</div>' : '';
-
-  var resultsHtml = "";
-  if (stories.length) resultsHtml += '<div class="video-grid coach-videos">' + stories.map(function (s) {
-    return '<div>' + RG.video(s.youtubeId, s.name) + '<div class="video-cap"><span class="card-label">' + E(s.name) + '</span><span class="card-title" style="display:block;margin-top:0.3rem">' + E(s.headline) + '</span></div></div>';
-  }).join("") + '</div>';
-  if (reviews.length) {
-    var shown = 4;
-    resultsHtml += '<div class="coach-reviews' + (stories.length ? ' spaced' : '') + '">' + reviews.map(function (v, i) {
-      return '<figure class="review' + (i >= shown ? ' is-extra' : '') + '">' + RG.stars(v.rating) + '<p>' + E(v.text) + '</p><figcaption class="review-by">' + E(v.name) + (v.date ? '<span>' + E(v.date) + '</span>' : '') + '</figcaption></figure>';
-    }).join("") + '</div>' +
-    (reviews.length > shown ? '<button class="btn btn-ghost btn-sm more-reviews" type="button">Show all ' + reviews.length + ' reviews</button>' : '') +
-    (r.googleUrl ? '<p class="coach-note"><a class="link-arrow" href="' + E(r.googleUrl) + '" target="_blank" rel="noopener">See every review on Google <span>→</span></a></p>' : '');
-  }
 
   var expHtml = list(coach.experience).length ? '<ol class="timeline">' + list(coach.experience).map(function (x) {
     return '<li><span class="timeline-period">' + E(x.period) + '</span><span class="timeline-role">' + E(x.role) + '</span>' + (x.org ? '<span class="timeline-org">' + E(x.org) + '</span>' : '') + '</li>';
@@ -138,8 +118,6 @@ RG.ready(async function (site) {
 
   var body =
     (section("about", "About " + E(first), "", aboutHtml) || "") +
-    (section("watch", "Watch", "", videoHtml) || "") +
-    (section("results", "Client Results", "", resultsHtml) || "") +
     (section("experience", "Experience", "", expHtml) || "") +
     (section("credentials", "Credentials", "", credHtml) || "") +
     (section("sessions", "Sessions &amp; Pricing", "", priceHtml) || "") +
@@ -164,8 +142,6 @@ RG.ready(async function (site) {
     '<div class="wrap-narrow coach-body">' + body + '</div>' +
     (others.length ? '<section class="section"><div class="wrap"><div class="label-rule">Meet the Team</div><div class="coach-grid">' + others.map(RG.coachCard).join("") + '</div></div></section>' : '');
 
-  var btn = root.querySelector(".more-reviews");
-  if (btn) btn.addEventListener("click", function () { root.querySelectorAll(".review.is-extra").forEach(function (x) { x.classList.remove("is-extra"); }); btn.remove(); });
 
   var cta = document.getElementById("cta-wa");
   cta.href = waLink; cta.textContent = "WhatsApp " + first;
