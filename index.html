@@ -44,7 +44,6 @@
         <p class="lead">Every ReGen coach works from the same system. Each brings their own experience, so you can choose the coach who fits your goals.</p>
       </div>
       <div class="team-wall" id="team-wall"><div class="skeleton">Loading the team</div></div>
-      <dl class="team-stats reveal" id="team-stats"></dl>
       <div class="btn-row reveal" style="justify-content:center;margin-top:2.5rem"><a class="btn btn-gold" href="/coaches.html">Meet All Coaches</a><a class="btn btn-ghost" id="team-book" href="/book.html">Book a Free Discovery Call</a></div>
     </div>
   </section>
@@ -171,12 +170,6 @@ RG.ready(async function (site) {
     hero.innerHTML = '<span class="hero-faces">' + team.slice(0, 6).map(function (k) { return '<span class="hero-face">' + RG.photo(k.photo, k.name) + '</span>'; }).join("") + '</span>' +
       '<span class="hero-team-text">Meet our ' + team.length + ' coaches <span>→</span></span>';
     hero.hidden = false;
-    var stats = [];
-    if (r.rating) stats.push([r.rating + " ★", "Google rating"]);
-    if (r.count) stats.push([r.count, "Google reviews"]);
-    stats.push([String(team.length), "Coaches"]);
-    stats.push(["5", "Pillars, one system"]);
-    document.getElementById("team-stats").innerHTML = stats.map(function (x) { return '<div><dd>' + RG.esc(x[0]) + '</dd><dt>' + RG.esc(x[1]) + '</dt></div>'; }).join("");
   }
   document.getElementById("team-book").href = waHref;
   document.getElementById("team-book").target = "_blank";
