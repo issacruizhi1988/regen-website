@@ -145,7 +145,7 @@
     header.className = "site-nav";
     header.innerHTML =
       '<div class="wrap">' +
-      '<a class="brand" href="/" aria-label="ReGen Performance home"><img src="/assets/img/logo-mark-gold.png" alt="" width="44" height="30"><span>Regen Performance</span></a>' +
+      '<a class="brand" href="/" aria-label="ReGen Performance home"><img src="/assets/img/logo-mark-white.png" alt="" width="44" height="30"><span>Regen Performance</span></a>' +
       '<button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>' +
       '<ul class="nav-links" id="nav-links">' + links + "</ul></div>";
     document.body.insertBefore(header, document.body.firstChild);
@@ -169,7 +169,7 @@
     footer.className = "site-footer";
     footer.innerHTML =
       '<div class="wrap"><div class="footer-grid">' +
-      '<div class="footer-brand"><img src="/assets/img/logo-full-gold.png" alt="ReGen Performance" width="78" height="64"><p>Movement and strength coaching in Singapore. The body is not broken. It is just not working as a system yet.</p></div>' +
+      '<div class="footer-brand"><img src="/assets/img/logo-full-white.png" alt="ReGen Performance" width="78" height="64"><p>Movement and strength coaching in Singapore. The body is not broken. It is just not working as a system yet.</p></div>' +
       '<div class="footer-col"><h4>Explore</h4><ul>' +
       '<li><a href="/philosophy.html">The ReGen Method</a></li><li><a href="/coaches.html">Our Coaches</a></li><li><a href="/results.html">Client Results</a></li><li><a href="/resources.html">Resources</a></li><li><a href="/book.html">Book a Call</a></li></ul></div>' +
       '<div class="footer-col"><h4>Follow</h4><ul>' +
