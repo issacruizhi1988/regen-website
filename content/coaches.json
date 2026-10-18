@@ -191,10 +191,16 @@
     {
       "slug": "edmund-lee",
       "name": "Edmund Lee",
-      "specialty": "Transforming lives through movement and strength",
-      "bio": "I coach individuals to achieve peak performance and holistic health. I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body — whether it's overcoming pain, enhancing your movement options, or achieving a full-body transformation.",
-      "motto": "",
+      "specialty": "Movement-based rehab and progressive strength training",
+      "bio": "Movement-based rehab and progressive strength training for people who want to move well and stay pain-free.",
+      "motto": "Move well. Load smart. Stay strong.",
       "credentials": [
+        {
+          "group": "Postgraduate Study",
+          "items": [
+            "MSc in Osteopathy, European School of Osteopathy (ESO), in progress"
+          ]
+        },
         {
           "group": "Personal Trainer Certification",
           "items": [
@@ -209,18 +215,19 @@
           ]
         },
         {
-          "group": "Rehab/Massage Certifications",
+          "group": "Rehab / Massage Certification",
           "items": [
             "Certified Kinesiology Taping Course (Integrated Training Institute)",
             "Certified Instrumented Assisted Soft Tissue Massage (Integrated Training Institute)",
             "Certified Neuro-Musculoskeletal Cupping Therapist (Integrated Training Institute)",
             "Certified Sports Massage Therapist (International Sports Academy)",
             "Certified Functional Stretch Therapist (Integrated Training Institute)",
-            "R4 Coach Master Class"
+            "R4 Coach Master Class",
+            "Certified Sports Medicine Trainer (Integrated Training Institute)"
           ]
         },
         {
-          "group": "Movement Screening/Anatomy/Mentorship Program",
+          "group": "Movement Screening / Anatomy / Mentorship",
           "items": [
             "Integrated Kinetic Neurology (IKN Level 1, 2 & Performance)",
             "AMP Performance Mentorship Program",
@@ -234,30 +241,18 @@
       "location": "Platinum Fitness, 22 Martin Road, Level 4, Singapore 239058",
       "pricing": [
         {
-          "label": "30-Minute Discovery Call",
-          "price": "Free"
-        },
-        {
-          "label": "First Trial Session",
-          "price": "$100"
-        },
-        {
-          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
-          "price": "$140"
+          "label": "1 Session",
+          "price": "$150"
         },
         {
           "label": "5 Sessions",
-          "price": "$600",
-          "note": "$120 per session"
+          "price": "$650",
+          "note": "$130 per session"
         },
         {
           "label": "12 Sessions",
           "price": "$1200",
           "note": "$100 per session"
-        },
-        {
-          "label": "House visits",
-          "price": "Surcharge of $40"
         }
       ],
       "videos": [
@@ -272,46 +267,51 @@
       ],
       "notionUrl": "https://regenperformance.notion.site/edmund",
       "order": 2,
-      "intro": "I help you regain confidence, improve mobility, and build a stronger, healthier body.",
+      "intro": "I'm a movement coach who helps clients move better, feel better and get stronger through assessment-led training.",
       "focus": [
-        "Peak performance",
-        "Movement & strength",
-        "Rehab & mobility",
-        "Full-body transformation"
+        "Posture & movement correction",
+        "Return to training after pain or injury",
+        "Progressive strength & loading"
       ],
-      "approach": "My coaching services aim to educate you and lead you to a better quality of life.\n\nLet's work together to create lasting change and empower you to move freely and confidently!",
-      "since": "2020",
+      "approach": "I start by understanding how your body moves, then use postural correction, targeted rehab-adjacent work and progressive loading to build strength that lasts.\n\nMy approach draws on biomechanics, neurology and sports medicine, so every programme is built around you, not a template.",
+      "since": "2019",
       "experience": [
         {
           "role": "Rehab Trainer",
           "org": "Functional Training Institute",
-          "period": "Oct 2023 – Nov 2024"
-        },
-        {
-          "role": "Personal Trainer",
-          "org": "Movement and Medicine Sports Centre (MSMC)",
-          "period": "Apr 2020 – May 2023"
+          "period": "2023 – 2024"
         },
         {
           "role": "Functional Stretch Therapist",
-          "org": "Movement and Medicine Sports Centre (MSMC)",
-          "period": "Apr 2020 – May 2023"
+          "org": "Movement Sports and Medicine Centre",
+          "period": "2020 – 2023"
         },
         {
           "role": "Group Instructor",
-          "org": "Movement and Medicine Sports Centre (MSMC)",
-          "period": "Apr 2020 – May 2023"
+          "org": "Movement and Sports Medicine Centre",
+          "period": "2020 – 2023"
         }
       ],
       "highlights": [
-        "American Council on Exercise Certified Personal Trainer (ACE)",
-        "Certified Neuro-Musculoskeletal Cupping Therapist (Integrated Training Institute)",
+        "MSc in Osteopathy, European School of Osteopathy (ESO), in progress",
         "Integrated Kinetic Neurology (IKN Level 1, 2 & Performance)",
+        "Certified Sports Medicine Trainer (Integrated Training Institute)",
         "Certified Sports Massage Therapist (International Sports Academy)",
-        "AMP Performance Mentorship Program",
-        "Certified Kinesiology Taping Course (Integrated Training Institute)"
+        "AMP Performance Mentorship Program"
       ],
-      "more": ""
+      "more": "",
+      "achievementsTitle": "My Own Transformation",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/edmund-lee-transformation-front.jpg",
+          "caption": "Edmund's own transformation, front"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/edmund-lee-transformation-back.jpg",
+          "caption": "Edmund's own transformation, back"
+        }
+      ]
     },
     {
       "slug": "tan-long",

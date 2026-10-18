@@ -50,6 +50,7 @@ collections:
                   - {label: Role, name: role, widget: string}
                   - {label: Organisation, name: org, widget: string, required: false}
                   - {label: Period, name: period, widget: string, hint: "e.g. Jan 2022 – Oct 2023"}
+              - {label: Achievements heading, name: achievementsTitle, widget: string, required: false, hint: "Optional. Defaults to Achievements, e.g. My Own Transformation."}
               - {label: Achievements, name: achievements, widget: list, required: false, hint: "Competition results or wins, one per line, e.g. 2nd Place, Turf Games Singapore 2026."}
               - label: Achievement photos
                 name: gallery

@@ -50,7 +50,7 @@ RG.ready(async function (site) {
   // Achievements: competition results and wins, plus photos (tap to enlarge).
   var gallery = list(coach.gallery).filter(function (g) { return g.src; });
   var achHtml = (list(coach.achievements).length ? '<ul class="ach-list">' + list(coach.achievements).map(function (a) { return '<li>' + E(a) + '</li>'; }).join("") + '</ul>' : '') +
-    (gallery.length ? '<div class="photo-wall coach-gallery">' + gallery.map(function (g) {
+    (gallery.length ? '<div class="photo-wall coach-gallery" style="--gcols:' + Math.min(gallery.length, 3) + '">' + gallery.map(function (g) {
       return '<button class="gallery-item wall-item" type="button" data-full="' + E(g.src) + '" data-caption="' + E(g.caption) + '" data-group="coach-gallery">' +
         '<img src="' + E(g.src.indexOf("/coaches/gallery/") >= 0 ? g.src.replace("/gallery/", "/gallery/thumbs/") : g.src) + '" alt="' + E(g.caption || coach.name) + '" decoding="async"></button>';
     }).join("") + '</div>' : '');
@@ -83,7 +83,7 @@ RG.ready(async function (site) {
 
   var body =
     (section("about", "About " + E(first), "", aboutHtml) || "") +
-    (section("achievements", "Achievements", "", achHtml) || "") +
+    (section("achievements", E(coach.achievementsTitle || "Achievements"), "", achHtml) || "") +
     (section("experience", "Experience", "", expHtml) || "") +
     (section("credentials", "Credentials", "", credHtml) || "") +
     (section("sessions", "Sessions &amp; Pricing", "", priceHtml) || "") +
@@ -106,7 +106,7 @@ RG.ready(async function (site) {
         '<button class="btn btn-ghost share-btn" type="button">Share profile</button></div>' +
       '</div>' +
     '</header>' +
-    '<nav class="coach-tabs" aria-label="Profile sections"><div class="wrap">' + sections.map(function (s) { return '<a href="#' + s[0] + '">' + s[1].replace(/^About .*/, "About") + '</a>'; }).join("") + '</div></nav>' +
+    '<nav class="coach-tabs" aria-label="Profile sections"><div class="wrap">' + sections.map(function (s) { return '<a href="#' + s[0] + '">' + s[1].replace(/^About .*/, "About").replace(/^My Own /, "") + '</a>'; }).join("") + '</div></nav>' +
     '<div class="wrap-narrow coach-body">' + body + '</div>' +
     (others.length ? '<section class="section"><div class="wrap"><div class="label-rule">Meet the Team</div><div class="coach-grid">' + others.map(RG.coachCard).join("") + '</div></div></section>' : '');
 
