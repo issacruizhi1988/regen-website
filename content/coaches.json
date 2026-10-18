@@ -771,10 +771,11 @@
       "highlights": [],
       "more": "",
       "achievements": [
+        "1st Place, Bikini Amateur, INBA Natural Bodybuilding Pro Qualifier, Singapore (July 2023)",
+        "1st Place, Bikini Open, INBA Natural Bodybuilding Pro Qualifier, Singapore (July 2023)",
         "2nd Place, Turf Games Singapore 2026 (Teams of 6, Intermediate Mixed), Team City Hall",
-        "2nd Place, REVL Arena Games at HSBC SVNS Singapore, Team City Hall",
-        "HYROX Singapore competitor",
-        "Stage competitor, INBA Natural Bodybuilding Pro Qualifier, Singapore (July 2023)"
+        "2nd Place, REVL Arena Games at HSBC SVNS Singapore 2025, Team City Hall",
+        "HYROX Singapore 2026 competitor"
       ],
       "gallery": [
         {
@@ -783,19 +784,19 @@
         },
         {
           "src": "/assets/img/coaches/gallery/roxanne-zeng-revl.jpg",
-          "caption": "2nd Place, REVL Arena Games at HSBC SVNS Singapore"
+          "caption": "2nd Place, REVL Arena Games at HSBC SVNS Singapore 2025"
         },
         {
           "src": "/assets/img/coaches/gallery/roxanne-zeng-hyrox.jpg",
-          "caption": "HYROX Singapore"
+          "caption": "HYROX Singapore 2026"
         },
         {
           "src": "/assets/img/coaches/gallery/roxanne-zeng-stage.jpg",
-          "caption": "INBA Natural Bodybuilding Pro Qualifier, Singapore, July 2023"
+          "caption": "1st Place, Bikini Amateur and Bikini Open, INBA Natural Bodybuilding Pro Qualifier, July 2023"
         },
         {
           "src": "/assets/img/coaches/gallery/roxanne-zeng-medals.jpg",
-          "caption": "INBA Global Singapore medals"
+          "caption": "Two 1st Place medals, INBA Global Singapore (Bikini Amateur and Bikini Open)"
         }
       ]
     },
