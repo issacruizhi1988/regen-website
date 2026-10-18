@@ -732,8 +732,8 @@
     {
       "slug": "roxanne-zeng",
       "name": "Roxanne Zeng",
-      "specialty": "Building strength and confidence with women from inside out",
-      "bio": "Effective body transformation training that fits into different lifestyles — combining body transformation programs, pain management training, and lifestyle strength training.",
+      "specialty": "Empowerment through fitness",
+      "bio": "My passion lies in empowerment through fitness, and I can't wait to help you get started on your journey.",
       "motto": "",
       "credentials": [
         {
@@ -754,18 +754,50 @@
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Roxanne-Zeng-2ae2698f422380619751e9544a42c618",
       "order": 9,
-      "intro": "I offer an effective body transformation journey that fits into different lifestyles.",
+      "intro": "My passion lies in empowerment through fitness, and I can't wait to help you get started on your journey.",
       "focus": [
         "Women's strength",
-        "Body transformation",
-        "Pain management",
-        "Lifestyle training"
+        "Body transformation"
       ],
-      "approach": "My coaching focuses on body transformation programs for women, pain management training, and lifestyle strength training that fits into busy schedules.",
-      "since": "",
-      "experience": [],
+      "approach": "Being physically active has always been part of my lifestyle since I was a teenager, but it was only when I learned the science behind exercise was I truly able to own my workouts and achieve my fitness goals.\n\nMy experience has shaped me to never stop equipping myself with more knowledge to help others achieve their goals the way I did mine.",
+      "since": "2017",
+      "experience": [
+        {
+          "role": "Freelance Trainer",
+          "org": "ReGen Performance",
+          "period": "2024 – Present"
+        }
+      ],
       "highlights": [],
-      "more": ""
+      "more": "",
+      "achievements": [
+        "2nd Place, Turf Games Singapore 2026 (Teams of 6, Intermediate Mixed), Team City Hall",
+        "2nd Place, REVL Arena Games at HSBC SVNS Singapore, Team City Hall",
+        "HYROX Singapore competitor",
+        "Stage competitor, INBA Natural Bodybuilding Pro Qualifier, Singapore (July 2023)"
+      ],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/roxanne-zeng-turf-games.jpg",
+          "caption": "2nd Place, Turf Games Singapore 2026, Intermediate Mixed"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/roxanne-zeng-revl.jpg",
+          "caption": "2nd Place, REVL Arena Games at HSBC SVNS Singapore"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/roxanne-zeng-hyrox.jpg",
+          "caption": "HYROX Singapore"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/roxanne-zeng-stage.jpg",
+          "caption": "INBA Natural Bodybuilding Pro Qualifier, Singapore, July 2023"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/roxanne-zeng-medals.jpg",
+          "caption": "INBA Global Singapore medals"
+        }
+      ]
     },
     {
       "slug": "qaila-warren",

@@ -47,6 +47,14 @@ RG.ready(async function (site) {
     (list(coach.focus).length ? '<div class="focus-list">' + list(coach.focus).map(function (f) { return '<span class="focus">' + E(f) + '</span>'; }).join("") + '</div>' : '');
 
 
+  // Achievements: competition results and wins, plus photos (tap to enlarge).
+  var gallery = list(coach.gallery).filter(function (g) { return g.src; });
+  var achHtml = (list(coach.achievements).length ? '<ul class="ach-list">' + list(coach.achievements).map(function (a) { return '<li>' + E(a) + '</li>'; }).join("") + '</ul>' : '') +
+    (gallery.length ? '<div class="photo-wall coach-gallery">' + gallery.map(function (g) {
+      return '<button class="gallery-item wall-item" type="button" data-full="' + E(g.src) + '" data-caption="' + E(g.caption) + '" data-group="coach-gallery">' +
+        '<img src="' + E(g.src.indexOf("/coaches/gallery/") >= 0 ? g.src.replace("/gallery/", "/gallery/thumbs/") : g.src) + '" alt="' + E(g.caption || coach.name) + '" decoding="async"></button>';
+    }).join("") + '</div>' : '');
+
   var expHtml = list(coach.experience).length ? '<ol class="timeline">' + list(coach.experience).map(function (x) {
     return '<li><span class="timeline-period">' + E(x.period) + '</span><span class="timeline-role">' + E(x.role) + '</span>' + (x.org ? '<span class="timeline-org">' + E(x.org) + '</span>' : '') + '</li>';
   }).join("") + '</ol>' : '';
@@ -75,6 +83,7 @@ RG.ready(async function (site) {
 
   var body =
     (section("about", "About " + E(first), "", aboutHtml) || "") +
+    (section("achievements", "Achievements", "", achHtml) || "") +
     (section("experience", "Experience", "", expHtml) || "") +
     (section("credentials", "Credentials", "", credHtml) || "") +
     (section("sessions", "Sessions &amp; Pricing", "", priceHtml) || "") +
@@ -101,6 +110,17 @@ RG.ready(async function (site) {
     '<div class="wrap-narrow coach-body">' + body + '</div>' +
     (others.length ? '<section class="section"><div class="wrap"><div class="label-rule">Meet the Team</div><div class="coach-grid">' + others.map(RG.coachCard).join("") + '</div></div></section>' : '');
 
+
+  // Never leave an empty cell in the gallery: stretch the last photo across leftover columns.
+  var wall = root.querySelector(".coach-gallery");
+  function fillGallery() {
+    if (!wall) return;
+    var items = wall.children, n = items.length, cols = getComputedStyle(wall).gridTemplateColumns.split(" ").length;
+    for (var i = 0; i < n; i++) { items[i].style.gridColumn = ""; items[i].style.aspectRatio = ""; }
+    var r = n % cols;
+    if (r) { var span = cols - r + 1; items[n - 1].style.gridColumn = "span " + span; items[n - 1].style.aspectRatio = span + " / 1"; }
+  }
+  fillGallery(); window.addEventListener("resize", fillGallery);
 
   var share = root.querySelector(".share-btn");
   share.addEventListener("click", function () {

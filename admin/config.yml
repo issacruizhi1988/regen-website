@@ -50,6 +50,14 @@ collections:
                   - {label: Role, name: role, widget: string}
                   - {label: Organisation, name: org, widget: string, required: false}
                   - {label: Period, name: period, widget: string, hint: "e.g. Jan 2022 – Oct 2023"}
+              - {label: Achievements, name: achievements, widget: list, required: false, hint: "Competition results or wins, one per line, e.g. 2nd Place, Turf Games Singapore 2026."}
+              - label: Achievement photos
+                name: gallery
+                widget: list
+                required: false
+                fields:
+                  - {label: Photo, name: src, widget: image}
+                  - {label: Caption, name: caption, widget: string, required: false}
               - {label: Credential highlights, name: highlights, widget: list, required: false, hint: "Up to 6 key certifications shown first. Only needed if the coach has many."}
               - label: Credentials
                 name: credentials

@@ -604,3 +604,10 @@ body{font-weight:400;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;
   .home-hero-body{padding-top:2rem;padding-bottom:3rem;}
   .home-hero-img{-webkit-mask-image:linear-gradient(to bottom,#000 75%,transparent);mask-image:linear-gradient(to bottom,#000 75%,transparent);}
 }
+
+/* Coach achievements */
+.ach-list{list-style:none;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1.4rem;}
+.ach-list li{background:var(--card);padding:1rem 1.1rem 1rem 2.6rem;position:relative;font-size:0.92rem;color:var(--cream);line-height:1.5;}
+.ach-list li::before{content:"";position:absolute;left:1.1rem;top:1.35rem;width:8px;height:8px;background:var(--accent);transform:rotate(45deg);}
+.coach-gallery{grid-template-columns:repeat(3,1fr);}
+@media (max-width:480px){.coach-gallery{grid-template-columns:repeat(2,1fr);}}
