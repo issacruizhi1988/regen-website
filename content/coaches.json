@@ -731,38 +731,38 @@
     },
     {
       "slug": "jenson",
-      "name": "Jenson Lau",
-      "specialty": "Sport science-trained rehab & strength coaching",
-      "bio": "I coach individuals to achieve peak performance and holistic health. With personalised coaching and support, I will help you develop healthy habits and reach your goals.",
+      "name": "Jensen Lau",
+      "specialty": "Recovery & strength training for everyone",
+      "bio": "Recovery & strength training for everyone. I've helped people get stronger, healthier and live daily life better.",
       "motto": "",
       "credentials": [
         {
           "group": "Academic Qualifications",
           "items": [
-            "Edinburgh Napier University — Higher Diploma in Sport & Exercise Science",
-            "PSB Academy — Diploma in Sport & Exercise Science"
+            "Higher Diploma in Sport & Exercise Science, Edinburgh Napier",
+            "Diploma in Sport & Exercise Science, PSB Academy"
           ]
         },
         {
           "group": "Professional Certifications",
           "items": [
-            "FISAF — Certified Fitness Leader & Personal Trainer",
-            "PTA Global — Certified Personal Trainer"
+            "FISAF Certified Fitness Leader & Personal Trainer",
+            "PTA Global Certified Personal Trainer"
           ]
         },
         {
           "group": "Specialized Training",
           "items": [
-            "Functional Training Institute — Rehab Hero Certificate Course",
-            "Functional Training Institute — Dual Zone Myofascial Release",
-            "Fitness Innovation Singapore (FIT) — Training Pregnant & Post Natal Clients",
-            "Fitness Innovation Singapore (FIT) — Pre & Post Rehab Training Course",
-            "Fitness Innovation Singapore (FIT) — Sport Injuries Management",
-            "Fitness Innovation Singapore (FIT) — Training Clients with Lower Back Pain",
-            "Fitness Innovation Singapore (FIT) — Advanced Muscle & Strength Development",
-            "Fitness Innovation Singapore (FIT) — Weight Management through Nutrition & Exercise",
-            "Fitness Anywhere — TRX Suspension Training Course",
-            "Fitness Factory — Restorative Stretch Therapy (RST)"
+            "Rehab Hero Certificate Course (Functional Training Institute)",
+            "Dual Zone Myofascial Release (Functional Training Institute)",
+            "Training Pregnant & Post Natal Clients (FIT)",
+            "Pre & Post Rehab Training Course (FIT)",
+            "Sport Injuries Management (FIT)",
+            "Training Clients with Lower Back Pain (FIT)",
+            "Advanced Muscle & Strength Development (FIT)",
+            "Weight Management through Nutrition & Exercise (FIT)",
+            "TRX Suspension Training Course (Fitness Anywhere)",
+            "Restorative Stretch Therapy, RST (Fitness Factory)"
           ]
         }
       ],
@@ -772,11 +772,7 @@
       "location": "Platinum Fitness Robertson Quay, 22 Martin Road, #04-01, Singapore 239058",
       "pricing": [
         {
-          "label": "30-Minute Free Consultation",
-          "price": "Free"
-        },
-        {
-          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
+          "label": "1 Session",
           "price": "$130"
         },
         {
@@ -786,35 +782,45 @@
         },
         {
           "label": "12 Sessions",
-          "price": "$1320",
+          "price": "$1100",
           "note": "$110 per session"
-        },
-        {
-          "label": "Referral Program",
-          "price": ""
         }
       ],
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Jenson-3032698f422380449876c625a69afbaf",
       "order": 8,
-      "intro": "I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body.",
+      "intro": "I've helped people get stronger, healthier and live daily life better.",
       "focus": [
-        "Sport & exercise science",
-        "Rehab & recovery",
-        "Lower back pain",
-        "Pre/postnatal training",
-        "Weight management"
+        "Strength training",
+        "Mobility",
+        "Rehab"
       ],
-      "approach": "My coaching services aim to help you achieve your fitness goals and improve your quality of life.\n\nWith personalised coaching and support, I will help you develop healthy habits and reach your goals.",
-      "since": "",
-      "experience": [],
+      "approach": "With a background in Sport & Exercise Science and more than 15 years in fitness, I build training around recovery, strength and mobility, so you can handle daily life with less pain and more energy.\n\nFrom rehab after injury to lower back pain, pre- and post-natal training and weight management, every programme is tailored to where you are now.",
+      "since": "2010",
+      "experience": [
+        {
+          "role": "Freelance Personal Trainer",
+          "org": "Freeman Fitness",
+          "period": "Jan 2025 – Present"
+        },
+        {
+          "role": "Freelance Elite Personal Trainer",
+          "org": "Fitness First",
+          "period": "Jan 2021 – Dec 2024"
+        },
+        {
+          "role": "Fitness & Group Instructor",
+          "org": "Fitness First",
+          "period": "Dec 2010 – Dec 2020"
+        }
+      ],
       "highlights": [
-        "Edinburgh Napier University — Higher Diploma in Sport & Exercise Science",
-        "FISAF — Certified Fitness Leader & Personal Trainer",
-        "PTA Global — Certified Personal Trainer",
-        "Functional Training Institute — Rehab Hero Certificate Course",
-        "Fitness Innovation Singapore (FIT) — Training Clients with Lower Back Pain",
-        "Fitness Factory — Restorative Stretch Therapy (RST)"
+        "Higher Diploma in Sport & Exercise Science, Edinburgh Napier",
+        "Diploma in Sport & Exercise Science, PSB Academy",
+        "Rehab Hero Certificate Course (Functional Training Institute)",
+        "Pre & Post Rehab Training Course (FIT)",
+        "Sport Injuries Management (FIT)",
+        "Training Clients with Lower Back Pain (FIT)"
       ],
       "more": ""
     },
