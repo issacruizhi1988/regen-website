@@ -9,6 +9,11 @@
   status = 301
 
 [[redirects]]
+  from = "/coaches/jenson/*"
+  to = "/coaches/jensen/"
+  status = 301
+
+[[redirects]]
   from = "/method"
   to = "/philosophy.html"
   status = 301

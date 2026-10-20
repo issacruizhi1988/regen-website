@@ -179,7 +179,7 @@ collections:
                 multiple: true
                 required: false
                 hint: "Tag the coach(es) this review is about. It then appears on their profile."
-                options: [issac-tan, edmund-lee, tan-long, shaun-lim, eugene, kennard-chia, hans-ng, jenson, roxanne-zeng, qaila-warren]
+                options: [issac-tan, edmund-lee, tan-long, shaun-lim, eugene, kennard-chia, hans-ng, jensen, roxanne-zeng, qaila-warren]
               - {label: Featured, name: featured, widget: boolean, default: false, hint: "Featured reviews show first on the Results page and rotate on the Home page."}
 
   - name: resources
