@@ -613,3 +613,4 @@ body{font-weight:400;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;
 @media (max-width:480px){.coach-gallery{grid-template-columns:repeat(2,1fr);}}
 .coach-gallery{grid-template-columns:repeat(var(--gcols,3),1fr);}
 @media (max-width:480px){.coach-gallery{grid-template-columns:repeat(min(var(--gcols,3),2),1fr);}}
+.coach-gallery[style*="--gcols:1"]{max-width:520px;}

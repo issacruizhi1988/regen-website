@@ -524,30 +524,108 @@
     {
       "slug": "kennard-chia",
       "name": "Kennard Chia",
-      "specialty": "Transforming Busy Professionals from Sedentary to Strong",
-      "bio": "Evidence-based methods designed for your busy schedule — sustainable fat loss, beginner-friendly strength training, and personalized fitness coaching tailored specifically to your goals and lifestyle.",
-      "motto": "TRAIN SMART. LIVE STRONG. STAY CONSISTENT.",
-      "credentials": [],
+      "specialty": "Helping goal-driven individuals progress physically despite pain",
+      "bio": "Helping goal-driven individuals progress physically despite pain, with fat loss, functional strength and smart injury management.",
+      "motto": "Never stop believing that your body can do great things.",
+      "credentials": [
+        {
+          "group": "Personal Training & Nutrition",
+          "items": [
+            "ACE Certified Personal Trainer",
+            "Precision Nutrition Level 1 Certified",
+            "Behaviour Change in Exercise (PTA Global)",
+            "Exercise & Stress Management (PTA Global)"
+          ]
+        },
+        {
+          "group": "Rehab & Manual Therapy",
+          "items": [
+            "Proprioceptive Deep Tendon Reflex (PDTR) - Foundation / Intermediate / Advance",
+            "NKT Level 1",
+            "Dual Zone Myofascial Release",
+            "Rehab Express",
+            "Sports Massage Therapy (Edufit Asia)",
+            "Pre-Script Level 1"
+          ]
+        },
+        {
+          "group": "Biomechanics",
+          "items": [
+            "Gary Ward - Closed Chain Biomechanics of Lower Limb",
+            "Gary Ward - Closed Chain Biomechanics of Upper Limb"
+          ]
+        }
+      ],
       "photo": "/assets/img/coaches/kennard-chia-v2.jpg",
       "whatsapp": "6590078599",
       "instagram": "strengthwithken",
       "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
-      "pricing": [],
+      "pricing": [
+        {
+          "label": "1 Session",
+          "price": "$160"
+        },
+        {
+          "label": "5 Sessions",
+          "price": "$750",
+          "note": "$150 per session"
+        },
+        {
+          "label": "12 Sessions",
+          "price": "$1560",
+          "note": "$130 per session"
+        }
+      ],
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Kennard-Chia-2222698f42238084950bf3c47002a4bd",
       "order": 6,
-      "intro": "I help busy professionals go from sedentary to strong using evidence-based methods designed for a packed schedule.",
+      "intro": "Dealing with nagging issues that are stopping you from achieving your goals? I'll guide you back while improving your strength and managing your injuries.",
       "focus": [
-        "Sustainable fat loss",
-        "Beginner strength training",
-        "Personalized coaching",
-        "Busy professionals"
+        "Fat loss",
+        "Functional strength training",
+        "Pain affecting strength progress"
       ],
-      "approach": "**Sustainable Fat Loss** — no crash diets, just proven strategies.\n\n**Beginner-Friendly Strength Training** — learn proper form from day one.\n\n**Personalized Fitness Coaching** — tailored specifically to your goals and lifestyle.",
-      "since": "",
-      "experience": [],
-      "highlights": [],
-      "more": ""
+      "approach": "**Sustainable fat loss.** No crash diets, just proven strategies.\n\n**Functional strength training.** Learn proper form from day one and keep progressing.\n\n**Training through pain.** We manage nagging injuries while your strength keeps moving forward.",
+      "since": "2019",
+      "experience": [
+        {
+          "role": "Freelance Personal Trainer",
+          "org": "",
+          "period": "2024 – Present"
+        },
+        {
+          "role": "Movement Therapist",
+          "org": "RehabPro",
+          "period": "2022 – 2024"
+        },
+        {
+          "role": "Personal Trainer",
+          "org": "Functional Training Institute",
+          "period": "2020 – 2022"
+        },
+        {
+          "role": "Personal Trainer",
+          "org": "Virgin Active",
+          "period": "2019 – 2020"
+        }
+      ],
+      "highlights": [
+        "NKT Level 1",
+        "Proprioceptive Deep Tendon Reflex (PDTR) - Foundation / Intermediate / Advance",
+        "Gary Ward - Closed Chain Biomechanics of Lower Limb",
+        "Gary Ward - Closed Chain Biomechanics of Upper Limb",
+        "ACE Certified Personal Trainer",
+        "Precision Nutrition Level 1 Certified"
+      ],
+      "more": "",
+      "achievementsTitle": "My Own Transformation",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/kennard-chia-transformation.jpg",
+          "caption": "Kennard's own transformation"
+        }
+      ]
     },
     {
       "slug": "hans-ng",
