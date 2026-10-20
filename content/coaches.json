@@ -14,65 +14,25 @@
           ]
         },
         {
+          "group": "Integrated Kinetic Neurology (IKN)",
+          "items": [
+            "IKN Approach Level 1 & 2, and IKN Performance",
+            "A Neuroanatomical Approach to Manual Therapy: Lower Limb & Lower Midline, and Upper Limb & Upper Midline",
+            "IKN Mobility: Lower Body and Upper Body",
+            "IKN Low Back, Knee, and Foot & Ankle Programs",
+            "Bridging Rehab & Plyometrics: Lower Body"
+          ]
+        },
+        {
           "group": "Advanced Studies with David Miao",
           "items": [
-            "Precision Training & Breathing Control (精準訓練與呼吸控制)",
-            "Breathing in Motion: Gait Assessment & Breathing Training, Special Edition (移動的呼吸 特別版)",
-            "Equipment-Based Rehabilitation & Breathing (器械康復與呼吸應用)",
-            "Foot & Ankle Function Workshop (足踝功能工作坊)",
-            "Foot & Ankle Biomechanics II: The Logic of Strength Training (足踝力量訓練的底層邏輯)",
-            "Efficient Fat Loss & Precision Body Shaping (高效減脂與精準塑形)",
-            "Core & Waist Training Masterclass (完美腰腹訓練私教課)",
-            "Magic Muscle Chains (神奇的肌肉鏈)",
-            "Back to Basics: Functional Muscle Anatomy, 5-day hands-on course, Royalty Kinesiology Center, Shenzhen (返璞归真 不一样的肌肉功能解剖)"
-          ]
-        },
-        {
-          "group": "Breathing Education",
-          "items": [
-            "Breathing Retraining for Over-breathers & Snorers (LINK Breathing)"
-          ]
-        },
-        {
-          "group": "Coaching Certification",
-          "items": [
-            "Lab Profile Certification (Mind Transformation)",
-            "Facet5 Profile Certification (Facet5 Global)",
-            "Neuro-Linguistic Practitioner Certification (Mind Transformation)",
-            "Master Neuro-Linguistic Practitioner Certification (Mind Transformation)",
-            "International Association of Coaching Institutes Life Coach (ICI & Mind Transformation)",
-            "International Association of Coaching Institutes Executive Coach (ICI & Mind Transformation)",
-            "Elevate Leadership Program (Virgin Active)"
-          ]
-        },
-        {
-          "group": "Personal Trainer Certification",
-          "items": [
-            "America Council on Exercise Certified Personal Trainer (ACE)",
-            "Fitness First Asia Personal Trainer Foundation Program (Fitness First)",
-            "Fitness Innovation Certified Personal Trainer (FIT)",
-            "PTA Global Certified Personal Trainer (PTA Global)",
-            "PTA Global Leadership Mentorship program (PTA Global)"
-          ]
-        },
-        {
-          "group": "Group Training Certification",
-          "items": [
-            "Hard-core series (Fitness First)",
-            "Boom & Hook Program Head coach (Fitness First)",
-            "GRIT (Les Mills)",
-            "Body Balance (Les Mills)",
-            "Master GRID Trainer Program (Virgin Active)",
-            "Pivotal Group Coaching (Pivotal)",
-            "Powerful Presenting (PTA Global)"
-          ]
-        },
-        {
-          "group": "Practitioner Certification",
-          "items": [
-            "Pilates Mat work 130hrs (Body Tree Pilates)",
-            "Gymnastic Bodies Level 0.5 Coach 300hrs (Gymnastic Bodies)",
-            "R4 Coach Master Class"
+            "Functional Muscle Anatomy, 5-day in-person intensive, Royalty Kinesiology Center, Shenzhen (返璞归真 不一样的肌肉功能解剖)",
+            "Magic Muscle Chains, 5-day in-person intensive (神奇的肌肉鏈)",
+            "Breathing: The Breathing Masterclass, Breathing Application Workshop, Breathing in Motion (incl. Special Edition), Precision Training & Breathing Control (呼吸盛典, 呼吸應用工作坊, 移動的呼吸, 精準訓練與呼吸控制)",
+            "Foot & Ankle: Biomechanics I, II & III and Function Workshop (足踝生物力學 I–III, 足踝功能工作坊)",
+            "Rehab & Pain: Pain Management in Practice, Equipment-Based Rehab & Breathing, Foundations of Training & Functional Rehab (疼痛管理與實踐, 器械康復與呼吸應用, 運動訓練與功能康復的底層邏輯)",
+            "Women's Health & Aesthetics: Pelvic Floor Masterclass, Facial Restructuring Assessment & Adjustment (盆底肌寶典, 面部重塑的評估與調整)",
+            "Body Composition: Efficient Fat Loss & Precision Body Shaping, Core & Waist Training Masterclass (高效減脂與精準塑形, 完美腰腹訓練私教課)"
           ]
         },
         {
@@ -88,6 +48,28 @@
             "School of Bone Setting for Neck & Upper Back (Osteocare)",
             "Certified Neuro-Musculoskeletal Cupping Therapist (Integrated Training Institute)",
             "iThrust Masterclass (HVLA Manual Therapy)"
+          ]
+        },
+        {
+          "group": "Movement Screening / Anatomy",
+          "items": [
+            "Functional Movement Screening Level 1&2 (GrayCook)",
+            "Movement Anatomy – Basic (Body Tree Pilates)",
+            "Movement Anatomy – Biomechanics (Body Tree Pilates)",
+            "Movement Anatomy – Pathologies (Body Tree Pilates)",
+            "Strength and Mobility (Body Tree Pilates)",
+            "Thomas Myers Body Reading and Resilience workshop (Anatomy Trains)",
+            "Neurokinetic Therapy (NKT Level 1 & 2)"
+          ]
+        },
+        {
+          "group": "Personal Trainer Certification",
+          "items": [
+            "America Council on Exercise Certified Personal Trainer (ACE)",
+            "Fitness First Asia Personal Trainer Foundation Program (Fitness First)",
+            "Fitness Innovation Certified Personal Trainer (FIT)",
+            "PTA Global Certified Personal Trainer (PTA Global)",
+            "PTA Global Leadership Mentorship program (PTA Global)"
           ]
         },
         {
@@ -108,25 +90,13 @@
           ]
         },
         {
-          "group": "Movement Screening / Anatomy",
-          "items": [
-            "Functional Movement Screening Level 1&2 (GrayCook)",
-            "Movement Anatomy – Basic (Body Tree Pilates)",
-            "Movement Anatomy – Biomechanics (Body Tree Pilates)",
-            "Movement Anatomy – Pathologies (Body Tree Pilates)",
-            "Strength and Mobility (Body Tree Pilates)",
-            "Thomas Myers Body Reading and Resilience workshop (Anatomy Trains)",
-            "Neurokinetic Therapy (NKT Level 1 & 2)",
-            "Integrated Kinetic Neurology (IKN level 1, 2 & Performance)"
-          ]
-        },
-        {
           "group": "Specialist Coaching Certification",
           "items": [
             "Parkour Adapt Fitness Specialist (Adapt)",
             "IKSFA Kettlebell Sport Coach Level 1 (IKSFA)",
             "Train the Trainer Freestyle Specialist Coach (Fitness First)",
-            "Pelvic Balance (EBFA Global)"
+            "Pelvic Balance (EBFA Global)",
+            "Breathing Retraining for Over-breathers & Snorers (LINK Breathing)"
           ]
         },
         {
@@ -134,6 +104,38 @@
           "items": [
             "Certified in Sports nutrition (ACE)",
             "Precision Nutrition Level 1 (PN)"
+          ]
+        },
+        {
+          "group": "Practitioner Certification",
+          "items": [
+            "Pilates Mat work 130hrs (Body Tree Pilates)",
+            "Gymnastic Bodies Level 0.5 Coach 300hrs (Gymnastic Bodies)",
+            "R4 Coach Master Class"
+          ]
+        },
+        {
+          "group": "Group Training Certification",
+          "items": [
+            "Hard-core series (Fitness First)",
+            "Boom & Hook Program Head coach (Fitness First)",
+            "GRIT (Les Mills)",
+            "Body Balance (Les Mills)",
+            "Master GRID Trainer Program (Virgin Active)",
+            "Pivotal Group Coaching (Pivotal)",
+            "Powerful Presenting (PTA Global)"
+          ]
+        },
+        {
+          "group": "Coaching Certification",
+          "items": [
+            "Lab Profile Certification (Mind Transformation)",
+            "Facet5 Profile Certification (Facet5 Global)",
+            "Neuro-Linguistic Practitioner Certification (Mind Transformation)",
+            "Master Neuro-Linguistic Practitioner Certification (Mind Transformation)",
+            "International Association of Coaching Institutes Life Coach (ICI & Mind Transformation)",
+            "International Association of Coaching Institutes Executive Coach (ICI & Mind Transformation)",
+            "Elevate Leadership Program (Virgin Active)"
           ]
         }
       ],
@@ -207,21 +209,21 @@
       ],
       "highlights": [
         "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)",
-        "Integrated Kinetic Neurology (IKN level 1, 2 & Performance)",
+        "Integrated Kinetic Neurology (IKN Approach Level 1 & 2, and Performance)",
         "Neurokinetic Therapy (NKT Level 1 & 2)",
-        "Functional Movement Screening Level 1&2 (GrayCook)",
+        "Functional Muscle Anatomy and Magic Muscle Chains, 5-day intensives with David Miao",
         "Clinical Orthopedic Manual Therapy – lower back and pelvis (COMT)",
         "America Council on Exercise Certified Personal Trainer (ACE)"
       ],
       "more": "",
       "achievementsTitle": "Adventures",
       "achievements": [
+        "National team, Sanda (Chinese kickboxing), 1 year",
         "Petra Desert Marathon, Jordan (finisher)",
         "Annapurna Base Camp trek, Nepal",
         "Milford Track hike and Franz Josef Glacier, New Zealand",
         "Bike Hash, Bangkok",
-        "Three years of Sanda (Chinese kickboxing) training",
-        "Parkour and gymnastics, started at 25 and still training"
+        "Coached and explored kickboxing, parkour and gymnastics for several years"
       ],
       "gallery": [
         {
@@ -246,15 +248,15 @@
         },
         {
           "src": "/assets/img/coaches/gallery/issac-tan-sanda.jpg",
-          "caption": "Sanda (Chinese kickboxing)"
+          "caption": "National team, Sanda (Chinese kickboxing)"
         },
         {
           "src": "/assets/img/coaches/gallery/issac-tan-parkour.jpg",
-          "caption": "Parkour"
+          "caption": "Parkour, coached and explored for several years"
         },
         {
           "src": "/assets/img/coaches/gallery/issac-tan-gymnastics.jpg",
-          "caption": "Gymnastics"
+          "caption": "Gymnastics, coached and explored for several years"
         }
       ]
     },
