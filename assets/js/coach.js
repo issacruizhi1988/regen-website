@@ -51,7 +51,7 @@ RG.ready(async function (site) {
   // Achievements: competition results and wins, plus photos (tap to enlarge).
   var gallery = list(coach.gallery).filter(function (g) { return g.src; });
   var achHtml = (list(coach.achievements).length ? '<ul class="ach-list">' + list(coach.achievements).map(function (a) { return '<li>' + E(a) + '</li>'; }).join("") + '</ul>' : '') +
-    (gallery.length ? '<div class="photo-wall coach-gallery" style="--gcols:' + Math.min(gallery.length, 3) + '">' + gallery.map(function (g) {
+    (gallery.length ? '<div class="photo-wall coach-gallery" style="--gcols:' + (gallery.length === 4 ? 2 : Math.min(gallery.length, 3)) + '">' + gallery.map(function (g) {
       return '<button class="gallery-item wall-item" type="button" data-full="' + E(g.src) + '" data-caption="' + E(g.caption) + '" data-group="coach-gallery">' +
         '<img src="' + E(g.src.indexOf("/coaches/gallery/") >= 0 ? g.src.replace("/gallery/", "/gallery/thumbs/") : g.src) + '" alt="' + E(g.caption || coach.name) + '" decoding="async"></button>';
     }).join("") + '</div>' : '');

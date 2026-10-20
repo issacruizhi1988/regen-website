@@ -412,40 +412,38 @@
     {
       "slug": "shaun-lim",
       "name": "Shaun Lim",
-      "specialty": "Empowering people to move without pain",
-      "bio": "I coach individuals to achieve peak performance and holistic health. With personalized coaching and support, I will help you develop healthy habits and reach your goals.",
-      "motto": "",
+      "specialty": "Rehabilitation to peak performance for dancers",
+      "bio": "Rehabilitation to peak performance for dancers. I combine manual therapy, active mobility, and strength & conditioning to help clients overcome chronic pain.",
+      "motto": "Progress isn't just about pushing harder; it's about learning to work smarter with your body every single day.",
       "credentials": [
         {
-          "group": "Certifications",
+          "group": "Qualifications & Certifications",
           "items": [
-            "National Council of Strength & Fitness (NCSF) Certified Personal Trainer",
-            "Integrated Kinetic Neurology Rehabilitation Level 1 & 2",
-            "Postural Restoration Institute (Myokinematic Restoration)",
-            "Anatomy in Motion (Gary Ward AiM)"
+            "Bachelor of Fine Arts (Dance)",
+            "Integrated Kinetic Neurology Level 1 & 2",
+            "Anatomy In Motion",
+            "NCSF Personal Training Certification",
+            "ISA Basic Sports Massage",
+            "SwimtoFly Level 3"
           ]
         }
       ],
       "photo": "/assets/img/coaches/shaun-lim-v2.jpg",
       "whatsapp": "6592371442",
-      "instagram": "shaun_slzh",
+      "instagram": "shaun.rehab",
       "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
       "pricing": [
         {
-          "label": "30-Minute Discovery Call",
-          "price": "Free"
+          "label": "1 Session",
+          "price": "$120"
         },
         {
-          "label": "1 hour of Sports Rehab Therapy/Functional Personal Training",
-          "price": "$140"
-        },
-        {
-          "label": "5 sessions",
+          "label": "5 Sessions",
           "price": "$550",
-          "note": "$120 per session"
+          "note": "$110 per session"
         },
         {
-          "label": "12 sessions",
+          "label": "12 Sessions",
           "price": "$1200",
           "note": "$100 per session"
         }
@@ -453,44 +451,68 @@
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Shaun-Lim-1a42698f422380aa942bf90e5af1e34c",
       "order": 4,
-      "intro": "I coach individuals to achieve peak performance and holistic health.",
+      "intro": "I combine manual therapy, active mobility, and strength & conditioning to help my clients overcome chronic pain and perform at their highest level.",
       "focus": [
-        "Dance & movement",
-        "Postural restoration",
-        "Neurokinetic rehab",
-        "Peak performance"
+        "Lower limb injuries",
+        "Lower back pain",
+        "Shoulder pain"
       ],
-      "approach": "My coaching services aim to help you achieve your fitness goals and improve your quality of life.\n\nWith personalized coaching and support, I will help you develop healthy habits and reach your goals.",
-      "since": "2018",
+      "approach": "As a professionally trained dancer and dance lecturer, I know what the body needs to perform at its highest level, and what it takes to come back from pain and injury.\n\nWith personalised coaching and support, I help you build healthy habits, move without pain and reach your goals.",
+      "since": "2020",
       "experience": [
         {
-          "role": "Dance Faculty Personal Trainer",
+          "role": "Adjunct Lecturer (Dance & Body Conditioning)",
           "org": "LASALLE College of the Arts",
-          "period": "Jan 2025 – Present"
+          "period": "2024 – Present"
         },
         {
-          "role": "Rehab and Peak Performance Trainer",
+          "role": "Rehab Trainer",
           "org": "Functional Training Institute",
-          "period": "Mar 2023 – Dec 2024"
+          "period": "2023 – 2024"
         },
         {
-          "role": "Head Swim Coach and Personal Trainer",
+          "role": "Head Coach (Swimming & Personal Training)",
           "org": "Elite Coach",
-          "period": "Oct 2019 – Feb 2023"
+          "period": "2019 – 2022"
         },
         {
-          "role": "Professional Dancer",
+          "role": "Project Company Dancer",
           "org": "Richard Chappell Dance (UK)",
-          "period": "Feb 2019 – Aug 2019"
+          "period": "2019"
         },
         {
           "role": "Project Dancer",
-          "org": "The Human Expression 2nd Company",
-          "period": "Jun 2018 – Present"
+          "org": "T.H.E 2nd Company",
+          "period": "2018 – Present"
         }
       ],
       "highlights": [],
-      "more": ""
+      "more": "",
+      "achievementsTitle": "Performances",
+      "achievements": [
+        "Silence Between Waves, Richard Chappell Dance (UK)",
+        "Bodily Meander",
+        "Dance at Dusk 2025: As It Fades, T.H.E 2nd Company",
+        "Dance at Dusk 2019: Silences, T.H.E 2nd Company"
+      ],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/shaun-lim-silence-between-waves.jpg",
+          "caption": "Silence Between Waves, Richard Chappell Dance (UK)"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/shaun-lim-bodily-meander-1.jpg",
+          "caption": "Bodily Meander"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/shaun-lim-bodily-meander-2.jpg",
+          "caption": "Bodily Meander"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/shaun-lim-dance-at-dusk.jpg",
+          "caption": "Dance at Dusk, Esplanade Outdoor Theatre"
+        }
+      ]
     },
     {
       "slug": "eugene",
