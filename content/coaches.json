@@ -8,6 +8,32 @@
       "motto": "Move better. Get stronger. Hurt less. Live more.",
       "credentials": [
         {
+          "group": "Postgraduate Study",
+          "items": [
+            "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)"
+          ]
+        },
+        {
+          "group": "Advanced Studies with David Miao",
+          "items": [
+            "Precision Training & Breathing Control (精準訓練與呼吸控制)",
+            "Breathing in Motion: Gait Assessment & Breathing Training, Special Edition (移動的呼吸 特別版)",
+            "Equipment-Based Rehabilitation & Breathing (器械康復與呼吸應用)",
+            "Foot & Ankle Function Workshop (足踝功能工作坊)",
+            "Foot & Ankle Biomechanics II: The Logic of Strength Training (足踝力量訓練的底層邏輯)",
+            "Efficient Fat Loss & Precision Body Shaping (高效減脂與精準塑形)",
+            "Core & Waist Training Masterclass (完美腰腹訓練私教課)",
+            "Magic Muscle Chains (神奇的肌肉鏈)",
+            "Back to Basics: Functional Muscle Anatomy, 5-day hands-on course, Royalty Kinesiology Center, Shenzhen (返璞归真 不一样的肌肉功能解剖)"
+          ]
+        },
+        {
+          "group": "Breathing Education",
+          "items": [
+            "Breathing Retraining for Over-breathers & Snorers (LINK Breathing)"
+          ]
+        },
+        {
           "group": "Coaching Certification",
           "items": [
             "Lab Profile Certification (Mind Transformation)",
@@ -52,6 +78,7 @@
         {
           "group": "Rehab / Massage Certification",
           "items": [
+            "Sports Massage Therapy (Edufit Asia)",
             "Pre-and Post-Partum Exercise Certified (FIT)",
             "Certified in backache problem (FIT)",
             "Accredited Rehab Trainer (Rehab Trainer)",
@@ -142,14 +169,14 @@
       ],
       "notionUrl": "https://regenperformance.notion.site/Issac-Tan-11f2698f422380dabce0eff261339838",
       "order": 1,
-      "intro": "I help people unlock their peak performance and build a body that feels as good as it looks.",
+      "intro": "I help people move without pain and build a body that feels as good as it looks.",
       "focus": [
         "Moving without pain",
         "Sports rehab therapy",
         "Functional personal training",
         "Strength & recovery"
       ],
-      "approach": "**Your goals matter.** Whether it's strength, recovery, or living pain-free, I'll guide you with evidence-based methods that deliver results.\n\nThrough a perfect blend of **science**, **personalized training**, and supportive coaching, I'll help you build sustainable habits and create a lifestyle you'll genuinely enjoy.",
+      "approach": "I've coached since 2011, rising from Master Trainer at Fitness First to Head Coach at Virgin Active and Training & Development Manager at the Functional Training Institute, where I trained and mentored other coaches.\n\nToday I'm completing my **MSc in Osteopathy at the European School of Osteopathy**, and I bring that clinical lens to every session. We find out why it hurts, not just where, then train your body out of pain with evidence-based methods, because \"just push through it\" isn't a strategy.\n\nWhether your goal is strength, recovery or simply living pain-free, you'll get a plan built around you, and the habits to make it last. I live what I teach, from Annapurna Base Camp to a desert marathon in Petra.",
       "since": "2011",
       "experience": [
         {
@@ -179,14 +206,57 @@
         }
       ],
       "highlights": [
+        "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)",
         "Integrated Kinetic Neurology (IKN level 1, 2 & Performance)",
         "Neurokinetic Therapy (NKT Level 1 & 2)",
         "Functional Movement Screening Level 1&2 (GrayCook)",
         "Clinical Orthopedic Manual Therapy – lower back and pelvis (COMT)",
-        "America Council on Exercise Certified Personal Trainer (ACE)",
-        "Precision Nutrition Level 1 (PN)"
+        "America Council on Exercise Certified Personal Trainer (ACE)"
       ],
-      "more": ""
+      "more": "",
+      "achievementsTitle": "Adventures",
+      "achievements": [
+        "Petra Desert Marathon, Jordan (finisher)",
+        "Annapurna Base Camp trek, Nepal",
+        "Milford Track hike and Franz Josef Glacier, New Zealand",
+        "Bike Hash, Bangkok",
+        "Three years of Sanda (Chinese kickboxing) training",
+        "Parkour and gymnastics, started at 25 and still training"
+      ],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-petra-marathon.jpg",
+          "caption": "Petra Desert Marathon, Jordan"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-annapurna.jpg",
+          "caption": "Annapurna Base Camp, Nepal"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-milford-sound.jpg",
+          "caption": "Milford Track, New Zealand"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-franz-josef-glacier.jpg",
+          "caption": "Franz Josef Glacier, New Zealand"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-bike-hash-bangkok.jpg",
+          "caption": "Bike Hash, Bangkok"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-sanda.jpg",
+          "caption": "Sanda (Chinese kickboxing)"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-parkour.jpg",
+          "caption": "Parkour"
+        },
+        {
+          "src": "/assets/img/coaches/gallery/issac-tan-gymnastics.jpg",
+          "caption": "Gymnastics"
+        }
+      ]
     },
     {
       "slug": "edmund-lee",
@@ -198,7 +268,7 @@
         {
           "group": "Postgraduate Study",
           "items": [
-            "MSc in Osteopathy, European School of Osteopathy (ESO), in progress"
+            "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)"
           ]
         },
         {
@@ -293,7 +363,7 @@
         }
       ],
       "highlights": [
-        "MSc in Osteopathy, European School of Osteopathy (ESO), in progress",
+        "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)",
         "Integrated Kinetic Neurology (IKN Level 1, 2 & Performance)",
         "Certified Sports Medicine Trainer (Integrated Training Institute)",
         "Certified Sports Massage Therapist (International Sports Academy)",
@@ -416,6 +486,12 @@
       "bio": "Rehabilitation to peak performance for dancers. I combine manual therapy, active mobility, and strength & conditioning to help clients overcome chronic pain.",
       "motto": "Progress isn't just about pushing harder; it's about learning to work smarter with your body every single day.",
       "credentials": [
+        {
+          "group": "Postgraduate Study",
+          "items": [
+            "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)"
+          ]
+        },
         {
           "group": "Qualifications & Certifications",
           "items": [
@@ -657,6 +733,12 @@
       "motto": "Nothing will work, unless you do.",
       "credentials": [
         {
+          "group": "Postgraduate Study",
+          "items": [
+            "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)"
+          ]
+        },
+        {
           "group": "Personal Trainer Certification",
           "items": [
             "American Council on Exercise Certified Personal Trainer (ACE)",
@@ -721,6 +803,7 @@
         }
       ],
       "highlights": [
+        "MSc in Osteopathy, European School of Osteopathy (ESO), UK (in progress)",
         "American Council on Exercise Certified Personal Trainer (ACE)",
         "EXOS Performance Specialist Certification (Phase 1)",
         "Precision Nutrition Level 1",

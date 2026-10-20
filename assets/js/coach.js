@@ -33,6 +33,9 @@ RG.ready(async function (site) {
   var years = /^\d{4}$/.test(coach.since || "") ? new Date().getFullYear() - Number(coach.since) : 0;
   if (years >= 2) facts.push(["Experience", years + "+ years · since " + coach.since]);
   else if (coach.since) facts.push(["Coaching since", coach.since]);
+  // A qualification marked "(in progress)" is shown up front, e.g. Currently studying: MSc in Osteopathy.
+  var studying = groups.reduce(function (a, g) { return a.concat(list(g.items)); }, []).filter(function (i) { return /in progress/i.test(i); })[0];
+  if (studying) facts.push(["Currently studying", studying.split(",")[0]]);
   if (coach.location) facts.push(["Trains at", coach.location.split(",")[0]]);
 
   var sections = [];
@@ -51,7 +54,7 @@ RG.ready(async function (site) {
   // Achievements: competition results and wins, plus photos (tap to enlarge).
   var gallery = list(coach.gallery).filter(function (g) { return g.src; });
   var achHtml = (list(coach.achievements).length ? '<ul class="ach-list">' + list(coach.achievements).map(function (a) { return '<li>' + E(a) + '</li>'; }).join("") + '</ul>' : '') +
-    (gallery.length ? '<div class="photo-wall coach-gallery" style="--gcols:' + (gallery.length === 4 ? 2 : Math.min(gallery.length, 3)) + '">' + gallery.map(function (g) {
+    (gallery.length ? '<div class="photo-wall coach-gallery" style="--gcols:' + (gallery.length === 4 ? 2 : gallery.length >= 8 && gallery.length % 4 === 0 ? 4 : Math.min(gallery.length, 3)) + '">' + gallery.map(function (g) {
       return '<button class="gallery-item wall-item" type="button" data-full="' + E(g.src) + '" data-caption="' + E(g.caption) + '" data-group="coach-gallery">' +
         '<img src="' + E(g.src.indexOf("/coaches/gallery/") >= 0 ? g.src.replace("/gallery/", "/gallery/thumbs/") : g.src) + '" alt="' + E(g.caption || coach.name) + '" decoding="async"></button>';
     }).join("") + '</div>' : '');
