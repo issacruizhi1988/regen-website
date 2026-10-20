@@ -630,9 +630,9 @@
     {
       "slug": "hans-ng",
       "name": "Hans Ng",
-      "specialty": "Rehab & pre/postnatal training to move without pain",
-      "bio": "I coach individuals to achieve peak performance and holistic health. With personalised coaching and support, I will help you develop healthy habits and reach your goals.",
-      "motto": "",
+      "specialty": "Rehabilitation and functional strength to overcome pain",
+      "bio": "Empowering you through rehabilitation and functional strength training to overcome pain, build a stronger, healthier body and regain the confidence to move freely again.",
+      "motto": "Nothing will work, unless you do.",
       "credentials": [
         {
           "group": "Personal Trainer Certification",
@@ -651,9 +651,9 @@
             "iTHRUST Masterclass",
             "Integrated Kinetic Neurology Level 1",
             "Integrated Kinetic Neurology Level 2",
-            "Rehab Trainer – Rehab Essentials",
+            "Rehab Trainer - Rehab Essentials",
             "Fix Scoliosis",
-            "EBFA Global – Pelvic Balance",
+            "EBFA Global - Pelvic Balance",
             "Barefoot Training Specialist Level 1",
             "Certified Neuro-Musculoskeletal Cupping Therapist",
             "Dual Zone Myofascial Release"
@@ -666,12 +666,8 @@
       "location": "Platinum Fitness Robertson Quay, 22 Martin Road, #04-01, Singapore 239058",
       "pricing": [
         {
-          "label": "30-Minute Free Consultation",
-          "price": "Free"
-        },
-        {
-          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training",
-          "price": "$155"
+          "label": "1 Session",
+          "price": "$150"
         },
         {
           "label": "5 Sessions",
@@ -682,39 +678,32 @@
           "label": "12 Sessions",
           "price": "$1620",
           "note": "$135 per session"
-        },
-        {
-          "label": "Referral Program",
-          "price": ""
         }
       ],
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Hans-Ng-2232698f422380afb69adfd625e0792a",
       "order": 7,
-      "intro": "I specialize in helping you regain confidence, improve mobility, and build a stronger, healthier body.",
+      "intro": "I aspire to empower people to move without pain, achieve peak performance and build functional strength and holistic health.",
       "focus": [
-        "Neurokinetic rehab",
-        "Scoliosis correction",
-        "Pre & postnatal training",
-        "Pelvic balance",
-        "Pain-free movement"
+        "Musculoskeletal pain",
+        "Functional strength & performance",
+        "Healthy habits for longevity"
       ],
-      "approach": "My coaching services aim to help you achieve your fitness goals and improve your quality of life.\n\nWith personalised coaching and support, I will help you develop healthy habits and reach your goals.",
+      "approach": "Through osteopathic manual treatment, personalised rehabilitation and functional strength training, my goal is to help you achieve your fitness goals, regain confidence in movement and improve your overall quality of life.\n\nTogether we overcome pain, build a stronger, healthier body and get you moving freely again.",
       "since": "2020",
       "experience": [
         {
-          "role": "Rehab & Functional Training Coach",
+          "role": "Senior Rehab Trainer",
           "org": "Functional Training Institute",
-          "period": "Oct 2020 – Jul 2025"
+          "period": "2020 – 2025"
         }
       ],
       "highlights": [
         "American Council on Exercise Certified Personal Trainer (ACE)",
         "EXOS Performance Specialist Certification (Phase 1)",
-        "Integrated Kinetic Neurology Level 1",
+        "Precision Nutrition Level 1",
         "Integrated Kinetic Neurology Level 2",
-        "Fix Scoliosis",
-        "Certified Neuro-Musculoskeletal Cupping Therapist"
+        "Rehab Trainer - Rehab Essentials"
       ],
       "more": ""
     },
@@ -881,15 +870,19 @@
     {
       "slug": "qaila-warren",
       "name": "Qaila Warren",
-      "specialty": "ACE Certified Personal Trainer with a Social Work background",
-      "bio": "I am an ACE Certified Personal Trainer with a background in Social Work. I help individuals train safely, build confidence in the gym, and navigate challenges in their fitness journey with compassion and grit.",
-      "motto": "",
+      "specialty": "Helping beginners train safely, build strength confidently and overcome adversity",
+      "bio": "I help beginners train safely, build strength confidently, and overcome adversity.",
+      "motto": "Embrace the past, nurture the present, create the future.",
       "credentials": [
         {
           "group": "Qualifications",
           "items": [
-            "ACE Certified Personal Trainer",
-            "Diploma in Social Work"
+            "ACE Personal Trainer Certification (2025)",
+            "FitAsia ACE Personal Trainer Development Program, Singapore (2025)",
+            "Diploma in Social Work (2024)",
+            "Sports Massage, FitAsia (2026)",
+            "First Aid Skills Certification, Expert Level (2025)",
+            "Child Protection Training for Sports Coaches (2026)"
           ]
         }
       ],
@@ -918,16 +911,39 @@
       "order": 10,
       "intro": "I help individuals train safely, build confidence in the gym, and navigate challenges in their fitness journey with compassion and grit.",
       "focus": [
-        "Beginner-friendly training",
-        "Training with injuries",
-        "Accountability & structure",
-        "Habit & lifestyle support"
+        "Beginners",
+        "Women",
+        "Training around pain & injuries"
       ],
-      "approach": "My coaching combines structured strength training with a collaborative, process-oriented and values-based approach.\n\nI support people who are new to the gym and don't know where to start, who've struggled to stay consistent, who want to train safely despite pain, injuries, or setbacks, or who are looking for guidance, accountability, and structure — without extreme diets or burnout.\n\nThrough personalised training, habit and lifestyle support, safe and confident training, accountability and guidance, and practical tools for real life, I help you navigate setbacks and keep moving forward with confidence.",
-      "since": "",
-      "experience": [],
+      "approach": "My sessions combine full-body strength, mobility and athleticism, while thoughtfully adapting to individual needs, including chronic pain and injuries.\n\nI support people who are new to the gym and don't know where to start, who've struggled to stay consistent, who want to train safely despite pain, injuries, or setbacks, or who are looking for guidance, accountability, and structure — without extreme diets or burnout.",
+      "since": "2025",
+      "experience": [
+        {
+          "role": "Freelance Personal Trainer",
+          "org": "Project Future Self",
+          "period": "2025 – Present"
+        },
+        {
+          "role": "Youth Coach",
+          "org": "Tyger Trybe",
+          "period": "2024 – 2026"
+        },
+        {
+          "role": "Platinum Fitness",
+          "org": "",
+          "period": "2022 – 2026"
+        }
+      ],
       "highlights": [],
-      "more": "### FAQs\n\n**I'm a beginner, can I still join?**\nOf course! Many of my clients start with little to no gym experience. Sessions are tailored to your current level, and the goal is to help you build confidence, understanding, and a strong foundation at your own pace.\n\n**What if I have pain/injuries?**\nThat's completely okay! I take an individualised approach and adjust training based on your history, symptoms, and comfort levels. The aim is to help you move and train with more confidence, not push through pain unnecessarily.\n\n**What should I expect in the first session?**\nThe first session is focused on understanding you. We will go through your goals, training history, lifestyle, movement assessments, and any limitations or concerns you may have. From there, we will start building a plan that works for you.\n\n**Do you provide programming?**\nYes! All clients receive personalised programming through my coaching app, where workouts, progress tracking, and training guidance are organised in one place. Programs are adjusted based on your goals, schedule, and progress.\n\n**How am I supported outside our sessions?**\nSupport goes beyond our in-person sessions! Clients receive guidance through check-ins, habit support, food journaling feedback, exercise form reviews, and additional resources to help them stay consistent and confident independently.\n\n### Why My Background Matters\n\nBefore becoming a Personal Trainer, I studied and worked in Social Work.\n\nSupporting individuals from diverse backgrounds taught me the importance of empathy, behaviour change, and meeting people where they are. These experiences continue to shape how I coach today.\n\nI believe meaningful progress happens when people feel understood, supported, and empowered to take ownership of their journey.\n\n### Sport Has Always Been Part of My Life\n\nGrowing up, sport played a significant role in shaping who I am. I was the only girl on my primary school's basketball team before later founding the school's first official girls' basketball team.\n\nSince then, I've explored various interests including strength training, bouldering, dancing, and drumming. Each experience has taught me valuable lessons about resilience, growth, and embracing the learning process.\n\n### My Coaching Philosophy\n\nFitness is rarely just about workouts. Many people are balancing work, family responsibilities, stress, injuries, self-doubt, or previous experiences that shape how they approach exercise.\n\nMy role isn't simply to prescribe exercises. It's to help you develop the skills, confidence, and understanding needed to navigate challenges while continuing to move towards your goals.\n\nI believe progress comes from consistency, self-awareness, and learning how to work with life's challenges rather than waiting for perfect conditions.\n\n### My Coaching Journey\n\nMy coaching approach has been shaped by mentors from different areas of the industry, including strength training, rehabilitation, sports performance, and lifestyle coaching.\n\nWorking with clients from various backgrounds has helped me develop a coaching philosophy centred around collaboration, curiosity, and sustainable progress rather than perfection.\n\n### Beyond The Gym\n\nOutside of coaching, you'll probably find me training, exploring new hobbies, spending time with people I care about, or working on community initiatives.\n\nI believe growth extends beyond fitness, and some of life's most meaningful lessons happen outside the gym."
+      "more": "### FAQs\n\n**I'm a beginner, can I still join?**\nOf course! Many of my clients start with little to no gym experience. Sessions are tailored to your current level, and the goal is to help you build confidence, understanding, and a strong foundation at your own pace.\n\n**What if I have pain/injuries?**\nThat's completely okay! I take an individualised approach and adjust training based on your history, symptoms, and comfort levels. The aim is to help you move and train with more confidence, not push through pain unnecessarily.\n\n**What should I expect in the first session?**\nThe first session is focused on understanding you. We will go through your goals, training history, lifestyle, movement assessments, and any limitations or concerns you may have. From there, we will start building a plan that works for you.\n\n**Do you provide programming?**\nYes! All clients receive personalised programming through my coaching app, where workouts, progress tracking, and training guidance are organised in one place. Programs are adjusted based on your goals, schedule, and progress.\n\n**How am I supported outside our sessions?**\nSupport goes beyond our in-person sessions! Clients receive guidance through check-ins, habit support, food journaling feedback, exercise form reviews, and additional resources to help them stay consistent and confident independently.\n\n### Why My Background Matters\n\nBefore becoming a Personal Trainer, I studied and worked in Social Work.\n\nSupporting individuals from diverse backgrounds taught me the importance of empathy, behaviour change, and meeting people where they are. These experiences continue to shape how I coach today.\n\nI believe meaningful progress happens when people feel understood, supported, and empowered to take ownership of their journey.\n\n### Sport Has Always Been Part of My Life\n\nGrowing up, sport played a significant role in shaping who I am. I was the only girl on my primary school's basketball team before later founding the school's first official girls' basketball team.\n\nSince then, I've explored various interests including strength training, bouldering, dancing, and drumming. Each experience has taught me valuable lessons about resilience, growth, and embracing the learning process.\n\n### My Coaching Philosophy\n\nFitness is rarely just about workouts. Many people are balancing work, family responsibilities, stress, injuries, self-doubt, or previous experiences that shape how they approach exercise.\n\nMy role isn't simply to prescribe exercises. It's to help you develop the skills, confidence, and understanding needed to navigate challenges while continuing to move towards your goals.\n\nI believe progress comes from consistency, self-awareness, and learning how to work with life's challenges rather than waiting for perfect conditions.\n\n### My Coaching Journey\n\nMy coaching approach has been shaped by mentors from different areas of the industry, including strength training, rehabilitation, sports performance, and lifestyle coaching.\n\nWorking with clients from various backgrounds has helped me develop a coaching philosophy centred around collaboration, curiosity, and sustainable progress rather than perfection.\n\n### Beyond The Gym\n\nOutside of coaching, you'll probably find me training, exploring new hobbies, spending time with people I care about, or working on community initiatives.\n\nI believe growth extends beyond fitness, and some of life's most meaningful lessons happen outside the gym.",
+      "achievementsTitle": "My Own Transformation",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/qaila-warren-transformation.jpg",
+          "caption": "Qaila's own transformation"
+        }
+      ]
     }
   ]
 }

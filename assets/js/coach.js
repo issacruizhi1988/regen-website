@@ -31,7 +31,8 @@ RG.ready(async function (site) {
 
   var facts = [];
   var years = /^\d{4}$/.test(coach.since || "") ? new Date().getFullYear() - Number(coach.since) : 0;
-  if (years > 0) facts.push(["Experience", years + "+ years · since " + coach.since]);
+  if (years >= 2) facts.push(["Experience", years + "+ years · since " + coach.since]);
+  else if (coach.since) facts.push(["Coaching since", coach.since]);
   if (coach.location) facts.push(["Trains at", coach.location.split(",")[0]]);
 
   var sections = [];
