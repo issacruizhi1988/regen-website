@@ -233,7 +233,7 @@
   // One card design for every coach, used on Home, Coaches and profile pages.
   function coachCard(k) {
     var href = "/coaches/" + encodeURIComponent(k.slug) + "/";
-    var first = (k.name || "").split(/\s+/)[0];
+    var first = k.firstName || (k.name || "").split(/\s+/)[0];
     var site = window.RG.site || {};
     var waHref = wa(k.whatsapp || site.whatsapp, "Hi " + first + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.");
     var focus = (k.focus || []).filter(Boolean).slice(0, 3);
@@ -248,11 +248,20 @@
       '</div></article>';
   }
 
+  // Compact card for the Home page: photo, name, specialty. Tapping opens the profile.
+  function teamCard(k) {
+    var href = "/coaches/" + encodeURIComponent(k.slug) + "/";
+    return '<a class="team-member reveal" href="' + href + '">' +
+      '<span class="coach-photo">' + photo(k.photo, k.name) + '</span>' +
+      '<span class="team-name">' + esc(k.name) + '</span>' +
+      '<span class="team-spec">' + esc(k.specialty) + '</span></a>';
+  }
+
   function param(name) { return new URLSearchParams(location.search).get(name) || ""; }
 
   var readyFns = [];
   window.RG = {
-    load: load, esc: esc, shuffle: shuffle, teamOrder: teamOrder, coachCard: coachCard, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
+    load: load, esc: esc, shuffle: shuffle, teamOrder: teamOrder, coachCard: coachCard, teamCard: teamCard, wa: wa, igUrl: igUrl, ytId: ytId, video: video, md: md, stars: stars, photo: photo, param: param,
     reveal: observeReveal,
     ready: function (fn) { readyFns.push(fn); }
   };

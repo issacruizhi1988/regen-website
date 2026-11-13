@@ -12,7 +12,7 @@ RG.ready(async function (site) {
     return;
   }
 
-  var first = (coach.name || "").split(/\s+/)[0] || "there";
+  var first = coach.firstName || (coach.name || "").split(/\s+/)[0] || "there";
   document.title = coach.name + " · ReGen Performance";
   // Meta and link-preview tags are written by tools/build.py for each coach page.
 
@@ -76,10 +76,10 @@ RG.ready(async function (site) {
 
   var priceHtml = '<div class="price-card">' +
     '<div class="price-row price-lead"><span>30-Minute Discovery Call</span><b>Free</b></div>' +
-    list(coach.pricing).filter(function (p) { return !/discovery|consultation/i.test(p.label); }).map(function (p) {
+    list(coach.pricing).filter(function (p) { return !/discovery call|free consultation/i.test(p.label); }).map(function (p) {
       return '<div class="price-row"><span>' + E(p.label) + (p.note ? '<small>' + E(p.note) + '</small>' : '') + '</span><b>' + E(p.price) + '</b></div>';
     }).join("") +
-    (list(coach.pricing).filter(function (p) { return !/discovery|consultation/i.test(p.label); }).length ? '' : '<p class="coach-note">Ask ' + E(first) + ' about session packages on your discovery call.</p>') +
+    (list(coach.pricing).filter(function (p) { return !/discovery call|free consultation/i.test(p.label); }).length ? '' : '<p class="coach-note">Ask ' + E(first) + ' about session packages on your discovery call.</p>') +
     '<a class="btn btn-gold" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp ' + E(first) + '</a>' +
     (coach.location ? '<p class="coach-note">' + E(coach.location) + '</p>' : '') + '</div>';
 

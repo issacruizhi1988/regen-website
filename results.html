@@ -146,7 +146,7 @@ RG.ready(async function (site) {
     var state = { coach: "", all: false };
     function render() {
       var list = ordered.filter(function (v) { return !state.coach || (v.coaches || []).indexOf(state.coach) >= 0; });
-      var limit = state.all || state.coach ? list.length : 12;
+      var limit = state.all || state.coach ? list.length : 6;
       grid.innerHTML = list.slice(0, limit).map(function (v) {
         var names = (v.coaches || []).filter(function (k) { return bySlug[k]; }).map(function (k) { return bySlug[k].name; });
         return '<figure class="review">' + RG.stars(v.rating) + '<p>' + E(v.text) + '</p><figcaption class="review-by">' + E(v.name) + (v.date ? '<span>' + E(v.date) + '</span>' : '') +

@@ -34,6 +34,7 @@ collections:
               - {label: URL Slug, name: slug, widget: string, hint: "Lowercase with dashes, e.g. issac-tan. Used in the page URL: /coaches/issac-tan/"}
               - {label: Name, name: name, widget: string}
               - {label: Photo, name: photo, widget: image, hint: "Square photo, face clearly visible, no text on the image."}
+              - {label: First name for buttons, name: firstName, widget: string, required: false, hint: "Only if the WhatsApp button should not use the first word of the name, e.g. Tan Long."}
               - {label: Specialty (one-line tagline), name: specialty, widget: string, hint: "60 characters or less. Shown under the name everywhere."}
               - {label: Intro (one sentence), name: intro, widget: string, required: false, hint: "First person, e.g. \"I help people ...\". The large line at the top of the About section."}
               - {label: Card bio (2 sentences), name: bio, widget: text, required: false}

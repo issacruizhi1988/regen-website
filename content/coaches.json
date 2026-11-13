@@ -182,6 +182,11 @@
       "since": "2011",
       "experience": [
         {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
           "role": "Training and Development Manager",
           "org": "Functional Training Institute",
           "period": "Jan 2022 – Oct 2023"
@@ -349,6 +354,11 @@
       "since": "2019",
       "experience": [
         {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
           "role": "Rehab Trainer",
           "org": "Functional Training Institute",
           "period": "2023 – 2024"
@@ -388,32 +398,66 @@
     {
       "slug": "tan-long",
       "name": "Tan Long",
-      "specialty": "Rehab and Movement specialist",
-      "bio": "I specialize in empowering people to move without pain through optimised training for integrated peak performance and holistic fitness. I aim to help you achieve your fitness and health goals through efficient and evidence-led methods.",
+      "specialty": "Movement rehab, pain management and strength for lasting resilience",
+      "bio": "Movement rehabilitation, pain management, and strength training for long-term physical resilience.",
       "motto": "",
       "credentials": [
         {
-          "group": "Movement & Performance",
+          "group": "Academic Qualification",
           "items": [
-            "Neurokinetic Therapy (NKT) Level 1 and 2",
-            "OMT Osteopathic Articulations",
-            "iThrust HVLA Masterclass",
-            "Barefoot Training Specialist Level 1",
-            "Spheric Movement and Performance Level 1",
-            "FRCms"
+            "Bachelor's Degree in Sports and Exercise Science"
           ]
         },
         {
-          "group": "Specialized Training",
+          "group": "Royalty Institute of Athletic Rehabilitation",
           "items": [
-            "Sports Massage by Posture Lab",
-            "DZMR",
-            "Level 8 Fix Scoliosis",
-            "EBFA Pelvic Floor Specialist",
-            "IKN Level 1 and 2",
-            "Resistance Training Specialist Level 1",
-            "Sports Rehab Level 1",
-            "Rehab Essentials"
+            "Functional Muscle Anatomy & Applied Biomechanics (返璞归真：不一样的肌肉功能解剖)",
+            "Myofascial Chains & Functional Movement Integration (神奇的肌肉链)",
+            "Postural Scoliosis & Neuroscience (体态脊柱侧弯与脑科学)",
+            "Foot & Ankle Biomechanics I, III, Muscular Anatomy and Lower-Limb Strength (足踝生物力学 I · III · 肌肉篇 · 撸铁的底层逻辑之足踝下肢篇)",
+            "Breathing: Fundamentals, In Movement, Precision Training & Breathing Control, Mechanical Rehab & Breathing (呼吸盛典 · 移动的呼吸 · 精准训练与呼吸控制 · 器械康复与呼吸应用)",
+            "Applied Strength Training & Exercise Biomechanics (肌肉科学训练：器械篇)",
+            "Upper Limb Biomechanics & Functional Anatomy (手部生物力学与功能解剖)",
+            "Joint Mobility Restrictions & Corrective Techniques (关节受限与调整)",
+            "Pelvic Floor Rehabilitation & Functional Training (盆底肌宝典)",
+            "Pain Management & Practical Applications (疼痛管理与实践)"
+          ]
+        },
+        {
+          "group": "Applied Neurology",
+          "items": [
+            "Integrated Kinetic Neurology (IKN) Levels 1 & 2",
+            "SFNG ANRM 902 – Cervical & Shoulder Neuromuscular Rehabilitation (颈肩神经运动健康课程)",
+            "SFNG ANRM 602 – Gait Analysis & Neuro-Musculoskeletal Rehabilitation (步态分析与康复)",
+            "SFNG ANRM 601 – Principles of Musculoskeletal & Neurological Rehabilitation (肌肉与神经医学原理)",
+            "SFNG Peripheral Neuromuscular Reset (外周神经重置)",
+            "BBIS Applied Neurology for Posture & Movement (姿势与运动)",
+            "BBIS Applied Functional Neurology: Integration & Clinical Applications (功能神经学整合与应用)",
+            "NeuroKinetic Therapy (NKT) Levels 1 & 2"
+          ]
+        },
+        {
+          "group": "Rehab & Manual Therapy",
+          "items": [
+            "Rehab Essentials – Rehab Trainer",
+            "Level 8 – Fix Scoliosis",
+            "iThrust – HVLA Masterclass",
+            "OMT – Osteopathic Articulations",
+            "EBFA – Barefoot Training Specialist Level 1, and Pelvic Floor Specialist",
+            "Functional Training Institute – Dual Zone Myofascial Release",
+            "International Sports Academy – Sports Rehab Level 1",
+            "Posture Lab – Certification in Sports Massage"
+          ]
+        },
+        {
+          "group": "Strength & Movement",
+          "items": [
+            "AMP Blueprint Mentorship",
+            "Resistance Training Specialist (RTS) Level 1",
+            "Functional Range Conditioning Mobility Specialist (FRCms)",
+            "Spheric Human Performance – Principles-Based Approach to Exercise Selection",
+            "ASCA Strength and Conditioning Level 1",
+            "CPR + AED Certification"
           ]
         }
       ],
@@ -423,63 +467,58 @@
       "location": "Platinum Fitness Robertson Quay, 22 Martin Road, Singapore",
       "pricing": [
         {
-          "label": "30-Minute Discovery Call",
-          "price": "Free"
-        },
-        {
-          "label": "1 Hour of Sports Rehab Therapy/Functional Personal Training (Inclusive of Gym rental)",
-          "price": "$170"
+          "label": "1 Session",
+          "price": "$180"
         },
         {
           "label": "5 Sessions",
-          "price": "$800",
-          "note": "$160 per session"
+          "price": "$875",
+          "note": "$175 per session"
         },
         {
           "label": "12 Sessions",
-          "price": "$1680",
-          "note": "$140 per session"
+          "price": "$1860",
+          "note": "$155 per session"
         }
       ],
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Tan-Long-1a52698f422380a7aad6db451609c274",
       "order": 3,
-      "intro": "I specialize in empowering people to move without pain.",
+      "intro": "I specialise in helping individuals overcome pain, restore movement, and build confidence in their physical abilities.",
       "focus": [
-        "Rehab & movement",
-        "Scoliosis correction",
-        "Pelvic floor health",
-        "Sports massage",
-        "Peak performance"
+        "Chronic pain",
+        "Functional rehabilitation",
+        "Neuromuscular control & movement coordination"
       ],
-      "approach": "Optimised training for integrated peak performance and holistic fitness.\n\nI aim to help you achieve your fitness and health goals through efficient and evidence-led methods.",
+      "approach": "My approach combines exercise-based rehabilitation with an understanding of how the nervous system influences pain and performance.\n\nEvery plan is built for long-term physical resilience, not a quick fix.",
       "since": "2018",
       "experience": [
+        {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
+          "role": "Senior Trainer",
+          "org": "Prorehab Pte Ltd",
+          "period": "2024 – Present"
+        },
         {
           "role": "Senior Rehab Trainer",
           "org": "Functional Training Institute",
           "period": "2021 – 2024"
-        },
-        {
-          "role": "Trainer",
-          "org": "9rounds, Anytime Fitness",
-          "period": "2018 – 2021"
-        },
-        {
-          "role": "Preschool Physical Program Coach",
-          "org": "Nurture Education Group",
-          "period": "2018 – 2019"
         }
       ],
       "highlights": [
-        "Neurokinetic Therapy (NKT) Level 1 and 2",
-        "Level 8 Fix Scoliosis",
-        "EBFA Pelvic Floor Specialist",
-        "IKN Level 1 and 2",
-        "iThrust HVLA Masterclass",
-        "Sports Rehab Level 1"
+        "Bachelor's Degree in Sports and Exercise Science",
+        "Royalty Institute of Athletic Rehabilitation (16 courses)",
+        "Integrated Kinetic Neurology (IKN) Levels 1 & 2",
+        "SFNG Applied Neuromuscular Rehabilitation (ANRM 601, 602, 902)",
+        "Brain Body Integrative Systems (BBIS) Applied Neurology",
+        "AMP Blueprint Mentorship"
       ],
-      "more": ""
+      "more": "",
+      "firstName": "Tan Long"
     },
     {
       "slug": "shaun-lim",
@@ -539,6 +578,11 @@
       "since": "2020",
       "experience": [
         {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
           "role": "Adjunct Lecturer (Dance & Body Conditioning)",
           "org": "LASALLE College of the Arts",
           "period": "2024 – Present"
@@ -595,31 +639,67 @@
     {
       "slug": "eugene",
       "name": "Eugene Yam",
-      "specialty": "Fat loss & confidence coaching for women aged 30-40",
-      "bio": "Expert coaching for women aged 30-40 who want to lose 10-20kg, build confidence, and create lasting change - without extreme diets or medications. I combine science-backed training, nutrition, and psychology to help you achieve sustainable results.",
+      "specialty": "Holistic health and body transformation for corporate executives",
+      "bio": "I help corporate executives that want to speedrun to optimal health and get into the best shape of their lives.",
       "motto": "",
-      "credentials": [],
+      "credentials": [
+        {
+          "group": "Certifications",
+          "items": [
+            "N1 Education – Biomechanics & Exercise Execution (Kassem Hanson)",
+            "N1 Education – Nutrition & Program Design (Kassem Hanson)",
+            "Pre-Script Full Body Intensive (Dr Jordan Shallow)",
+            "Functional Nutrition & Metabolism Specialisation, FNMS (Sam Miller)",
+            "Health Mindset Coaching Certification (Dr Kasey Jo)",
+            "Evolve Mentorship Program (Alex Effer)"
+          ]
+        }
+      ],
       "photo": "/assets/img/coaches/eugene-v2.jpg",
       "whatsapp": "6590032060",
       "instagram": "eugeneywl",
       "location": "Platinum Fitness Robertson Quay, 11 Unity St, Singapore 237995",
-      "pricing": [],
+      "pricing": [
+        {
+          "label": "1 Session",
+          "price": "$150 – $180",
+          "note": "depending on frequency"
+        },
+        {
+          "label": "One-time consultation + training & nutrition plan",
+          "price": "$250"
+        }
+      ],
       "videos": [],
       "notionUrl": "https://regenperformance.notion.site/Eugene-1d22698f422380a1b669dd6c406d47bc",
       "order": 5,
-      "intro": "I help women aged 30-40 lose 10-20kg, build confidence, and create lasting change - without extreme diets or medications.",
+      "intro": "I help corporate executives that want to speedrun to optimal health and get into the best shape of their lives.",
       "focus": [
-        "Fat loss",
-        "Women's fitness (30-40)",
-        "Mindset coaching",
-        "Sustainable nutrition",
-        "Functional training"
+        "Lifestyle",
+        "Body transformation",
+        "Functional nutrition (gut health, energy optimisation)"
       ],
-      "approach": "My holistic method combines science-backed training, nutrition, and psychology across three pillars.\n\n**Smart Training** — master functional movements, train safely and effectively, and enhance daily performance.\n\n**Mindset Mastery** — transform limiting beliefs, create empowering habits, and build unshakeable confidence.\n\n**Sustainable Results** — science-backed nutrition, step-by-step progression, and lifelong transformation.",
-      "since": "",
-      "experience": [],
+      "approach": "My approach is holistic: not just for you to look and perform better, but also changing how you think and feel on a daily basis.",
+      "since": "2020",
+      "experience": [
+        {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
+          "role": "Freelance Health & Body Transformation Coach",
+          "org": "",
+          "period": "2021 – 2026"
+        },
+        {
+          "role": "Personal Trainer",
+          "org": "Virgin Active",
+          "period": "2020 – 2021"
+        }
+      ],
       "highlights": [],
-      "more": "### Premium 1:1 Coaching Program\n\n- Customized training plan\n- Nutrition guidance\n- Mindset coaching\n- Direct access support\n- Progress tracking\n\n### Free Strategy Session\n\nBook a 60-minute discovery call to discuss your goals and see if we're the right fit."
+      "more": ""
     },
     {
       "slug": "kennard-chia",
@@ -799,6 +879,11 @@
       "since": "2020",
       "experience": [
         {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
+        {
           "role": "Senior Rehab Trainer",
           "org": "Functional Training Institute",
           "period": "2020 – 2025"
@@ -883,6 +968,11 @@
       "approach": "With a background in Sport & Exercise Science and more than 15 years in fitness, I build training around recovery, strength and mobility, so you can handle daily life with less pain and more energy.\n\nFrom rehab after injury to lower back pain, pre- and post-natal training and weight management, every programme is tailored to where you are now.",
       "since": "2010",
       "experience": [
+        {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
         {
           "role": "Freelance Personal Trainer",
           "org": "Freeman Fitness",
@@ -1031,6 +1121,11 @@
       "approach": "My sessions combine full-body strength, mobility and athleticism, while thoughtfully adapting to individual needs, including chronic pain and injuries.\n\nI support people who are new to the gym and don't know where to start, who've struggled to stay consistent, who want to train safely despite pain, injuries, or setbacks, or who are looking for guidance, accountability, and structure — without extreme diets or burnout.",
       "since": "2025",
       "experience": [
+        {
+          "role": "Coach",
+          "org": "ReGen Performance",
+          "period": "Current"
+        },
         {
           "role": "Freelance Personal Trainer",
           "org": "Project Future Self",

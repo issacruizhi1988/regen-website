@@ -7,7 +7,7 @@
 <meta name="description" content="ReGen Performance is a team of movement and strength coaches in Singapore. Move without pain, recover from injury and build lasting strength. WhatsApp us for a free 30-minute discovery call.">
 <meta property="og:title" content="ReGen Performance · Movement &amp; Strength Coaching Singapore">
 <meta property="og:description" content="Move without pain, recover from injury and build lasting strength. Free 30-minute discovery call.">
-<meta property="og:image" content="https://curious-kheer-eb3bcb.netlify.app/assets/img/team-share.jpg">
+<meta property="og:image" content="https://regenperformancesg.netlify.app/assets/img/team-share.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0A0A">
@@ -53,8 +53,9 @@
   <!-- 3. TEAM: pick a coach, message them -->
   <section class="section" id="team">
     <div class="wrap">
-      <div class="section-head reveal"><span class="eyebrow">Meet the Team</span><h2 class="h2">Choose Your <em>Coach</em></h2><p class="lead">Every coach works from the same system. Tap a profile to see their experience, or message them directly.</p></div>
-      <div class="coach-grid" id="home-coaches"><div class="skeleton">Loading the team</div></div>
+      <div class="section-head reveal"><span class="eyebrow">Meet the Team</span><h2 class="h2">Choose Your <em>Coach</em></h2><p class="lead">Every coach works from the same system. Tap a coach to see their experience, credentials and rates, and to message them directly.</p></div>
+      <div class="team-wall" id="home-coaches"><div class="skeleton">Loading the team</div></div>
+      <div class="btn-row" style="justify-content:center;margin-top:2.6rem"><a class="btn btn-ghost" href="/coaches.html">See Full Coach Profiles</a></div>
     </div>
   </section>
 
@@ -129,7 +130,7 @@ RG.ready(async function (site) {
   var [t, r, c] = await Promise.all([RG.load("testimonials"), RG.load("reviews"), RG.load("coaches")]);
 
   var team = RG.teamOrder(c.coaches);
-  document.getElementById("home-coaches").innerHTML = team.length ? team.map(RG.coachCard).join("") : '<div class="empty">Coach profiles are being added.</div>';
+  document.getElementById("home-coaches").innerHTML = team.length ? team.map(RG.teamCard).join("") : '<div class="empty">Coach profiles are being added.</div>';
 
   var vids = (t.testimonials || []).filter(function (s) { return s.featured && RG.ytId(s.youtubeId); }).slice(0, 2);
   document.getElementById("home-videos").innerHTML = vids.map(function (s) {
