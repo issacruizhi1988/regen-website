@@ -1,6 +1,6 @@
 # ReGen Performance website: architecture contract
 
-A static site with no build step. Pages are plain HTML files. Shared chrome (nav, footer, WhatsApp button) and content are rendered by `assets/js/site.js`, which reads the JSON files in `/content`. Decap CMS (`/admin`) edits those same JSON files through GitHub, and Netlify redeploys on every commit.
+A static site. The Netlify build runs tools/build.py, which prerenders content into the HTML (between <!--pre:NAME--> markers), writes JSON-LD, canonical tags, coach pages, sitemap.xml, robots.txt and llms.txt. Pages are plain HTML files. Shared chrome (nav, footer, WhatsApp button) and content are rendered by `assets/js/site.js`, which reads the JSON files in `/content`. Decap CMS (`/admin`) edits those same JSON files through GitHub, and Netlify redeploys on every commit.
 
 ## Folder layout
 ```

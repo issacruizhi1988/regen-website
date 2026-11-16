@@ -1,6 +1,7 @@
 {
   "whatsapp": "6591875632",
   "whatsappDisplay": "+65 9187 5632",
+  "phoneDisplay": "+65 9187 5632",
   "whatsappMessage": "Hi ReGen, I'd like to book a free 30-minute discovery call.",
   "instagram": {
     "handle": "@regenperformance.sg",
@@ -11,10 +12,40 @@
     "url": "https://www.youtube.com/@ReGenPerformanceEducation"
   },
   "location": {
-    "name": "Platinum Fitness",
-    "address": "22 Martin Road, Level 4, Singapore 239058",
+    "name": "Platinum Fitness, Robertson Quay",
+    "address": "22 Martin Road, #04-01, Singapore 239058",
     "note": "Just above Common Man Coffee",
-    "mapsUrl": ""
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=ReGen+Performance+22+Martin+Road+Singapore+239058",
+    "geo": {
+      "lat": 1.291783,
+      "lng": 103.8385045
+    },
+    "nearbyMrt": [
+      "Great World",
+      "Fort Canning",
+      "Havelock"
+    ],
+    "openingHours": [
+      {
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:30",
+        "closes": "21:30"
+      },
+      {
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "07:00",
+        "closes": "20:00"
+      }
+    ]
   },
   "quote": {
     "text": "First move well, then move often.",

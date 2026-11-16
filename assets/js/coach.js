@@ -13,8 +13,7 @@ RG.ready(async function (site) {
   }
 
   var first = coach.firstName || (coach.name || "").split(/\s+/)[0] || "there";
-  document.title = coach.name + " · ReGen Performance";
-  // Meta and link-preview tags are written by tools/build.py for each coach page.
+  // Title, meta and link-preview tags are written by tools/build.py for each coach page.
 
   var waLink = RG.wa(coach.whatsapp || site.whatsapp, "Hi " + first + ", I found you on the ReGen Performance website and I'd like to book a free discovery call.");
   var ig = RG.igUrl(coach.instagram);

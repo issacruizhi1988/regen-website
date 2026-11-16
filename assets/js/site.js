@@ -173,8 +173,8 @@
       '<div class="footer-col"><h4>Follow</h4><ul>' +
       '<li><a href="' + esc(ig) + '" target="_blank" rel="noopener">Instagram</a></li><li><a href="' + esc(yt) + '" target="_blank" rel="noopener">YouTube</a></li></ul></div>' +
       '<div class="footer-col"><h4>Visit</h4><ul>' +
-      "<li>" + esc((site.location && site.location.name) || "Platinum Fitness") + "</li>" +
-      "<li>" + esc((site.location && site.location.address) || "22 Martin Road, Level 4, Singapore 239058") + "</li>" +
+      "<li>" + esc((site.location && site.location.name) || "Platinum Fitness, Robertson Quay") + "</li>" +
+      "<li>" + esc((site.location && site.location.address) || "22 Martin Road, #04-01, Singapore 239058") + "</li>" +
       '<li><a href="' + waHref + '" target="_blank" rel="noopener">WhatsApp ' + esc(site.whatsappDisplay || "+65 9187 5632") + "</a></li></ul></div>" +
       '</div><div class="footer-base"><span>© ' + new Date().getFullYear() + " ReGen Performance · Singapore</span><span>Built From Within</span></div></div>";
     document.body.appendChild(footer);

@@ -4,3 +4,6 @@ Thumbs.db
 .vscode/
 *.log
 /coaches/
+sitemap.xml
+robots.txt
+llms.txt
