@@ -86,7 +86,7 @@ a{color:inherit;}
 
 /* ---------- Footer ---------- */
 .site-footer{border-top:1px solid var(--border);padding:4rem 0 2.5rem;background:linear-gradient(to bottom,var(--ink),#0b0a07);}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:2.5rem;}
 .footer-brand img{height:64px;width:auto;margin-bottom:1.2rem;}
 .footer-brand p{font-size:0.86rem;color:var(--muted);max-width:280px;line-height:1.8;}
 .footer-col h4{font-family:var(--mono);font-weight:500;font-size:0.672rem;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;font-weight:400;margin-bottom:1rem;}
@@ -388,6 +388,8 @@ a.card{text-decoration:none;}
 .coach-reviews{columns:2 280px;column-gap:1.2rem;}
 .coach-reviews.spaced{margin-top:2.5rem;}
 .review.is-extra{display:none;}
+.coach-offers a{color:var(--cream);text-decoration:underline;text-underline-offset:3px;}
+.coach-offers a:hover{color:var(--white);}
 .coach-note{font-size:0.84rem;color:var(--muted);margin-top:1rem;}
 .timeline{list-style:none;position:relative;padding-left:1.6rem;}
 .timeline::before{content:"";position:absolute;left:4px;top:0.5rem;bottom:0.5rem;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(255,255,255,0.044));}

@@ -6,6 +6,7 @@
 
   var NAV = [
     { href: "/coaches.html", label: "Coaches", page: "coaches" },
+    { href: "/#services", label: "Services", page: "services" },
     { href: "/results.html", label: "Results", page: "results" },
     { href: "/philosophy.html", label: "Method", page: "philosophy" }
   ];
@@ -170,6 +171,8 @@
       '<div class="footer-brand"><img src="/assets/img/logo-full-white.png" alt="ReGen Performance" width="78" height="64"><p>Movement and strength coaching in Singapore. The body is not broken. It is just not working as a system yet.</p></div>' +
       '<div class="footer-col"><h4>Explore</h4><ul>' +
       '<li><a href="/philosophy.html">The ReGen Method</a></li><li><a href="/coaches.html">Our Coaches</a></li><li><a href="/results.html">Client Results</a></li><li><a href="/resources.html">Resources</a></li></ul></div>' +
+      '<div class="footer-col"><h4>Services</h4><ul>' +
+      '<li><a href="/personal-training/">Personal Training</a></li><li><a href="/sports-massage/">Sports Massage</a></li><li><a href="/osteopathic-manual-therapy/">Osteopathic Manual Therapy</a></li></ul></div>' +
       '<div class="footer-col"><h4>Follow</h4><ul>' +
       '<li><a href="' + esc(ig) + '" target="_blank" rel="noopener">Instagram</a></li><li><a href="' + esc(yt) + '" target="_blank" rel="noopener">YouTube</a></li></ul></div>' +
       '<div class="footer-col"><h4>Visit</h4><ul>' +

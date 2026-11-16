@@ -293,7 +293,7 @@ def results_reviews_html(reviews, coaches):
     return "".join(out)
 
 
-def coach_profile_html(k, site):
+def coach_profile_html(k, site, services=()):
     lst = lambda a: [x for x in (a or []) if x and (not isinstance(x, str) or x.strip())]
     first = first_name(k)
     wa_link = wa(k.get("whatsapp") or site.get("whatsapp"),
@@ -341,19 +341,150 @@ def coach_profile_html(k, site):
             sec("sessions", "Sessions &amp; Pricing", price) +
             '<p class="coach-results-link"><a class="link-arrow" href="/results.html">See client results <span>→</span></a></p>')
     return ('<header class="coach-hero wrap"><div class="coach-photo coach-hero-photo">%s</div><div class="coach-hero-body">'
-            '<span class="eyebrow">ReGen Coach</span><h1 class="h1 coach-hero-name">%s</h1>%s%s'
+            '<span class="eyebrow">ReGen Coach</span><h1 class="h1 coach-hero-name">%s</h1>%s%s%s'
             '<div class="btn-row"><a class="btn btn-gold" href="%s" target="_blank" rel="noopener">WhatsApp %s</a>%s</div></div></header>'
             '<div class="wrap-narrow coach-body">%s</div>'
             % (photo(k.get("photo"), k.get("name")), E(k.get("name")),
                '<p class="coach-hero-spec">%s</p>' % E(k["specialty"]) if k.get("specialty") else "",
+               offers_html(k, services),
                '<p class="coach-motto">"%s"</p>' % E(k["motto"]) if k.get("motto") else "",
                wa_link, E(first),
                ('<a class="btn btn-ghost" href="%s" target="_blank" rel="noopener">@%s</a>' % (ig, E(str(k["instagram"]).lstrip("@")))) if ig else "",
                body))
 
 
+# ---------------------------------------------------------------- services
+def creds_text(k):
+    """All credential items of a coach joined into one string (same logic as assets/js/coach.js)."""
+    parts = []
+    for g in k.get("credentials") or []:
+        parts += [g] if isinstance(g, str) else [i for i in (g.get("items") or []) if i]
+    return " ".join(parts)
+
+
+def coach_offers(k, svc):
+    m = svc.get("coachMatch") or "*"
+    return m == "*" or bool(re.search(m, creds_text(k), re.I))
+
+
+def service_coaches(svc, ordered):
+    return [k for k in ordered if coach_offers(k, svc)]
+
+
+def service_url(svc, base):
+    return "%s/%s/" % (base, svc["slug"])
+
+
+def offers_html(k, services):
+    mine = [s for s in services if coach_offers(k, s)]
+    if not mine:
+        return ""
+    return ('<p class="coach-motto coach-offers">Offers: ' +
+            " · ".join('<a href="/%s/">%s</a>' % (E(s["slug"]), E(s.get("short") or s["name"])) for s in mine) + "</p>")
+
+
+def home_services_html(services):
+    return "".join('<a class="card" href="/%s/"><span class="card-label">%02d</span><span class="card-title">%s</span>'
+                   '<span class="card-text">%s</span><span class="link-arrow">Learn more <span>→</span></span></a>'
+                   % (E(s["slug"]), i + 1, E(s["name"]), E(s["card"]), ) for i, s in enumerate(services))
+
+
+SERVICE_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<!--pre:canon--><!--/pre:canon-->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReGen Performance">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{image}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{fonts}" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<!--pre:ld--><!--/pre:ld-->
+</head>
+<body data-page="services">
+<main>
+{body}
+</main>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
+"""
+
+
+def service_page_html(svc, services, ordered, site, reviews, base):
+    wa_href = wa(site.get("whatsapp"), site.get("whatsappMessage") or "Hi ReGen, I'd like to book a free 30-minute discovery call.")
+    wa_btn = '<a class="btn btn-gold" href="%s" target="_blank" rel="noopener">WhatsApp Us</a>' % E(wa_href)
+    coaches = service_coaches(svc, ordered)
+    who = "".join('<div class="card"><span class="card-text">%s</span></div>' % E(x) for x in svc.get("whoFor", []))
+    steps_src = svc.get("whatToExpect", [])
+    steps = "".join('<div class="card"><span class="step-num">%d</span><span class="card-text">%s</span></div>' % (i + 1, E(x))
+                    for i, x in enumerate(steps_src))
+    cols = "grid-3" if len(steps_src) % 3 == 0 else "grid-2"
+    faq = "".join('<details><summary>%s</summary><div class="prose">%s</div></details>' % (E(f["question"]), md_html(f["answer"]))
+                  for f in svc.get("faq", []))
+    others = [s for s in services if s["slug"] != svc["slug"]]
+    return (
+        '<section class="page-hero">\n    <div class="glow"></div><div class="grain"></div>\n    <div class="wrap">\n'
+        '      <span class="eyebrow">%s</span>\n      <h1 class="h2">%s</h1>\n      <p class="lead">%s</p>\n%s'
+        '      <div class="btn-row" style="margin-top:2rem">%s<a class="btn btn-ghost" href="#coaches">Meet the Coaches</a></div>\n'
+        '    </div>\n  </section>\n\n'
+        '  <section class="section">\n    <div class="wrap">\n'
+        '      <div class="section-head reveal"><span class="eyebrow">Who It\'s For</span><h2 class="h2">Is This <em>For You?</em></h2></div>\n'
+        '      <div class="grid grid-2 reveal">%s</div>\n    </div>\n  </section>\n\n'
+        '  <section class="section">\n    <div class="wrap">\n'
+        '      <div class="section-head reveal"><span class="eyebrow">What to Expect</span><h2 class="h2">How It <em>Works</em></h2></div>\n'
+        '      <div class="grid %s reveal steps">%s</div>\n    </div>\n  </section>\n\n'
+        '  <section class="section">\n    <div class="wrap-narrow">\n'
+        '      <div class="section-head reveal"><span class="eyebrow">Why ReGen</span><h2 class="h2">One System, <em>Every Session</em></h2></div>\n'
+        '      <div class="prose reveal"><p>%s</p></div>\n'
+        '      <p class="reveal" style="margin-top:1.6rem">Rated %s from %s Google reviews. <a class="link-arrow" href="%s" target="_blank" rel="noopener">Read them on Google <span>→</span></a></p>\n'
+        '    </div>\n  </section>\n\n'
+        '  <section class="section" id="coaches">\n    <div class="wrap">\n'
+        '      <div class="section-head reveal"><span class="eyebrow">Our Team</span><h2 class="h2">Coaches Who <em>Offer This</em></h2></div>\n'
+        '      <div class="coach-grid">%s</div>\n    </div>\n  </section>\n\n'
+        '  <section class="section">\n    <div class="wrap-narrow">\n'
+        '      <div class="section-head reveal"><span class="eyebrow">Questions</span><h2 class="h2">Common <em>Questions</em></h2></div>\n'
+        '      <div class="faq">%s</div>\n    </div>\n  </section>\n\n'
+        '  <section class="cta-band">\n    <div class="glow"></div>\n    <div class="wrap-narrow reveal">\n'
+        '      <div class="hero-vline"></div>\n      <span class="eyebrow">Start Your Journey</span>\n'
+        '      <h2 class="h2" style="margin-top:1rem">Book a Free<br><em>Discovery Call</em></h2>\n'
+        '      <p class="lead">Thirty minutes. No pressure, just clarity on what your body needs and where to start.</p>\n'
+        '      <div class="btn-row">%s</div>\n    </div>\n  </section>\n\n'
+        '  <section class="section">\n    <div class="wrap">\n      <div class="label-rule">Other Services</div>\n'
+        '      <p style="display:flex;flex-wrap:wrap;gap:1.2rem 2rem;margin-top:1rem">%s</p>\n    </div>\n  </section>'
+        % (E(svc["eyebrow"]), E(svc["h1"]), E(svc["lead"]),
+           ('      <p class="coach-note">%s</p>\n' % E(svc["credentialNote"])) if svc.get("credentialNote") else "",
+           wa_btn, who, cols, steps, E(svc["why"]), E(reviews.get("rating")), E(reviews.get("count")), E(reviews.get("googleUrl")),
+           "".join(coach_card(k, site) for k in coaches), faq, wa_btn,
+           "".join('<a class="link-arrow" href="/%s/">%s <span>→</span></a>' % (E(o["slug"]), E(o["name"])) for o in others)))
+
+
+def service_ld(svc, services, site, base):
+    url = service_url(svc, base)
+    wa_href = wa(site.get("whatsapp"), site.get("whatsappMessage") or "")
+    service = {"@context": "https://schema.org", "@type": "Service", "name": svc["name"], "serviceType": svc.get("short") or svc["name"],
+               "description": svc["metaDescription"], "url": url,
+               "areaServed": ["Robertson Quay", "River Valley", "Clarke Quay", "Singapore"],
+               "provider": {"@id": base + "/#business"},
+               "availableChannel": {"@type": "ServiceChannel", "serviceUrl": wa_href, "name": "WhatsApp"}}
+    faq = {"@context": "https://schema.org", "@type": "FAQPage",
+           "mainEntity": [{"@type": "Question", "name": f["question"],
+                           "acceptedAnswer": {"@type": "Answer", "text": md_plain(f["answer"])}} for f in svc.get("faq", [])]}
+    return [service, faq, crumbs([("Home", base + "/"), (svc["name"], url)])]
+
+
 # ---------------------------------------------------------------- JSON-LD
-def business_ld(site, reviews, coaches, base):
+def business_ld(site, reviews, coaches, base, services=()):
     loc = site.get("location", {})
     geo = loc.get("geo") or {}
     b = {"@context": "https://schema.org", "@type": "LocalBusiness", "@id": base + "/#business",
@@ -372,6 +503,10 @@ def business_ld(site, reviews, coaches, base):
     b["areaServed"] = ["Robertson Quay", "River Valley", "Clarke Quay", "Singapore"]
     if loc.get("openingHours"):
         b["openingHoursSpecification"] = [dict({"@type": "OpeningHoursSpecification"}, **h) for h in loc["openingHours"]]
+    if services:
+        b["makesOffer"] = [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": sv["name"], "url": service_url(sv, base)}}
+                           for sv in services]
+        b["knowsAbout"] = ["Personal training", "Injury rehabilitation", "Sports massage", "Osteopathic manual therapy", "Strength training"]
     b["employee"] = [{"@id": "%s/coaches/%s/#person" % (base, k["slug"])} for k in coaches]
     return b
 
@@ -398,6 +533,7 @@ def person_ld(k, base):
 # ---------------------------------------------------------------- main
 def main():
     site, reviews, resources = load("site"), load("reviews"), load("resources")
+    services = sorted(load("services")["services"], key=lambda x: x.get("order", 99))
     coaches = load("coaches")["coaches"]
     base = (os.environ.get("URL") or site.get("siteUrl") or "").rstrip("/")
     loc = site.get("location", {})
@@ -421,11 +557,12 @@ def main():
         page = set_block(read(fname), "canon", canon(base + path), before='<link rel="icon"')
         lds = []
         if fname == "index.html":
+            page = set_block(page, "services", home_services_html(services))
             page = set_block(page, "team", "".join(team_card(k) for k in ordered))
             page = set_block(page, "faq", faq_html(site))
             page = set_block(page, "visit", visit_html(site))
             page = set_block(page, "reviews", home_reviews_html(rv))
-            lds = [business_ld(site, reviews, ordered, base),
+            lds = [business_ld(site, reviews, ordered, base, services),
                    {"@context": "https://schema.org", "@type": "WebSite", "@id": base + "/#website", "url": base + "/",
                     "name": "ReGen Performance", "publisher": {"@id": base + "/#business"}},
                    {"@context": "https://schema.org", "@type": "FAQPage",
@@ -458,16 +595,33 @@ def main():
             title=e(title), desc=e(desc), url=e(url),
             image=e(base + (k.get("photo") or "/assets/img/team-share.jpg")), fonts=FONTS)
         page = set_block(page, "canon", canon(url))
-        page = set_block(page, "coach", coach_profile_html(k, site))
+        page = set_block(page, "coach", coach_profile_html(k, site, services))
         page = set_block(page, "ld", ld(person_ld(k, base), crumbs([("Home", base + "/"), ("Coaches", base + "/coaches.html"), (k["name"], url)])))
         write(f"coaches/{slug}/index.html", page)
 
+    # ---- one page per service
+    for svc in services:
+        d = os.path.join(ROOT, svc["slug"])
+        if os.path.isdir(d):
+            shutil.rmtree(d)
+        url = service_url(svc, base)
+        page = SERVICE_PAGE.format(title=E(svc["title"]), desc=E(svc["metaDescription"]), fonts=FONTS,
+                                   image=E(base + "/assets/img/team-share.jpg"),
+                                   body=service_page_html(svc, services, ordered, site, reviews, base))
+        page = set_block(page, "canon", canon(url))
+        page = set_block(page, "ld", ld(*service_ld(svc, services, site, base)))
+        write(svc["slug"] + "/index.html", page)
+
     # ---- sitemap.xml, robots.txt, llms.txt (generated on every deploy, git-ignored)
-    urls = [base + p for p in ["/", "/coaches.html", "/results.html", "/philosophy.html", "/resources.html"]]
+    urls = [base + "/"] + [service_url(sv, base) for sv in services]
+    urls += [base + p for p in ["/coaches.html", "/results.html", "/philosophy.html", "/resources.html"]]
     urls += [f"{base}/coaches/{k['slug']}/" for k in coaches]
     urls += [f"{base}/resource.html?r={r['slug']}" for r in resources.get("resources", [])]
+    top = {base + "/": "1.0"}
+    top.update({service_url(sv, base): "0.9" for sv in services})
+    prio = lambda u: "<priority>%s</priority>" % top[u] if u in top else ""
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-          "".join("  <url><loc>%s</loc></url>\n" % html.escape(u, quote=False) for u in urls) + "</urlset>\n")
+          "".join("  <url><loc>%s</loc>%s</url>\n" % (html.escape(u, quote=False), prio(u)) for u in urls) + "</urlset>\n")
     bots = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "Applebot"]
     write("robots.txt", "User-agent: *\nAllow: /\n\n" + "".join("User-agent: %s\nAllow: /\n\n" % b for b in bots) +
           "Sitemap: %s/sitemap.xml\n" % base)
@@ -488,11 +642,15 @@ def main():
              "## Reviews", "- " + rating, "",
              "## Coaches"]
     lines += ["- [%s](%s/coaches/%s/): %s" % (k["name"], base, k["slug"], k.get("specialty") or "") for k in ordered]
+    lines += ["", "## Services"]
+    for sv in services:
+        note = (" " + sv["credentialNote"]) if sv.get("credentialNote") else ""
+        lines.append("- [%s](%s): %s%s" % (sv["name"], service_url(sv, base), sv["card"], note))
     lines += ["", "## Pages", "- [Home](%s/)" % base, "- [Coaches](%s/coaches.html)" % base,
               "- [Client results and Google reviews](%s/results.html)" % base,
               "- [The ReGen Method](%s/philosophy.html)" % base, "- [Resources](%s/resources.html)" % base]
     write("llms.txt", "\n".join(l for l in lines if l is not None).rstrip() + "\n")
-    print(f"Built {len(coaches)} coach pages for {base or '(no base URL)'}")
+    print(f"Built {len(coaches)} coach and {len(services)} service pages for {base or '(no base URL)'}")
 
 
 if __name__ == "__main__":

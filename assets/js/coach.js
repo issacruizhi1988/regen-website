@@ -12,6 +12,11 @@ RG.ready(async function (site) {
     return;
   }
 
+  var svcs = ((await RG.load("services")).services || []).slice().sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
+  var credText = list0(coach.credentials).reduce(function (a, g) { return a.concat(typeof g === "string" ? [g] : (g.items || [])); }, []).filter(Boolean).join(" ");
+  var offers = svcs.filter(function (s) { return !s.coachMatch || s.coachMatch === "*" || new RegExp(s.coachMatch, "i").test(credText); });
+  function list0(a) { return a || []; }
+
   var first = coach.firstName || (coach.name || "").split(/\s+/)[0] || "there";
   // Title, meta and link-preview tags are written by tools/build.py for each coach page.
 
@@ -102,6 +107,7 @@ RG.ready(async function (site) {
         '<span class="eyebrow">ReGen Coach</span>' +
         '<h1 class="h1 coach-hero-name">' + E(coach.name) + '</h1>' +
         (coach.specialty ? '<p class="coach-hero-spec">' + E(coach.specialty) + '</p>' : '') +
+        (offers.length ? '<p class="coach-motto coach-offers">Offers: ' + offers.map(function (s) { return '<a href="/' + E(s.slug) + '/">' + E(s.short || s.name) + '</a>'; }).join(" · ") + '</p>' : '') +
         (coach.motto ? '<p class="coach-motto">"' + E(coach.motto) + '"</p>' : '') +
         (facts.length ? '<dl class="coach-facts">' + facts.map(function (f) { return '<div><dt>' + E(f[0]) + '</dt><dd>' + E(f[1]) + '</dd></div>'; }).join("") + '</dl>' : '') +
         '<div class="btn-row"><a class="btn btn-gold" href="' + waLink + '" target="_blank" rel="noopener">WhatsApp ' + E(first) + '</a>' +

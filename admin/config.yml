@@ -224,6 +224,43 @@ collections:
                 widget: string
                 required: false
 
+  - name: services
+    label: Services
+    description: The three service landing pages (Personal Training, Sports Massage, Osteopathic Manual Therapy). Each becomes a page at /<slug>/ and a card on the home page.
+    files:
+      - name: services
+        label: Services
+        file: content/services.json
+        format: json
+        fields:
+          - label: Services
+            name: services
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - {label: URL Slug, name: slug, widget: string, hint: "Lowercase with dashes. Used in the page URL, e.g. sports-massage gives /sports-massage/"}
+              - {label: Order, name: order, widget: number, value_type: int, min: 1, hint: "1, 2, 3. Controls the order on the home page, footer and sitemap."}
+              - {label: Name, name: name, widget: string}
+              - {label: Short name, name: short, widget: string, hint: "Used on coach profiles, e.g. Sports Massage."}
+              - {label: Coach match, name: coachMatch, widget: string, hint: "Regex matched against each coach's credentials (case-insensitive). Use * for all coaches."}
+              - {label: Page title (SEO), name: title, widget: string}
+              - {label: Meta description (SEO), name: metaDescription, widget: text}
+              - {label: Eyebrow, name: eyebrow, widget: string}
+              - {label: Heading (H1), name: h1, widget: string}
+              - {label: Lead, name: lead, widget: text}
+              - {label: Home card text, name: card, widget: text}
+              - {label: Credential note, name: credentialNote, widget: text, required: false, hint: "Optional small line under the lead."}
+              - {label: Who it's for, name: whoFor, widget: list, hint: "One bullet per item."}
+              - {label: What to expect, name: whatToExpect, widget: list, hint: "One step per item."}
+              - {label: Why ReGen, name: why, widget: text}
+              - label: Questions
+                name: faq
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - {label: Question, name: question, widget: string}
+                  - {label: Answer, name: answer, widget: text}
+
   - name: videos
     label: Videos
     description: The methodology video library.

@@ -1,0 +1,125 @@
+{
+  "services": [
+    {
+      "slug": "personal-training",
+      "order": 1,
+      "name": "Personal Training & Rehab",
+      "short": "Personal Training",
+      "coachMatch": "*",
+      "title": "Personal Training & Rehab in Robertson Quay, Singapore | ReGen Performance",
+      "metaDescription": "One-to-one personal training and injury rehab in Robertson Quay, Singapore. Assessment-led coaching for pain-free strength, fat loss and performance. Free 30-minute discovery call.",
+      "eyebrow": "Personal Training · Robertson Quay, Singapore",
+      "h1": "Personal Training & Rehab in Robertson Quay",
+      "lead": "One-to-one coaching that builds lasting strength, gets you out of pain and keeps you moving well, at Platinum Fitness, 22 Martin Road.",
+      "card": "Get stronger, leaner and pain-free with one-to-one coaching built around how your body moves.",
+      "whoFor": [
+        "You want to get stronger, leaner or fitter, with a coach who plans every session around you",
+        "You train but keep running into the same aches, tightness or injuries",
+        "You are returning to exercise after an injury, surgery or a long break",
+        "You are new to the gym and want to learn to train safely and confidently"
+      ],
+      "whatToExpect": [
+        "A movement and posture assessment in your first session, so we understand why your body moves the way it does",
+        "A plan built around your goals, history and schedule",
+        "Coached sessions that progress strength, mobility and conditioning step by step",
+        "Notes and exercise videos between sessions, so you keep progressing on your own"
+      ],
+      "why": "Every ReGen coach works from the same system: find the root cause, organise how the body moves, then load it progressively. That is why our clients get stronger without the pain coming back.",
+      "faq": [
+        {
+          "question": "How much does personal training cost?",
+          "answer": "Rates depend on the coach and package, from about $120 to $180 per session, with lower per-session rates on 5 and 12 session packages. Every coach's profile lists their prices, and your 30-minute discovery call is free."
+        },
+        {
+          "question": "Do you work with injuries and pain?",
+          "answer": "Yes. Rehab and pain-free strength is our speciality. We assess how you move, work on the cause, and rebuild strength step by step. If something needs medical attention, we will tell you and refer you on."
+        },
+        {
+          "question": "Where are you located?",
+          "answer": "Inside Platinum Fitness at Robertson Quay, 22 Martin Road, #04-01, Singapore 239058. A short walk from Great World, Fort Canning and Havelock MRT."
+        }
+      ]
+    },
+    {
+      "slug": "sports-massage",
+      "order": 2,
+      "name": "Sports Massage",
+      "short": "Sports Massage",
+      "coachMatch": "sports massage",
+      "title": "Sports Massage in Robertson Quay, Singapore | ReGen Performance",
+      "metaDescription": "Sports massage in Robertson Quay, Singapore. Relieve muscle tightness, recover faster and move better with certified sports massage therapists at Platinum Fitness, 22 Martin Road. WhatsApp to book.",
+      "eyebrow": "Sports Massage · Robertson Quay, Singapore",
+      "h1": "Sports Massage in Robertson Quay",
+      "lead": "Targeted sports massage to ease tight, aching muscles, speed up recovery and help you move freely, from therapists who also understand how you train.",
+      "card": "Ease tight, aching muscles and recover faster with targeted hands-on work.",
+      "whoFor": [
+        "Tight neck, shoulders, back or hips from desk work or training",
+        "Runners, lifters and athletes who want to recover faster between sessions",
+        "Anyone preparing for, or recovering from, a race or competition",
+        "People who want hands-on work combined with exercise that keeps the results"
+      ],
+      "whatToExpect": [
+        "A short check of where you feel tight or sore and how you move",
+        "Hands-on sports massage on the areas that need it, using techniques such as deep tissue work, myofascial release and cupping where suitable",
+        "Simple stretches or exercises to keep the improvement after the session",
+        "Advice on how to fit massage around your training"
+      ],
+      "why": "Our sports massage is delivered by certified therapists who are also strength and rehab coaches, so the hands-on work fits how you actually train and move. You leave looser, and you leave knowing what to do next.",
+      "faq": [
+        {
+          "question": "How is sports massage different from a regular massage?",
+          "answer": "Sports massage is targeted. We focus on the muscles and areas affecting your movement, recovery or performance, rather than general relaxation, and pair it with movement so the change lasts."
+        },
+        {
+          "question": "Can I combine sports massage with personal training?",
+          "answer": "Yes. Many clients add massage to their training or book it on its own for recovery. Ask us on WhatsApp which works best for you."
+        },
+        {
+          "question": "How do I book a sports massage?",
+          "answer": "Message us on WhatsApp at 9187 5632, or message one of the therapists below directly. Tell us where you feel tight or sore and we will arrange a time."
+        }
+      ]
+    },
+    {
+      "slug": "osteopathic-manual-therapy",
+      "order": 3,
+      "name": "Osteopathic Manual Therapy",
+      "short": "Osteopathic Therapy",
+      "coachMatch": "osteopath|HVLA|iThrust|OMT",
+      "title": "Osteopathic Manual Therapy in Robertson Quay, Singapore | ReGen Performance",
+      "metaDescription": "Osteopathic manual therapy in Robertson Quay, Singapore, by coaches completing an MSc in Osteopathy (European School of Osteopathy, UK). Joint mobilisation, soft tissue work and rehab exercise.",
+      "eyebrow": "Osteopathic Manual Therapy · Robertson Quay, Singapore",
+      "h1": "Osteopathic Manual Therapy in Robertson Quay",
+      "lead": "Hands-on osteopathic techniques to restore joint mobility and ease stiffness, combined with exercise so your body keeps the change.",
+      "card": "Hands-on osteopathic techniques to restore joint mobility, paired with exercise that makes it last.",
+      "credentialNote": "Delivered by coaches completing an MSc in Osteopathy at the European School of Osteopathy, UK, and certified in osteopathic and manual therapy techniques.",
+      "whoFor": [
+        "Stiff, restricted joints in the neck, back, hips or shoulders",
+        "Recurring aches that stretching and massage alone have not fixed",
+        "Clients who want hands-on work as part of a training and rehab plan",
+        "People who prefer a whole-body approach to how they move and feel"
+      ],
+      "whatToExpect": [
+        "An assessment of posture, joint movement and how your body compensates",
+        "Hands-on techniques such as joint articulation and mobilisation, soft tissue work and, where appropriate, manipulation",
+        "Movement and strength exercises to lock in the change",
+        "A clear plan, and a referral to a doctor or other specialist if anything needs medical attention"
+      ],
+      "why": "Osteopathy looks at the body as one connected system, the same idea behind the ReGen Method. Pairing osteopathic manual therapy with coached exercise means you do not just feel better after the session; you build the strength and control to stay that way.",
+      "faq": [
+        {
+          "question": "Who delivers the osteopathic manual therapy?",
+          "answer": "Coaches who are completing an MSc in Osteopathy at the European School of Osteopathy in the UK, and who are certified in osteopathic and manual therapy techniques. We are always clear about what we do, and we refer you on when something needs medical care."
+        },
+        {
+          "question": "What can osteopathic manual therapy help with?",
+          "answer": "Clients most often come to us for neck and shoulder stiffness, lower back tightness, hip and knee discomfort, and restricted movement from desk work or training. We assess first and tell you honestly whether we are the right fit."
+        },
+        {
+          "question": "How do I book?",
+          "answer": "Message us on WhatsApp at 9187 5632, or contact one of the coaches below directly to book an assessment."
+        }
+      ]
+    }
+  ]
+}
