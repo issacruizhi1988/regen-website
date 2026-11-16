@@ -384,9 +384,9 @@ def offers_html(k, services):
 
 
 def home_services_html(services):
-    return "".join('<a class="card" href="/%s/"><span class="card-label">%02d</span><span class="card-title">%s</span>'
+    return "".join('<a class="card" href="/%s/"><span class="card-label">%s</span><span class="card-title">%s</span>'
                    '<span class="card-text">%s</span><span class="link-arrow">Learn more <span>→</span></span></a>'
-                   % (E(s["slug"]), i + 1, E(s["name"]), E(s["card"]), ) for i, s in enumerate(services))
+                   % (E(s["slug"]), E(s.get("benefit") or "%02d" % (i + 1)), E(s["name"]), E(s["card"]), ) for i, s in enumerate(services))
 
 
 SERVICE_PAGE = """<!DOCTYPE html>
@@ -460,7 +460,7 @@ def service_page_html(svc, services, ordered, site, reviews, base):
         '      <h2 class="h2" style="margin-top:1rem">Book a Free<br><em>Discovery Call</em></h2>\n'
         '      <p class="lead">Thirty minutes. No pressure, just clarity on what your body needs and where to start.</p>\n'
         '      <div class="btn-row">%s</div>\n    </div>\n  </section>\n\n'
-        '  <section class="section">\n    <div class="wrap">\n      <div class="label-rule">Other Services</div>\n'
+        '  <section class="section">\n    <div class="wrap">\n      <div class="label-rule">Also Part of Every ReGen Session</div>\n'
         '      <p style="display:flex;flex-wrap:wrap;gap:1.2rem 2rem;margin-top:1rem">%s</p>\n    </div>\n  </section>'
         % (E(svc["eyebrow"]), E(svc["h1"]), E(svc["lead"]),
            ('      <p class="coach-note">%s</p>\n' % E(svc["credentialNote"])) if svc.get("credentialNote") else "",

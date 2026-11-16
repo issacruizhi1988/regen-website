@@ -7,11 +7,11 @@
       "short": "Personal Training",
       "coachMatch": "*",
       "title": "Personal Training & Rehab in Robertson Quay, Singapore | ReGen Performance",
-      "metaDescription": "One-to-one personal training and injury rehab in Robertson Quay, Singapore. Assessment-led coaching for pain-free strength, fat loss and performance. Free 30-minute discovery call.",
+      "metaDescription": "Integrated one-to-one personal training in Robertson Quay, Singapore. Strength training, sports massage and osteopathic manual therapy in one session, for pain-free strength and performance. Free 30-minute discovery call.",
       "eyebrow": "Personal Training · Robertson Quay, Singapore",
       "h1": "Personal Training & Rehab in Robertson Quay",
-      "lead": "One-to-one coaching that builds lasting strength, gets you out of pain and keeps you moving well, at Platinum Fitness, 22 Martin Road.",
-      "card": "Get stronger, leaner and pain-free with one-to-one coaching built around how your body moves.",
+      "lead": "One-to-one sessions that combine strength training, sports massage and osteopathic manual therapy, adjusted to what your body needs each time. At Platinum Fitness, 22 Martin Road.",
+      "card": "One-to-one coaching that blends exercise and hands-on therapy, adjusted to what your body needs each session.",
       "whoFor": [
         "You want to get stronger, leaner or fitter, with a coach who plans every session around you",
         "You train but keep running into the same aches, tightness or injuries",
@@ -21,14 +21,18 @@
       "whatToExpect": [
         "A movement and posture assessment in your first session, so we understand why your body moves the way it does",
         "A plan built around your goals, history and schedule",
-        "Coached sessions that progress strength, mobility and conditioning step by step",
+        "Sessions tailored on the day: strength training, sports massage, osteopathic manual therapy, or a mix of all three",
         "Notes and exercise videos between sessions, so you keep progressing on your own"
       ],
-      "why": "Every ReGen coach works from the same system: find the root cause, organise how the body moves, then load it progressively. That is why our clients get stronger without the pain coming back.",
+      "why": "One session, everything your body needs. Most people would see a trainer, a massage therapist and a manual therapist separately. At ReGen it is one coach, one plan and one session rate, and every session follows the same system: find the root cause, organise how the body moves, then load it progressively.",
       "faq": [
         {
           "question": "How much does personal training cost?",
-          "answer": "Rates depend on the coach and package, from about $120 to $180 per session, with lower per-session rates on 5 and 12 session packages. Every coach's profile lists their prices, and your 30-minute discovery call is free."
+          "answer": "Rates depend on the coach and package, from about $120 to $180 per session, with lower per-session rates on 5 and 12 session packages. The same rate applies whether a session is training, hands-on therapy or a mix. Your 30-minute discovery call is free."
+        },
+        {
+          "question": "Is sports massage or manual therapy charged separately?",
+          "answer": "No. It is all part of the same integrated session at your coach's usual rate. A session can be all training, all hands-on therapy, or half and half, depending on what your body needs that day."
         },
         {
           "question": "Do you work with injuries and pain?",
@@ -38,7 +42,8 @@
           "question": "Where are you located?",
           "answer": "Inside Platinum Fitness at Robertson Quay, 22 Martin Road, #04-01, Singapore 239058. A short walk from Great World, Fort Canning and Havelock MRT."
         }
-      ]
+      ],
+      "benefit": "Strength for life"
     },
     {
       "slug": "sports-massage",
@@ -47,11 +52,11 @@
       "short": "Sports Massage",
       "coachMatch": "sports massage",
       "title": "Sports Massage in Robertson Quay, Singapore | ReGen Performance",
-      "metaDescription": "Sports massage in Robertson Quay, Singapore. Relieve muscle tightness, recover faster and move better with certified sports massage therapists at Platinum Fitness, 22 Martin Road. WhatsApp to book.",
+      "metaDescription": "Sports massage in Robertson Quay, Singapore. Book a full session of massage or combine it with training, at the same session rate. Certified therapists at Platinum Fitness, 22 Martin Road.",
       "eyebrow": "Sports Massage · Robertson Quay, Singapore",
       "h1": "Sports Massage in Robertson Quay",
-      "lead": "Targeted sports massage to ease tight, aching muscles, speed up recovery and help you move freely, from therapists who also understand how you train.",
-      "card": "Ease tight, aching muscles and recover faster with targeted hands-on work.",
+      "lead": "Targeted sports massage to ease tight, aching muscles and recover faster. Book a full session of massage, or combine it with training. Same session, same rate.",
+      "card": "Ease tight, aching muscles and recover faster, as a full session or combined with training.",
       "whoFor": [
         "Tight neck, shoulders, back or hips from desk work or training",
         "Runners, lifters and athletes who want to recover faster between sessions",
@@ -61,24 +66,25 @@
       "whatToExpect": [
         "A short check of where you feel tight or sore and how you move",
         "Hands-on sports massage on the areas that need it, using techniques such as deep tissue work, myofascial release and cupping where suitable",
-        "Simple stretches or exercises to keep the improvement after the session",
-        "Advice on how to fit massage around your training"
+        "Use the whole session for massage, or split it with movement and strength work",
+        "Simple stretches or exercises to keep the improvement after the session"
       ],
-      "why": "Our sports massage is delivered by certified therapists who are also strength and rehab coaches, so the hands-on work fits how you actually train and move. You leave looser, and you leave knowing what to do next.",
+      "why": "Our sports massage is part of the ReGen integrated session, delivered by certified therapists who are also strength and rehab coaches. The hands-on work fits how you actually train, so you leave looser and knowing what to do next.",
       "faq": [
         {
           "question": "How is sports massage different from a regular massage?",
           "answer": "Sports massage is targeted. We focus on the muscles and areas affecting your movement, recovery or performance, rather than general relaxation, and pair it with movement so the change lasts."
         },
         {
-          "question": "Can I combine sports massage with personal training?",
-          "answer": "Yes. Many clients add massage to their training or book it on its own for recovery. Ask us on WhatsApp which works best for you."
+          "question": "Can I book just a sports massage?",
+          "answer": "Yes. A session can be fully sports massage, fully training, or a mix of both. It is priced the same as a regular ReGen session at your therapist's rate, and you decide together what your body needs that day."
         },
         {
           "question": "How do I book a sports massage?",
           "answer": "Message us on WhatsApp at 9187 5632, or message one of the therapists below directly. Tell us where you feel tight or sore and we will arrange a time."
         }
-      ]
+      ],
+      "benefit": "Recover faster"
     },
     {
       "slug": "osteopathic-manual-therapy",
@@ -87,11 +93,11 @@
       "short": "Osteopathic Therapy",
       "coachMatch": "osteopath|HVLA|iThrust|OMT",
       "title": "Osteopathic Manual Therapy in Robertson Quay, Singapore | ReGen Performance",
-      "metaDescription": "Osteopathic manual therapy in Robertson Quay, Singapore, by coaches completing an MSc in Osteopathy (European School of Osteopathy, UK). Joint mobilisation, soft tissue work and rehab exercise.",
+      "metaDescription": "Osteopathic manual therapy in Robertson Quay, Singapore, by coaches completing an MSc in Osteopathy (European School of Osteopathy, UK). Book a full session or combine it with training, at the same session rate.",
       "eyebrow": "Osteopathic Manual Therapy · Robertson Quay, Singapore",
       "h1": "Osteopathic Manual Therapy in Robertson Quay",
-      "lead": "Hands-on osteopathic techniques to restore joint mobility and ease stiffness, combined with exercise so your body keeps the change.",
-      "card": "Hands-on osteopathic techniques to restore joint mobility, paired with exercise that makes it last.",
+      "lead": "Hands-on osteopathic techniques to restore joint mobility and ease stiffness, combined with exercise so your body keeps the change. Book it as a full session or as part of your training.",
+      "card": "Hands-on osteopathic techniques to restore joint mobility, as a full session or combined with training.",
       "credentialNote": "Delivered by coaches completing an MSc in Osteopathy at the European School of Osteopathy, UK, and certified in osteopathic and manual therapy techniques.",
       "whoFor": [
         "Stiff, restricted joints in the neck, back, hips or shoulders",
@@ -116,10 +122,15 @@
           "answer": "Clients most often come to us for neck and shoulder stiffness, lower back tightness, hip and knee discomfort, and restricted movement from desk work or training. We assess first and tell you honestly whether we are the right fit."
         },
         {
+          "question": "Is it separate from personal training?",
+          "answer": "It is part of the same integrated session. A session can be fully hands-on therapy, fully training, or half and half, at your coach's usual session rate."
+        },
+        {
           "question": "How do I book?",
           "answer": "Message us on WhatsApp at 9187 5632, or contact one of the coaches below directly to book an assessment."
         }
-      ]
+      ],
+      "benefit": "Move without pain"
     }
   ]
 }
