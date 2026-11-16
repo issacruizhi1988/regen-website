@@ -518,7 +518,15 @@
         "AMP Blueprint Mentorship"
       ],
       "more": "",
-      "firstName": "Tan Long"
+      "firstName": "Tan Long",
+      "achievementsTitle": "Photoshoot",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/tan-long-photoshoot.jpg",
+          "caption": "Tan Long's fitness photoshoot (photo: Wilsurn)"
+        }
+      ]
     },
     {
       "slug": "shaun-lim",
@@ -699,7 +707,15 @@
         }
       ],
       "highlights": [],
-      "more": ""
+      "more": "",
+      "achievementsTitle": "Photoshoot",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/eugene-photoshoot.jpg",
+          "caption": "Eugene's fitness photoshoot: living the lifestyle he coaches"
+        }
+      ]
     },
     {
       "slug": "kennard-chia",
@@ -897,7 +913,15 @@
         "Integrated Kinetic Neurology Level 2",
         "Rehab Trainer - Rehab Essentials"
       ],
-      "more": ""
+      "more": "",
+      "achievementsTitle": "Transformation",
+      "achievements": [],
+      "gallery": [
+        {
+          "src": "/assets/img/coaches/gallery/hans-ng-transformation.jpg",
+          "caption": "Before and after transformation"
+        }
+      ]
     },
     {
       "slug": "jensen",
@@ -1016,7 +1040,7 @@
           ]
         }
       ],
-      "photo": "/assets/img/coaches/roxanne-zeng-v2.jpg",
+      "photo": "/assets/img/coaches/roxanne-zeng-v3.jpg",
       "whatsapp": "6586316504",
       "instagram": "roxannewithlove",
       "location": "Platinum Fitness Robertson Quay, 22 Martin Rd, #04-01, Singapore 239058",
@@ -1118,7 +1142,7 @@
         "Women",
         "Training around pain & injuries"
       ],
-      "approach": "My sessions combine full-body strength, mobility and athleticism, while thoughtfully adapting to individual needs, including chronic pain and injuries.\n\nI support people who are new to the gym and don't know where to start, who've struggled to stay consistent, who want to train safely despite pain, injuries, or setbacks, or who are looking for guidance, accountability, and structure — without extreme diets or burnout.",
+      "approach": "My sessions combine full-body strength, mobility and athleticism, while thoughtfully adapting to individual needs, including chronic pain and injuries.\n\nI support people who are new to the gym and don't know where to start, who've struggled to stay consistent, who want to train safely despite pain, injuries, or setbacks, or who are looking for guidance, accountability, and structure, without extreme diets or burnout.",
       "since": "2025",
       "experience": [
         {
